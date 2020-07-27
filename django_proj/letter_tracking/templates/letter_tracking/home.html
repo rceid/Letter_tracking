@@ -1,0 +1,15 @@
+{%extends "letter_tracking/base.html" %}
+{% block content %}
+    {% for letter in letters %}
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">{{ letter.posted_by }}</a>
+                    <small class="text-muted">{{ letter.date_posted | date:"F d, Y" }}</small>
+                </div>
+                <h2><a class="article-title" href="#">{{ letter.title }}</a></h2>
+                <p class="article-content">{{ letter.description }}</p>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
