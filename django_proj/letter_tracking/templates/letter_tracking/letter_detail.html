@@ -1,0 +1,19 @@
+{%extends "letter_tracking/base.html" %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="{% url 'userletters' object.posted_by.username %}">{{ object.posted_by }}</a>
+                <small class="text-muted">{{ object.date_posted | date:"F d, Y" }}</small>
+            </div>
+            <h2 class="article-title">{{ object.title }}</h2>
+            <p class="article-content">{{ object.description }}</p>
+            {% if object.posted_by == user %}
+                <div>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'letter-update' object.id%}">Update</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'letter-delete' object.id%}">Delete</a>
+                </div>
+            {% endif %}
+        </div>
+    </article>
+{% endblock content %}
