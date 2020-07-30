@@ -52,6 +52,8 @@ def prepare_data():
     '''
     letters = clean_letters()
     politicians, senators, reps = clean_politicians()
+    politicians['Caucus'] = 'Caucus placeholder'
+    politicians['Active'] = True
     letter_data =  pd.merge(letters, politicians, how='inner', on='Legislator')
     
     return letters, politicians, senators, reps
