@@ -16,4 +16,3 @@ class Letter(models.Model):
 
     def get_absolute_url(self):
         return reverse('letter-detail', kwargs={'pk':self.pk})
-

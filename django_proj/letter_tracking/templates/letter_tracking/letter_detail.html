@@ -3,7 +3,7 @@
     <article class="media content-section">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="{% url 'userletters' object.posted_by.username %}">{{ object.posted_by }}</a>
+                <a class="mr-2" href="{% url 'userletters' object.posted_by %}">{{ object.posted_by }}</a>
                 <small class="text-muted">{{ object.date_posted | date:"F d, Y" }}</small>
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
