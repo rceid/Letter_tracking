@@ -3,11 +3,40 @@
     <article class="media content-section">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="{% url 'userletters' object.posted_by %}">{{ object.posted_by }}</a>
-                <small class="text-muted">{{ object.date_posted | date:"F d, Y" }}</small>
+                <a class="mr-2">by {{object.rep_or_sen}} {{ object.legislator }} ({{ object.party}}) </a>
+                <small class="text-muted">{{ object.date | date:"F d, Y" }}</small>
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
             <p class="article-content">{{ object.description }}</p>
+            <div> 
+                <small>
+                    {% if object.posted_by == None %}
+                    Letter uploaded by: letter_admin
+                    {% else %}
+                    Letter uploaded by: {{user.posted_by}}
+                    {% endif %}
+                </small>
+            </div>
+
+            <div> 
+                <small>
+                    Daily letter number: {{object.consecutive_number}}
+                </small>
+            </div>
+            <div>
+                <small>
+                    Caucus: {{object.caucus}}
+                </small>
+            </div>
+            <div>
+                <small>
+                    Chamber: {{object.chamber}}
+                </small>
+            <div>
+                <small> 
+                    <a href="{{ object.link}}">link to letter</a> 
+                </small> 
+            </div>
             {% if object.posted_by == user %}
                 <div>
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'letter-update' object.id%}">Update</a>

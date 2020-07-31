@@ -4,11 +4,13 @@
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" href="{% url 'userletters' letter.posted_by %}">{{ letter.posted_by }}</a>
-                    <small class="text-muted">{{ letter.date_posted | date:"F d, Y" }}</small>
+                    <a class="mr-2" >by {{ letter.legislator }}</a>
+                    <!-- href="{% url 'userletters' letter.posted_by %}"> <!-->
+                    <small class="text-muted">{{ letter.date | date:"F d, Y" }}</small>
                 </div>
-                <h2><a class="article-title" href="{% url 'letter-detail' letter.id%}">{{ letter.title }}</a></h2>
+                <h2><a class="article-title">{{ letter.title }}</a></h2>
                 <p class="article-content">{{ letter.description }}</p>
+                <div> <small> <a  href="{% url 'letter-detail' letter.id%}">see more info</a></small></div>
             </div>
         </article>
     {% endfor %}

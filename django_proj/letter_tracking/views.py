@@ -8,6 +8,10 @@ from django.views.generic import (ListView,
                                  DeleteView)
 from .models import Letter
 
+FIELDS = ['topic', 'legislator', 'party',
+             'description', 'date', 'caucus', 
+             'rep_or_sen', 'chamber', 'link',
+             ]
 
 def home(request):
     context ={
@@ -19,8 +23,8 @@ class LetterListView(ListView):
     model = Letter
     template_name = 'letter_tracking/home.html'
     context_object_name = 'letters'
-    ordering = ['-date']
-    paginate_by = 5
+    ordering = ['-date', '-date_posted']
+    paginate_by = 15
 
 class UserLetterListView(ListView): #can adapt this to use for politicians. Video 11 pagination
     model = Letter
@@ -37,7 +41,7 @@ class LetterDetailView(DetailView):
 
 class LetterCreateView(LoginRequiredMixin, CreateView):
     model = Letter
-    fields = ['title', 'description', 'date']
+    fields = FIELDS
 
     def form_valid(self, form):
         form.instance.posted_by = self.request.user
@@ -46,7 +50,7 @@ class LetterCreateView(LoginRequiredMixin, CreateView):
 
 class LetterUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Letter
-    fields = ['title', 'description', 'date']
+    fields = FIELDS
 
     def form_valid(self, form):
         form.instance.posted_by = self.request.user

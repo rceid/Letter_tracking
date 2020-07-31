@@ -15,23 +15,35 @@ import us
 #from models import Letter, User
 
 
-##from django shell:
-#import sys
-#sys.path.insert(0, './data)
-#import letter_cleaning
-#l, p, s, r = letter_cleaning.prepare_data()
-#from letter_tracking.models import Letter
-#for _, info in l.iterrows():
-#   letter = Letter(title=info['Code'], \
-    #description=info['Short description'], date=info['Date'])
-#   letter.save()
+#from django shell:
+# import sys
+# sys.path.insert(0, './data')
+# import letter_cleaning
+# l, s, r = letter_cleaning.prepare_data()
+# from letter_tracking.models import Letter
+# for _, info in l.iterrows():
+#     letter = Letter(topic=info['Topic'], legislator=info['Legislator'],\
+#     party=info['Party'], rep_or_sen=info['Sen./Rep.'], description=info['Short description'],\
+#     caucus=info['Caucus'], date=info['Date'], chamber=info['Kind of statement Chamber'],\
+#     link=info['Link'], consecutive_number=info['Daily Letter Count'])
+#     letter.save()
 
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-    date = models.DateTimeField()
-    date_posted = models.DateTimeField(default=timezone.now)
-    posted_by = models.ForeignKey(User, 
-                                 on_delete=models.SET_NULL, null=True)
+
+    # topic = models.CharField(max_length=25)
+    # legislator = models.CharField(max_length=60)
+    # party = models.CharField(max_length=11, 
+    #                         choices=PolParties.choices)
+    # rep_or_sen = models.CharField(max_length=4,
+    #                              choices=RepSen.choices)
+    # caucus = models.CharField(max_length=100)
+    # description = models.TextField()
+    # date = models.DateTimeField()
+    # chamber = models.CharField(max_length=15)
+    # link = models.URLField("Link to letter")
+    # consecutive_number = models.IntegerField()
+    # date_posted = models.DateTimeField(default=timezone.now)
+    # posted_by = models.ForeignKey(User, 
+    #                              on_delete=models.SET_NULL, null=True)
 #
 
 LETTER_DATA = './data/letters spreadsheet.xlsx'
@@ -56,7 +68,7 @@ def prepare_data():
     politicians['Active'] = True
     letter_data =  pd.merge(letters, politicians, how='inner', on='Legislator')
     
-    return letters, politicians, senators, reps
+    return letter_data, senators, reps
     
 
 def clean_letters():
@@ -99,7 +111,7 @@ def clean_politicians():
     return politicians, senators, reps
         
         
-# if __name__ == '__main__':
-#     letters, politicians, senators, reps = prepare_data()
+if __name__ == '__main__':
+    letters, politicians, senators, reps = prepare_data()
 
     
