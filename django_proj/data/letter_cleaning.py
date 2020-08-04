@@ -11,46 +11,14 @@ import sys
 import pandas as pd
 import datetime as dt
 import us
-#sys.path.insert(0, '.\\..\\letter_tracking')
-#from models import Letter, User
 
 
-#from django shell:
-# import sys
-# sys.path.insert(0, './data')
-# import letter_cleaning
-# l, s, r = letter_cleaning.prepare_data()
-# from letter_tracking.models import Letter
-# for _, info in l.iterrows():
-#     letter = Letter(topic=info['Topic'], legislator=info['Legislator'],\
-#     party=info['Party'], rep_or_sen=info['Sen./Rep.'], description=info['Short description'],\
-#     caucus=info['Caucus'], date=info['Date'], chamber=info['Kind of statement Chamber'],\
-#     link=info['Link'], consecutive_number=info['Daily Letter Count'])
-#     letter.save()
-
-
-    # topic = models.CharField(max_length=25)
-    # legislator = models.CharField(max_length=60)
-    # party = models.CharField(max_length=11, 
-    #                         choices=PolParties.choices)
-    # rep_or_sen = models.CharField(max_length=4,
-    #                              choices=RepSen.choices)
-    # caucus = models.CharField(max_length=100)
-    # description = models.TextField()
-    # date = models.DateTimeField()
-    # chamber = models.CharField(max_length=15)
-    # link = models.URLField("Link to letter")
-    # consecutive_number = models.IntegerField()
-    # date_posted = models.DateTimeField(default=timezone.now)
-    # posted_by = models.ForeignKey(User, 
-    #                              on_delete=models.SET_NULL, null=True)
-#
 
 LETTER_DATA = './data/letters spreadsheet.xlsx'
 REP_DATA = './data/factsheet_data.csv'
-COLS_TO_KEEP = ['Date', 'Kind of statement Chamber', 'Kind of statement Party',\
-                'State', 'Party', 'Congressperson', 'Daily Letter Count', 'Code',\
-                    'Topic', 'Rep/Sen', 'Short description']
+# COLS_TO_KEEP = ['Date', 'Kind of statement Chamber', 'Kind of statement Party',\
+#                 'State', 'Party', 'Congressperson', 'Daily Letter Count', 'Code',\
+#                     'Topic', 'Rep/Sen', 'Short description', 'Counter']
     
 def prepare_data():
     '''
@@ -64,14 +32,17 @@ def prepare_data():
     '''
     letters = clean_letters()
     politicians, senators, reps = clean_politicians()
-    politicians['Caucus'] = 'Caucus placeholder'
-    politicians['Active'] = True
     letter_data =  pd.merge(letters, politicians, how='inner', on='Legislator')
     
     return letter_data, senators, reps
     
 
 def clean_letters():
+    # if not command_line:
+    #     LETTER_DATA = './letters spreadsheet.xlsx'
+    # else:
+    #     LETTER_DATA = './data/letters spreadsheet.xlsx'
+        
     letters = pd.read_excel(LETTER_DATA, sheet_name='Seguimiento', header=7)
     
     letters = letters[letters['Code'] != '1900.01.00.S.R.']    
@@ -82,15 +53,21 @@ def clean_letters():
     letters['State'] = letters['State']\
         .replace(us.states.mapping('abbr','name'))
     letters.rename(columns={'Congressperson':'Legislator'}, inplace=True)
-        #how to create the letter pk
-    # letters['Code'] = letters['Date'].apply(lambda x: str(x).replace('-', '.') + '.')\
-    #     + letters['Kind of statement Chamber'].str[0] + '.' + \
-    #         letters['Kind of statement Party'].str[0] + '.' + letters['Topic']
-    
+    dummy_col = lambda x: 1 if x == 1.0 else 0
+    letters['Counter'] = letters['Counter'].apply(dummy_col)
+    letters['MX was directly mentioned'] = \
+        letters['MX was directly mentioned'].apply(dummy_col)
+
     return letters
     
 
 def clean_politicians():
+    # if not command_line:
+    #     REP_DATA = './factsheet_data.csv'
+    #     LETTER_DATA = './letters spreadsheet.xlsx'
+    # else:
+    #     REP_DATA = './data/factsheet_data.csv'
+    #     LETTER_DATA = './data/letters spreadsheet.xlsx'
     cols = ['Legislator', 'Jurisdiction', 'Sen./Rep.', 'Party Affiliation']
     senators = pd.read_excel(LETTER_DATA, sheet_name='Catálogos', header=1, \
                              usecols=['Sen./Rep.','Legislador','Estado','Partido'])
@@ -112,6 +89,6 @@ def clean_politicians():
         
         
 if __name__ == '__main__':
-    letters, politicians, senators, reps = prepare_data()
+    letters, senators, reps = prepare_data()
 
     
