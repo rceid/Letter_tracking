@@ -57,20 +57,22 @@ class LetterUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return super().form_valid(form)
 
     def test_func(self):
-        letter = self.get_object()
-        if self.request.user == letter.posted_by:
-            return True
-        return False
+        return True
+        # letter = self.get_object()
+        # if self.request.user == letter.posted_by:
+        #     return True
+        # return False
 
 class LetterDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Letter
     success_url = '/'
 
     def test_func(self):
-        letter = self.get_object()
-        if self.request.user == letter.posted_by:
-            return True
-        return False
+        return True
+        # letter = self.get_object()
+        # if self.request.user == letter.posted_by:
+        #     return True
+        # return False
 
 def about(request):
     return render(request, 'letter_tracking/about.html', {'title': 'About'})

@@ -29,7 +29,7 @@ class Letter(models.Model):
     
     class Sentiment(models.TextChoices):
         Pos = 1, _('Positive')
-        Neut = 2, _('Neurtal')
+        Neut = 2, _('Neutral')
         Neg = 3, _('Negative')
 
     class Dummy(models.TextChoices):
@@ -45,7 +45,7 @@ class Letter(models.Model):
                                  verbose_name=_('Author Name'),
                                  help_text=
                                  "Names are displayed in <em>Last Name, First Name</em> format")
-    cosigners = models.TextField()
+    cosigners = models.CharField(max_length=500)
     party = models.CharField(max_length=11, 
                             choices=PolParties.choices)
     rep_or_sen = models.CharField(max_length=4,
@@ -85,7 +85,7 @@ class Letter(models.Model):
     @property
     def title(self):
         return str(self.date)[:10].replace('-', '.') + '.' + str(self.chamber)[0] +\
-                '.' + str(self.party)[0] + '.' + str(self.topic)
+                '.' + str(self.party) + '.' + str(self.topic) + '.' + str(self.consecutive_number)
 
     def __str__(self):
         return self.title

@@ -20,6 +20,12 @@
 
             <div> 
                 <small>
+                    Cosigners: {{object.cosigners}}
+
+                </small>
+            </div>
+            <div>
+                <small>
                     Daily letter number: {{object.consecutive_number}}
                 </small>
             </div>
@@ -37,12 +43,10 @@
                     <a href="{{ object.link}}">link to letter</a> 
                 </small> 
             </div>
-            {% if object.posted_by == user %}
                 <div>
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'letter-update' object.id%}">Update</a>
                 <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'letter-delete' object.id%}">Delete</a>
                 </div>
-            {% endif %}
         </div>
     </article>
 {% endblock content %}

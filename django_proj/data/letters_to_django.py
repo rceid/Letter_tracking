@@ -20,9 +20,11 @@ def go():
     
 def letter_sponsors():
     letters, s, r = letter_cleaning.prepare_data()
+    letters.reset_index(inplace=True)
     distinct_letters = letters.groupby('Code').__iter__()
     signers = {}
     for title, info in distinct_letters:
+        info.sort_values('index', inplace=True)
         try:
             info[info['Counter'] == 1]['Legislator'].item() #author call
             
@@ -33,6 +35,7 @@ def letter_sponsors():
                 letter_info(signers, title_, info_)
         else:
             letter_info(signers, title, info)
+    
     return signers
 
     
@@ -56,8 +59,7 @@ def upload(signers):
         description=info['Short description'],
         caucus='Na', date=info['Date'], 
         chamber=info['Kind of statement Chamber'],
-        link=info['Link'], #consecutive_number=info['Daily Letter Count'],
-        specific_topic=info['Specific topic'], kind_of_statement=info['Kind of statement'],
+        link=info['Link'],specific_topic=info['Specific topic'], kind_of_statement=info['Kind of statement'],
         positive_MX =info['Positive for MX'], MX_mentioned=info['MX was directly mentioned'],
         recipient=info['Recipient'], kind_statement_party=info['Kind of statement Party'][0],
         comments=info['Comments'], action=info['Action'],\
