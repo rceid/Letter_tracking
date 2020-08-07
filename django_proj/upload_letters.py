@@ -10,4 +10,3 @@ sys.path.insert(0, './data')
 import letters_to_django as ltd
 
 ltd.go()
-

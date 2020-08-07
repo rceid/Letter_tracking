@@ -16,40 +16,61 @@ def go():
     print('Fetching letters...\n')
     signers = letter_sponsors()
     print('\nLetters fetched, uploading letters...')
+    signers = list(signers.items()) #list of tuples w code and dict
+    signers = sorted(signers, key= lambda signers:(signers[1]['Date'], \
+                                                  (signers[1]['Entry Order'])))
     upload(signers)
     
 def letter_sponsors():
     letters, s, r = letter_cleaning.prepare_data()
     letters.reset_index(inplace=True)
-    distinct_letters = letters.groupby('Code').__iter__()
+    daily_letters = letters.groupby('Date').__iter__()
     signers = {}
-    for title, info in distinct_letters:
-        info.sort_values('index', inplace=True)
+    for date, info in daily_letters:
+        entry_order(info)
         try:
             info[info['Counter'] == 1]['Legislator'].item() #author call
             
         except:
-            print('multiple authors for {}'.format(title), '\nDifferentiating by specific topic')
+            print('multiple letters on {}'.format(date), '\nDifferentiating by specific topic')
             subdivision = info.groupby('Specific topic').__iter__()
             for title_, info_ in subdivision:
-                letter_info(signers, title_, info_)
+                letter_info(signers, info_)
         else:
-            letter_info(signers, title, info)
+            letter_info(signers, info)
     
     return signers
 
+def entry_order(daily_letters):
+    '''
+    Gets the order by which the letters were entered in the system on
+    they day they were entered
+    '''
+    topics = list(daily_letters['Specific topic'].unique())
+    topic_order = dict(zip(topics, range(1, len(topics) + 1)))
+    daily_letters['Entry Order'] = daily_letters['Specific topic']\
+        .replace(topic_order).astype(str)
+    daily_letters['Code'] = daily_letters['Code'] + '.'\
+        + daily_letters['Entry Order']
     
-def letter_info(dic, title, info):
-    primary = info[info['Counter'] == 1]
-    dic[title] = primary.to_dict('records')[0]
-    author = primary['Legislator'].item()
-    cosigners = list(info[info['Counter'] == 0]['Legislator'])
-    dic[title]['author'] = author
-    dic[title]['cosigners'] = cosigners
+def letter_info(dic, daily_letters):
+    for code, info in daily_letters.groupby('Code').__iter__():
+        primary = info[info['Counter'] == 1]
+        dic[code] = primary.to_dict('records')[0]
+        author = primary['Legislator'].item()
+        cosigners = list(info[info['Counter'] == 0]['Legislator'])
+        dic[code]['author'] = author
+        dic[code]['cosigners'] = cosigners
 
 def upload(signers):
+    '''
+    Uploads the collection of letters to the django web application
+    '''
     count = 0
-    for _, info in signers.items():
+    import datetime
+    for _, info in signers:
+        if info['Date'] == datetime.date(2020, 4, 15):
+            print(info['Code'], info['Legislator'], info['Entry Order'])
         count += 1
         ###fix cosigners later, caucus field is constant
         cosign = ', '.join(info['cosigners'])

@@ -11,7 +11,8 @@ import pandas as pd
 import us
 
 
-
+# LETTER_DATA = './letters spreadsheet.xlsx'
+# REP_DATA = './factsheet_data.csv'
 LETTER_DATA = './data/letters spreadsheet.xlsx'
 REP_DATA = './data/factsheet_data.csv'
 
@@ -24,6 +25,7 @@ def prepare_data():
     letters = clean_letters()
     politicians, senators, reps = clean_politicians()
     letter_data =  pd.merge(letters, politicians, how='left', on='Legislator')
+    
     return letter_data, senators, reps    
 
 def clean_letters():
@@ -39,7 +41,8 @@ def clean_letters():
     letters['Counter'] = letters['Counter'].apply(dummy_col)
     letters['MX was directly mentioned'] = \
         letters['MX was directly mentioned'].apply(dummy_col)
-        
+    letters['Specific topic'] = letters['Specific topic'].fillna('Blank')
+    
     return letters
 
 def clean_politicians():
