@@ -8,9 +8,10 @@ from django.views.generic import (ListView,
                                  DeleteView)
 from .models import Letter
 
-FIELDS = ['topic', 'legislator', 'party',
-             'description', 'date', 'caucus', 
-             'rep_or_sen', 'chamber', 'link',
+FIELDS = ['topic', 'legislator', 'party','rep_or_sen','cosigners',
+             'description', 'date', 'caucus', 'chamber', 'link', 'specific_topic',
+             'kind_of_statement', 'positive_MX', 'MX_mentioned', 'recipient', 
+             'kind_statement_party', 'comments', 'action', 'notice_num'
              ]
 
 def home(request):

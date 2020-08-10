@@ -1,0 +1,537 @@
+Legislator,State,Jurisdiction,Sen./Rep.,Party Affiliation,Active
+Larson John,CT,Connecticut Congressional District 1,Rep.,D,True
+DeLauro Rosa,CT,Connecticut Congressional District 3,Rep.,D,True
+Himes Jim,CT,Connecticut Congressional District 4,Rep.,D,True
+Hayes Jahana,CT,Connecticut Congressional District 5,Rep.,D,True
+Courtney Joe,CT,Connecticut Congressional District 2,Rep.,D,True
+Pingree Chellie,ME,Maine Congressional District 1,Rep.,D,True
+Golden Jared,ME,Maine Congressional District 2,Rep.,D,True
+Neal Richie,MA,Massachusetts Congressional District 1,Rep.,D,True
+Trahan Lori,MA,Massachusetts Congressional District 3,Rep.,D,True
+Clark Katherine,MA,Massachusetts Congressional District 5,Rep.,D,True
+Kennedy Joe,MA,Massachusetts Congressional District 4,Rep.,D,True
+Pressley Ayanna,MA,Massachusetts Congressional District 7,Rep.,D,True
+McGovern Jim,MA,Massachusetts Congressional District 2,Rep.,D,True
+Keating Bill,MA,Massachusetts Congressional District 9,Rep.,D,True
+Moulton Seth,MA,Massachusetts Congressional District 6,Rep.,D,True
+Lynch Stephen,MA,Massachusetts Congressional District 8,Rep.,D,True
+Pappas Chris,NH,New Hampshire Congressional District 1,Rep.,D,True
+Kuster Annie,NH,New Hampshire Congressional District 2,Rep.,D,True
+Cicilline David,RI,Rhode Island Congressional District 1,Rep.,D,True
+Langevin Jim,RI,Rhode Island Congressional District 2,Rep.,D,True
+Welch Peter,VT,Vermont Congressional District (at Large),Rep.,D,True
+Norcross Donald,NJ,New Jersey Congressional District 1,Rep.,D,True
+Kim Andy,NJ,New Jersey Congressional District 3,Rep.,D,True
+Payne Donald,NJ,New Jersey Congressional District 10,Rep.,D,True
+Smith Chris,NJ,New Jersey Congressional District 4,Rep.,R,True
+Gottheimer Josh,NJ,New Jersey Congressional District 5,Rep.,D,True
+Malinowski Tom,NJ,New Jersey Congressional District 7,Rep.,D,True
+Van Drew Jeff,NJ,New Jersey Congressional District 2,Rep.,R,True
+Pascrell Bill,NJ,New Jersey Congressional District 9,Rep.,D,True
+Sherrill Mikie,NJ,New Jersey Congressional District 11,Rep.,D,True
+Pallone Frank,NJ,New Jersey Congressional District 6,Rep.,D,True
+Coleman Bonnie Watson,NJ,New Jersey Congressional District 12,Rep.,D,True
+Sires Albio,NJ,New Jersey Congressional District 8,Rep.,D,True
+Zeldin Lee,NY,New York Congressional District 1,Rep.,R,True
+Velázquez Nydia,NY,New York Congressional District 7,Rep.,D,True
+Jacobs Chris,NY,New York Congressional District 27,Rep.,R,True
+Lowey Nita,NY,New York Congressional District 17,Rep.,D,True
+Ocasio-Cortez Alexandria,NY,New York Congressional District 14,Rep.,D,True
+Meng Grace,NY,New York Congressional District 6,Rep.,D,True
+Meeks Gregory,NY,New York Congressional District 5,Rep.,D,True
+Katko John,NY,New York Congressional District 24,Rep.,R,True
+Engel Eliot,NY,New York Congressional District 16,Rep.,D,True
+Rose Max,NY,New York Congressional District 11,Rep.,D,True
+Serrano José,NY,New York Congressional District 15,Rep.,D,True
+Reed Tom,NY,New York Congressional District 23,Rep.,R,True
+Jeffries Hakeem,NY,New York Congressional District 8,Rep.,D,True
+Maloney Carolyn,NY,New York Congressional District 12,Rep.,D,True
+Maloney Sean Patrick,NY,New York Congressional District 18,Rep.,D,True
+King Pete,NY,New York Congressional District 2,Rep.,R,True
+Tonko Paul,NY,New York Congressional District 20,Rep.,D,True
+Morelle Joe,NY,New York Congressional District 25,Rep.,D,True
+Suozzi Tom,NY,New York Congressional District 3,Rep.,D,True
+Stefanik Elise,NY,New York Congressional District 21,Rep.,R,True
+Nadler Jerry,NY,New York Congressional District 10,Rep.,D,True
+Rice Kathleen,NY,New York Congressional District 4,Rep.,D,True
+Espaillat Adriano,NY,New York Congressional District 13,Rep.,D,True
+Higgins Brian,NY,New York Congressional District 26,Rep.,D,True
+Brindisi Anthony,NY,New York Congressional District 22,Rep.,D,True
+Clarke Yvette,NY,New York Congressional District 9,Rep.,D,True
+Delgado Antonio,NY,New York Congressional District 19,Rep.,D,True
+Fitzpatrick Brian,PA,Pennsylvania Congressional District 1,Rep.,R,True
+Doyle Mike,PA,Pennsylvania Congressional District 18,Rep.,D,True
+Wild Susan,PA,Pennsylvania Congressional District 7,Rep.,D,True
+Boyle Brendan,PA,Pennsylvania Congressional District 2,Rep.,D,True
+Lamb Conor,PA,Pennsylvania Congressional District 17,Rep.,D,True
+Reschenthaler Guy,PA,Pennsylvania Congressional District 14,Rep.,R,True
+Houlahan Chrissy,PA,Pennsylvania Congressional District 6,Rep.,D,True
+Evans Dwight,PA,Pennsylvania Congressional District 3,Rep.,D,True
+Perry Scott,PA,Pennsylvania Congressional District 10,Rep.,R,True
+Dean Madeleine,PA,Pennsylvania Congressional District 4,Rep.,D,True
+Scanlon Mary Gay,PA,Pennsylvania Congressional District 5,Rep.,D,True
+Kelly Mike,PA,Pennsylvania Congressional District 16,Rep.,R,True
+Joyce John,PA,Pennsylvania Congressional District 13,Rep.,R,True
+Smucker Lloyd,PA,Pennsylvania Congressional District 11,Rep.,R,True
+Meuser Dan,PA,Pennsylvania Congressional District 9,Rep.,R,True
+Thompson Glenn,PA,Pennsylvania Congressional District 15,Rep.,R,True
+Keller Fred,PA,Pennsylvania Congressional District 12,Rep.,R,True
+Cartwright Matt,PA,Pennsylvania Congressional District 8,Rep.,D,True
+Rush Bobby,IL,Illinois Congressional District 1,Rep.,D,True
+LaHood Darin,IL,Illinois Congressional District 18,Rep.,R,True
+Davis Danny,IL,Illinois Congressional District 7,Rep.,R,True
+Kelly Robin,IL,Illinois Congressional District 2,Rep.,D,True
+Underwood Lauren,IL,Illinois Congressional District 14,Rep.,D,True
+Quigley Mike,IL,Illinois Congressional District 5,Rep.,D,True
+Kinzinger Adam,IL,Illinois Congressional District 16,Rep.,R,True
+Davis Rodney,IL,Illinois Congressional District 13,Rep.,R,True
+Bustos Cheri,IL,Illinois Congressional District 17,Rep.,D,True
+Casten Sean,IL,Illinois Congressional District 6,Rep.,D,True
+Lipinski Dan,IL,Illinois Congressional District 3,Rep.,D,True
+Schneider Brad,IL,Illinois Congressional District 10,Rep.,D,True
+Garcia Chuy,IL,Illinois Congressional District 4,Rep.,D,True
+Foster Bill,IL,Illinois Congressional District 11,Rep.,D,True
+Schakowsky Jan,IL,Illinois Congressional District 9,Rep.,D,True
+Shimkus John,IL,Illinois Congressional District 15,Rep.,R,True
+Bost Mike,IL,Illinois Congressional District 12,Rep.,R,True
+Krishnamoorthi Raja,IL,Illinois Congressional District 8,Rep.,D,True
+Walorski Jackie,IN,Indiana Congressional District 2,Rep.,R,True
+Hollingsworth Trey,IN,Indiana Congressional District 9,Rep.,R,True
+Pence Greg,IN,Indiana Congressional District 6,Rep.,R,True
+Bucshon Larry,IN,Indiana Congressional District 8,Rep.,R,True
+Visclosky Pete,IN,Indiana Congressional District 1,Rep.,D,True
+Banks Jim,IN,Indiana Congressional District 3,Rep.,R,True
+Brooks Susan,IN,Indiana Congressional District 5,Rep.,R,True
+Baird Jim,IN,Indiana Congressional District 4,Rep.,R,True
+Carson André,IN,Indiana Congressional District 7,Rep.,D,True
+Bergman Jack,MI,Michigan Congressional District 1,Rep.,R,True
+Walberg Tim,MI,Michigan Congressional District 7,Rep.,R,True
+Huizenga Bill,MI,Michigan Congressional District 2,Rep.,R,True
+Upton Fred,MI,Michigan Congressional District 6,Rep.,R,True
+Lawrence Brenda,MI,Michigan Congressional District 14,Rep.,D,True
+Amash Justin,MI,Michigan Congressional District 3,Rep.,L,True
+Mitchell Paul,MI,Michigan Congressional District 10,Rep.,R,True
+Kildee Dan,MI,Michigan Congressional District 5,Rep.,D,True
+Moolenaar John,MI,Michigan Congressional District 4,Rep.,R,True
+Tlaib Rashida,MI,Michigan Congressional District 13,Rep.,D,True
+Stevens Haley,MI,Michigan Congressional District 11,Rep.,D,True
+Levin Andy,MI,Michigan Congressional District 9,Rep.,D,True
+Dingell Debbie,MI,Michigan Congressional District 12,Rep.,D,True
+Slotkin Elissa,MI,Michigan Congressional District 8,Rep.,D,True
+Chabot Steve,OH,Ohio Congressional District 1,Rep.,R,True
+Gibbs Bob,OH,Ohio Congressional District 7,Rep.,R,True
+Wenstrup Brad,OH,Ohio Congressional District 2,Rep.,R,True
+Joyce David,OH,Ohio Congressional District 14,Rep.,R,True
+Johnson Bill,OH,Ohio Congressional District 6,Rep.,R,True
+Beatty Joyce,OH,Ohio Congressional District 3,Rep.,D,True
+Turner Mike,OH,Ohio Congressional District 10,Rep.,R,True
+Jordan Jim,OH,Ohio Congressional District 4,Rep.,R,True
+Latta Bob,OH,Ohio Congressional District 5,Rep.,R,True
+Gonzalez Anthony,OH,Ohio Congressional District 16,Rep.,R,True
+Ryan Tim,OH,Ohio Congressional District 13,Rep.,D,True
+Stivers Steve,OH,Ohio Congressional District 15,Rep.,R,True
+Fudge Marcia,OH,Ohio Congressional District 11,Rep.,D,True
+Kaptur Marcy,OH,Ohio Congressional District 9,Rep.,D,True
+Davidson Warren,OH,Ohio Congressional District 8,Rep.,R,True
+Balderson Troy,OH,Ohio Congressional District 12,Rep.,R,True
+Steil Bryan,WI,Wisconsin Congressional District 1,Rep.,R,True
+Kind Ron,WI,Wisconsin Congressional District 3,Rep.,D,True
+Moore Gwen,WI,Wisconsin Congressional District 4,Rep.,D,True
+Sensenbrenner Jim,WI,Wisconsin Congressional District 5,Rep.,R,True
+Tiffany Tom,WI,Wisconsin Congressional District 7,Rep.,R,True
+Pocan Mark,WI,Wisconsin Congressional District 2,Rep.,D,True
+Grothman Glenn,WI,Wisconsin Congressional District 6,Rep.,R,True
+Gallagher Mike,WI,Wisconsin Congressional District 8,Rep.,R,True
+Finkenauer Abby,IA,Iowa Congressional District 1,Rep.,D,True
+King Steve,IA,Iowa Congressional District 4,Rep.,R,True
+Loebsack Dave,IA,Iowa Congressional District 2,Rep.,D,True
+Axne Cindy,IA,Iowa Congressional District 3,Rep.,D,True
+Marshall Roger,KS,Kansas Congressional District 1,Rep.,R,True
+Davids Sharice,KS,Kansas Congressional District 3,Rep.,D,True
+Estes Ron,KS,Kansas Congressional District 4,Rep.,R,True
+Watkins Steve,KS,Kansas Congressional District 2,Rep.,R,True
+Peterson Collin,MN,Minnesota Congressional District 7,Rep.,D,True
+Craig Angie,MN,Minnesota Congressional District 2,Rep.,D,True
+Emmer Tom,MN,Minnesota Congressional District 6,Rep.,R,True
+Stauber Pete,MN,Minnesota Congressional District 8,Rep.,R,True
+Hagedorn Jim,MN,Minnesota Congressional District 1,Rep.,R,True
+Phillips Dean,MN,Minnesota Congressional District 3,Rep.,D,True
+McCollum Betty,MN,Minnesota Congressional District 4,Rep.,D,True
+Omar Ilhan,MN,Minnesota Congressional District 5,Rep.,D,True
+Clay Lacy,MO,Missouri Congressional District 1,Rep.,D,True
+Luetkemeyer Blaine,MO,Missouri Congressional District 3,Rep.,R,True
+Cleaver Emanuel,MO,Missouri Congressional District 5,Rep.,D,True
+Hartzler Vicky,MO,Missouri Congressional District 4,Rep.,R,True
+Long Billy,MO,Missouri Congressional District 7,Rep.,R,True
+Wagner Ann,MO,Missouri Congressional District 2,Rep.,R,True
+Graves Sam,MO,Missouri Congressional District 6,Rep.,R,True
+Smith Jason,MO,Missouri Congressional District 8,Rep.,R,True
+Fortenberry Jeff,NE,Nebraska Congressional District 1,Rep.,R,True
+Smith Adrian,NE,Nebraska Congressional District 3,Rep.,R,True
+Bacon Don,NE,Nebraska Congressional District 2,Rep.,R,True
+Armstrong Kelly,ND,North Dakota Congressional District (at Large),Rep.,R,True
+Johnson Dusty,SD,South Dakota Congressional District (at Large),Rep.,R,True
+Blunt Rochester Lisa,DE,Delaware Congressional District (at Large),Rep.,D,True
+Holmes Norton Eleanor,DC,District of Columbia Delegate District (at Large),Rep.,D,True
+Crist Charlie,FL,Florida Congressional District 13,Rep.,D,True
+Mucarsel-Powell Debbie,FL,Florida Congressional District 26,Rep.,D,True
+Deutch Ted,FL,Florida Congressional District 22,Rep.,D,True
+Soto Darren,FL,Florida Congressional District 9,Rep.,D,True
+Rooney Francis,FL,Florida Congressional District 19,Rep.,R,True
+Gaetz Matt,FL,Florida Congressional District 1,Rep.,R,True
+Murphy Stephanie,FL,Florida Congressional District 7,Rep.,D,True
+Shalala Donna,FL,Florida Congressional District 27,Rep.,D,True
+Steube Greg,FL,Florida Congressional District 17,Rep.,R,True
+Waltz Michael,FL,Florida Congressional District 6,Rep.,R,True
+Castor Kathy,FL,Florida Congressional District 14,Rep.,D,True
+Lawson Al,FL,Florida Congressional District 5,Rep.,D,True
+Wilson Frederica,FL,Florida Congressional District 24,Rep.,D,True
+Buchanan Vern,FL,Florida Congressional District 16,Rep.,R,True
+Webster Daniel,FL,Florida Congressional District 11,Rep.,R,True
+Spano Ross,FL,Florida Congressional District 15,Rep.,R,True
+Wasserman Schultz Debbie,FL,Florida Congressional District 23,Rep.,D,True
+Posey Bill,FL,Florida Congressional District 8,Rep.,R,True
+Bilirakis Gus,FL,Florida Congressional District 12,Rep.,R,True
+Mast Brian,FL,Florida Congressional District 18,Rep.,R,True
+Dunn Neal,FL,Florida Congressional District 2,Rep.,R,True
+Hastings Alcee,FL,Florida Congressional District 20,Rep.,D,True
+Diaz-Balart Mario,FL,Florida Congressional District 25,Rep.,R,True
+Frankel Lois,FL,Florida Congressional District 21,Rep.,D,True
+Yoho Ted,FL,Florida Congressional District 3,Rep.,R,True
+Demings Val,FL,Florida Congressional District 10,Rep.,D,True
+Rutherford John,FL,Florida Congressional District 4,Rep.,R,True
+Ferguson Drew,GA,Georgia Congressional District 3,Rep.,R,True
+Hice Jody,GA,Georgia Congressional District 10,Rep.,R,True
+Johnson Hank,GA,Georgia Congressional District 4,Rep.,D,True
+Lewis John,GA,Georgia Congressional District 5,Rep.,D,True
+Scott David,GA,Georgia Congressional District 13,Rep.,D,True
+Collins Doug,GA,Georgia Congressional District 9,Rep.,R,True
+Woodall Rob,GA,Georgia Congressional District 7,Rep.,R,True
+Bishop Sanford,GA,Georgia Congressional District 2,Rep.,D,True
+McBath Lucy,GA,Georgia Congressional District 6,Rep.,D,True
+Graves Tom,GA,Georgia Congressional District 14,Rep.,R,True
+Carter Buddy,GA,Georgia Congressional District 1,Rep.,R,True
+Loudermilk Barry,GA,Georgia Congressional District 11,Rep.,R,True
+Allen Rick,GA,Georgia Congressional District 12,Rep.,R,True
+Scott Austin,GA,Georgia Congressional District 8,Rep.,D,True
+Harris Andy,MD,Maryland Congressional District 1,Rep.,R,True
+Sarbanes John,MD,Maryland Congressional District 3,Rep.,D,True
+Brown Anthony,MD,Maryland Congressional District 4,Rep.,D,True
+Hoyer Steny,MD,Maryland Congressional District 5,Rep.,D,True
+Mfume Kweisi,MD,Maryland Congressional District 7,Rep.,D,True
+Ruppersberger Dutch,MD,Maryland Congressional District 2,Rep.,D,True
+Trone David,MD,Maryland Congressional District 6,Rep.,D,True
+Raskin Jamie,MD,Maryland Congressional District 8,Rep.,D,True
+Butterfield G.K.,NC,North Carolina Congressional District 1,Rep.,D,True
+Rouzer David,NC,North Carolina Congressional District 7,Rep.,R,True
+Holding George,NC,North Carolina Congressional District 2,Rep.,R,True
+Walker Mark,NC,North Carolina Congressional District 6,Rep.,R,True
+Murphy Greg,NC,North Carolina Congressional District 3,Rep.,R,True
+McHenry Patrick,NC,North Carolina Congressional District 10,Rep.,R,True
+Price David,NC,North Carolina Congressional District 4,Rep.,D,True
+Foxx Virginia,NC,North Carolina Congressional District 5,Rep.,R,True
+Budd Ted,NC,North Carolina Congressional District 13,Rep.,R,True
+Meadows (resigned) Mark,NC,North Carolina Congressional District 11,Rep.,R,True
+Bishop Dan,NC,North Carolina Congressional District 9,Rep.,R,True
+Hudson Richard,NC,North Carolina Congressional District 8,Rep.,R,True
+Adams Alma,NC,North Carolina Congressional District 12,Rep.,D,True
+Cunningham Joe,SC,South Carolina Congressional District 1,Rep.,D,True
+Duncan Jeff,SC,South Carolina Congressional District 3,Rep.,R,True
+Timmons William,SC,South Carolina Congressional District 4,Rep.,R,True
+Norman Ralph,SC,South Carolina Congressional District 5,Rep.,R,True
+Rice Tom,SC,South Carolina Congressional District 7,Rep.,R,True
+Wilson Joe,SC,South Carolina Congressional District 2,Rep.,R,True
+Clyburn Jim,SC,South Carolina Congressional District 6,Rep.,D,True
+Wittman Rob,VA,Virginia Congressional District 1,Rep.,R,True
+Scott Bobby,VA,Virginia Congressional District 3,Rep.,D,True
+Wexton Jennifer,VA,Virginia Congressional District 10,Rep.,D,True
+Riggleman Denver,VA,Virginia Congressional District 5,Rep.,R,True
+McEachin Donald,VA,Virginia Congressional District 4,Rep.,D,True
+Spanberger Abigail,VA,Virginia Congressional District 7,Rep.,D,True
+Luria Elaine,VA,Virginia Congressional District 2,Rep.,D,True
+Connolly Gerry,VA,Virginia Congressional District 11,Rep.,D,True
+Griffith Morgan,VA,Virginia Congressional District 9,Rep.,R,True
+Cline Ben,VA,Virginia Congressional District 6,Rep.,R,True
+Beyer Don,VA,Virginia Congressional District 8,Rep.,D,True
+McKinley David,WV,West Virginia Congressional District 1,Rep.,R,True
+Miller Carol,WV,West Virginia Congressional District 3,Rep.,R,True
+Mooney Alex,WV,West Virginia Congressional District 2,Rep.,R,True
+Byrne Bradley,AL,Alabama Congressional District 1,Rep.,R,True
+Rogers Mike,AL,Alabama Congressional District 3,Rep.,R,True
+Brooks Mo,AL,Alabama Congressional District 5,Rep.,R,True
+Aderholt Robert,AL,Alabama Congressional District 4,Rep.,R,True
+Sewell Terri,AL,Alabama Congressional District 7,Rep.,D,True
+Roby Martha,AL,Alabama Congressional District 2,Rep.,R,True
+Palmer Gary,AL,Alabama Congressional District 6,Rep.,R,True
+Guthrie Brett,KY,Kentucky Congressional District 2,Rep.,R,True
+Barr Andy,KY,Kentucky Congressional District 6,Rep.,R,True
+Comer James,KY,Kentucky Congressional District 1,Rep.,R,True
+Yarmuth John,KY,Kentucky Congressional District 3,Rep.,D,True
+Rogers Hal,KY,Kentucky Congressional District 5,Rep.,R,True
+Massie Thomas,KY,Kentucky Congressional District 4,Rep.,R,True
+Kelly Trent,MS,Mississippi Congressional District 1,Rep.,R,True
+Guest Michael,MS,Mississippi Congressional District 3,Rep.,R,True
+Palazzo Steven,MS,Mississippi Congressional District 4,Rep.,R,True
+Thompson Bennie,MS,Mississippi Congressional District 2,Rep.,D,True
+Roe Phil,TN,Tennessee Congressional District 1,Rep.,R,True
+Fleischmann Chuck,TN,Tennessee Congressional District 3,Rep.,R,True
+Cooper Jim,TN,Tennessee Congressional District 5,Rep.,D,True
+DesJarlais Scott,TN,Tennessee Congressional District 4,Rep.,R,True
+Green Mark,TN,Tennessee Congressional District 7,Rep.,R,True
+Burchett Tim,TN,Tennessee Congressional District 2,Rep.,R,True
+Kustoff David,TN,Tennessee Congressional District 8,Rep.,R,True
+Cohen Steve,TN,Tennessee Congressional District 9,Rep.,D,True
+Rose John,TN,Tennessee Congressional District 6,Rep.,R,True
+Crawford Rick,AR,Arkansas Congressional District 1,Rep.,R,True
+Womack Steve,AR,Arkansas Congressional District 3,Rep.,R,True
+Westerman Bruce,AR,Arkansas Congressional District 4,Rep.,R,True
+Hill French,AR,Arkansas Congressional District 2,Rep.,R,True
+Johnson Mike,LA,Louisiana Congressional District 4,Rep.,R,True
+Richmond Cedric,LA,Louisiana Congressional District 2,Rep.,D,True
+Graves Garret,LA,Louisiana Congressional District 6,Rep.,R,True
+Scalise Steve,LA,Louisiana Congressional District 1,Rep.,R,True
+Higgins Clay,LA,Louisiana Congressional District 3,Rep.,R,True
+Abraham Ralph,LA,Louisiana Congressional District 5,Rep.,R,True
+Hern Kevin,OK,Oklahoma Congressional District 1,Rep.,R,True
+Lucas Frank,OK,Oklahoma Congressional District 3,Rep.,R,True
+Horn Kendra,OK,Oklahoma Congressional District 5,Rep.,D,True
+Cole Tom,OK,Oklahoma Congressional District 4,Rep.,R,True
+Mullin Markwayne,OK,Oklahoma Congressional District 2,Rep.,R,True
+Cuellar Henry,TX,Texas Congressional District 28,Rep.,D,True
+Gohmert Louie,TX,Texas Congressional District 1,Rep.,R,True
+Garcia Sylvia,TX,Texas Congressional District 29,Rep.,D,True
+Fletcher Lizzie,TX,Texas Congressional District 7,Rep.,D,True
+Cloud Michael,TX,Texas Congressional District 27,Rep.,R,True
+Wright Ron,TX,Texas Congressional District 6,Rep.,R,True
+Flores Bill,TX,Texas Congressional District 17,Rep.,R,True
+Weber Randy,TX,Texas Congressional District 14,Rep.,R,True
+Babin Brian,TX,Texas Congressional District 36,Rep.,R,True
+Gooden Lance,TX,Texas Congressional District 5,Rep.,R,True
+Escobar Veronica,TX,Texas Congressional District 16,Rep.,D,True
+Marchant Kenny,TX,Texas Congressional District 24,Rep.,R,True
+Veasey Marc,TX,Texas Congressional District 33,Rep.,D,True
+Conaway Mike,TX,Texas Congressional District 11,Rep.,R,True
+González Vicente,TX,Texas Congressional District 15,Rep.,D,True
+Hurd Will,TX,Texas Congressional District 23,Rep.,R,True
+Granger Kay,TX,Texas Congressional District 12,Rep.,R,True
+Brady Kevin,TX,Texas Congressional District 8,Rep.,R,True
+Vela Filemon,TX,Texas Congressional District 34,Rep.,D,True
+Johnson Eddie Bernice,TX,Texas Congressional District 30,Rep.,D,True
+Lee Shelia Jackson,TX,Texas Congressional District 18,Rep.,D,True
+Crenshaw Dan,TX,Texas Congressional District 2,Rep.,R,True
+Castro Joaquin,TX,Texas Congressional District 20,Rep.,D,True
+Carter John,TX,Texas Congressional District 31,Rep.,R,True
+Williams Roger,TX,Texas Congressional District 25,Rep.,R,True
+Allred Colin,TX,Texas Congressional District 32,Rep.,D,True
+Roy Chip,TX,Texas Congressional District 21,Rep.,R,True
+Taylor Van,TX,Texas Congressional District 3,Rep.,R,True
+McCaul Michael,TX,Texas Congressional District 10,Rep.,R,True
+Ratcliffe (resigned) John,TX,Texas Congressional District 4,Rep.,R,True
+Doggett Lloyd,TX,Texas Congressional District 35,Rep.,D,True
+Thornberry Mac,TX,Texas Congressional District 13,Rep.,R,True
+Burgess Michael,TX,Texas Congressional District 26,Rep.,R,True
+Olson Pete,TX,Texas Congressional District 22,Rep.,R,True
+Green Al,TX,Texas Congressional District 9,Rep.,D,True
+Arrington Jodey,TX,Texas Congressional District 19,Rep.,R,True
+O'Halleran Tom,AZ,Arizona Congressional District 1,Rep.,D,True
+Grijalva Raúl,AZ,Arizona Congressional District 3,Rep.,D,True
+Biggs Andy,AZ,Arizona Congressional District 5,Rep.,R,True
+Gosar Paul,AZ,Arizona Congressional District 4,Rep.,R,True
+Gallego Ruben,AZ,Arizona Congressional District 7,Rep.,D,True
+Kirkpatrick Ann,AZ,Arizona Congressional District 2,Rep.,D,True
+Stanton Greg,AZ,Arizona Congressional District 9,Rep.,D,True
+Schweikert David,AZ,Arizona Congressional District 6,Rep.,R,True
+Lesko Debbie,AZ,Arizona Congressional District 8,Rep.,R,True
+DeGette Diana,CO,Colorado Congressional District 1,Rep.,D,True
+Tipton Scott,CO,Colorado Congressional District 3,Rep.,R,True
+Lamborn Doug,CO,Colorado Congressional District 5,Rep.,R,True
+Buck Ken,CO,Colorado Congressional District 4,Rep.,R,True
+Perlmutter Ed,CO,Colorado Congressional District 7,Rep.,D,True
+Neguse Joe,CO,Colorado Congressional District 2,Rep.,D,True
+Crow Jason,CO,Colorado Congressional District 6,Rep.,D,True
+Fulcher Russ,ID,Idaho Congressional District 1,Rep.,R,True
+Simpson Mike,ID,Idaho Congressional District 2,Rep.,R,True
+Gianforte Greg,MT,Montana Congressional District (at Large),Rep.,R,True
+Titus Dina,NV,Nevada Congressional District 1,Rep.,D,True
+Lee Susie,NV,Nevada Congressional District 3,Rep.,D,True
+Horsford Steven,NV,Nevada Congressional District 4,Rep.,D,True
+Amodei Mark,NV,Nevada Congressional District 2,Rep.,R,True
+Haaland Deb,NM,New Mexico Congressional District 1,Rep.,D,True
+Luján Ben Ray,NM,New Mexico Congressional District 3,Rep.,D,True
+Torres Small Xochitl,NM,New Mexico Congressional District 2,Rep.,D,True
+Bishop Rob,UT,Utah Congressional District 1,Rep.,R,True
+Curtis John,UT,Utah Congressional District 3,Rep.,R,True
+McAdams Ben,UT,Utah Congressional District 4,Rep.,D,True
+Stewart Chris,UT,Utah Congressional District 2,Rep.,R,True
+Cheney Liz,WY,Wyoming Congressional District (at Large),Rep.,R,True
+Young Don,AK,Alaska Congressional District (at Large),Rep.,R,True
+Ruiz Raul,CA,California Congressional District 36,Rep.,D,True
+Costa Jim,CA,California Congressional District 16,Rep.,D,True
+Correa Lou,CA,California Congressional District 46,Rep.,D,True
+Bass Karen,CA,California Congressional District 37,Rep.,D,True
+Lieu Ted,CA,California Congressional District 33,Rep.,D,True
+Swalwell Eric,CA,California Congressional District 15,Rep.,D,True
+Davis Susan,CA,California Congressional District 53,Rep.,D,True
+Lowenthal Alan,CA,California Congressional District 47,Rep.,D,True
+Aguilar Pete,CA,California Congressional District 31,Rep.,D,True
+Garamendi John,CA,California Congressional District 3,Rep.,D,True
+Cox T.J.,CA,California Congressional District 21,Rep.,D,True
+Rouda Harley,CA,California Congressional District 48,Rep.,D,True
+Harder Josh,CA,California Congressional District 10,Rep.,D,True
+Gomez Jimmy,CA,California Congressional District 34,Rep.,D,True
+Peters Scott,CA,California Congressional District 52,Rep.,D,True
+Sherman Brad,CA,California Congressional District 30,Rep.,D,True
+Eshoo Anna,CA,California Congressional District 18,Rep.,D,True
+Panetta Jimmy,CA,California Congressional District 20,Rep.,D,True
+Calvert Ken,CA,California Congressional District 42,Rep.,R,True
+Garcia Mike,CA,California Congressional District 25,Rep.,R,True
+Napolitano Grace,CA,California Congressional District 32,Rep.,D,True
+Waters Maxine,CA,California Congressional District 43,Rep.,D,True
+Torres Norma,CA,California Congressional District 35,Rep.,D,True
+Lee Barbara,CA,California Congressional District 13,Rep.,D,True
+Brownley Julia,CA,California Congressional District 26,Rep.,D,True
+Barragan Nanette,CA,California Congressional District 44,Rep.,D,True
+Lofgren Zoe,CA,California Congressional District 19,Rep.,D,True
+Levin Mike,CA,California Congressional District 49,Rep.,D,True
+Thompson Mike,CA,California Congressional District 5,Rep.,D,True
+Carbajal Salud,CA,California Congressional District 24,Rep.,D,True
+Cardenas Tony,CA,California Congressional District 29,Rep.,D,True
+Bera Ami,CA,California Congressional District 7,Rep.,D,True
+Matsui Doris,CA,California Congressional District 6,Rep.,D,True
+Cisneros Gil,CA,California Congressional District 39,Rep.,D,True
+DeSaulnier Mark,CA,California Congressional District 11,Rep.,D,True
+Hunter (Resigned) Duncan,CA,California Congressional District 50,Rep.,R,True
+McCarthy Kevin,CA,California Congressional District 23,Rep.,R,True
+Cook Paul,CA,California Congressional District 8,Rep.,R,True
+Vargas Juan,CA,California Congressional District 51,Rep.,D,True
+Schiff Adam,CA,California Congressional District 28,Rep.,D,True
+LaMalfa Doug,CA,California Congressional District 1,Rep.,R,True
+Roybal-Allard Lucille,CA,California Congressional District 40,Rep.,D,True
+Pelosi Nancy,CA,California Congressional District 12,Rep.,D,True
+Porter Katie,CA,California Congressional District 45,Rep.,D,True
+McClintock Tom,CA,California Congressional District 4,Rep.,R,True
+Nunes Devin,CA,California Congressional District 22,Rep.,R,True
+McNerney Jerry,CA,California Congressional District 9,Rep.,D,True
+Takano Mark,CA,California Congressional District 41,Rep.,D,True
+Chu Judy,CA,California Congressional District 27,Rep.,D,True
+Khanna Ro,CA,California Congressional District 17,Rep.,D,True
+Speier Jackie,CA,California Congressional District 14,Rep.,D,True
+Huffman Jared,CA,California Congressional District 2,Rep.,D,True
+Sánchez Linda,CA,California Congressional District 38,Rep.,D,True
+Case Ed,HI,Hawaii Congressional District 1,Rep.,D,True
+Gabbard Tulsi,HI,Hawaii Congressional District 2,Rep.,D,True
+Bonamici Suzanne,OR,Oregon Congressional District 1,Rep.,D,True
+Blumenauer Earl,OR,Oregon Congressional District 3,Rep.,D,True
+Schrader Kurt,OR,Oregon Congressional District 5,Rep.,D,True
+DeFazio Peter,OR,Oregon Congressional District 4,Rep.,D,True
+Walden Greg,OR,Oregon Congressional District 2,Rep.,R,True
+DelBene Suzan,WA,Washington Congressional District 1,Rep.,D,True
+Beutler Jaime Herrera,WA,Washington Congressional District 3,Rep.,R,True
+Heck Denny,WA,Washington Congressional District 10,Rep.,D,True
+McMorris Rodgers Cathy,WA,Washington Congressional District 5,Rep.,R,True
+Newhouse Dan,WA,Washington Congressional District 4,Rep.,R,True
+Jayapal Pramila,WA,Washington Congressional District 7,Rep.,D,True
+Larsen Rick,WA,Washington Congressional District 2,Rep.,D,True
+Smith Adam,WA,Washington Congressional District 9,Rep.,D,True
+Kilmer Derek,WA,Washington Congressional District 6,Rep.,D,True
+Schrier Kim,WA,Washington Congressional District 8,Rep.,D,True
+Alexander Lamar,TN,Tennessee,Sen.,R,True
+Baldwin Tammy,WI,Wisconsin,Sen.,D,True
+Barrasso John,WY,Wyoming,Sen.,R,True
+Bennet Michael,CO,Colorado,Sen.,D,True
+Blackburn Marsha,TN,Tennessee,Sen.,R,True
+Blumenthal Richard,CT,Connecticut,Sen.,D,True
+Blunt Roy,MO,Missouri,Sen.,R,True
+Booker Cory,NJ,New Jersey,Sen.,D,True
+Boozman John,AR,Arkansas,Sen.,R,True
+Braun Mike,IN,Indiana,Sen.,R,True
+Brown Sherrod,OH,Ohio,Sen.,D,True
+Burr Richard,NC,North Carolina,Sen.,R,True
+Cantwell Maria,WA,Washington,Sen.,D,True
+Capito Shelley,WV,West Virginia,Sen.,R,True
+Cardin Benjamin,MD,Maryland,Sen.,D,True
+Carper Thomas,DE,Delaware,Sen.,D,True
+Casey Bob,PA,Pennsylvania,Sen.,D,True
+Cassidy Bill,LA,Louisiana,Sen.,R,True
+Collins Susan,ME,Maine,Sen.,R,True
+Coons Chris,DE,Delaware,Sen.,D,True
+Cornyn John,TX,Texas,Sen.,R,True
+Cortez Masto Catherine,NV,Nevada,Sen.,D,True
+Cotton Tom,AR,Arkansas,Sen.,R,True
+Cramer Kevin,ND,North Dakota,Sen.,R,True
+Crapo Michael,ID,Idaho,Sen.,R,True
+Cruz Ted,TX,Texas,Sen.,R,True
+Daines Steve,MT,Montana,Sen.,R,True
+Duckworth Tammy,IL,Illinois,Sen.,D,True
+Durbin Richard,IL,Illinois,Sen.,D,True
+Enzi Michael,WY,Wyoming,Sen.,R,True
+Ernst Joni,IA,Iowa,Sen.,R,True
+Feinstein Dianne,CA,California,Sen.,D,True
+Fischer Deb,NE,Nebraska,Sen.,R,True
+Gardner Cory,CO,Colorado,Sen.,R,True
+Gillibrand Kirsten,NY,New York,Sen.,D,True
+Graham Lindsey,SC,South Carolina,Sen.,R,True
+Grassley Charles,IA,Iowa,Sen.,R,True
+Harris Kamala,CA,California,Sen.,D,True
+Hassan Maggie,NH,New Hampshire,Sen.,D,True
+Hawley Josh,MO,Missouri,Sen.,R,True
+Heinrich Martin,NM,New Mexico,Sen.,D,True
+Hirono Mazie,HI,Hawaii,Sen.,D,True
+Hoeven John,ND,North Dakota,Sen.,R,True
+Hyde-Smith Cindy,MS,Mississippi,Sen.,R,True
+Inhofe James,OK,Oklahoma,Sen.,R,True
+Johnson Ron,WI,Wisconsin,Sen.,R,True
+Jones Doug,AL,Alabama,Sen.,D,True
+Kaine Tim,VA,Virginia,Sen.,D,True
+Kennedy John,LA,Louisiana,Sen.,R,True
+King Angus,ME,Maine,Sen.,I,True
+Klobuchar Amy,MN,Minnesota,Sen.,D,True
+Lankford James,OK,Oklahoma,Sen.,R,True
+Leahy Patrick,VT,Vermont,Sen.,D,True
+Lee Mike,UT,Utah,Sen.,R,True
+Loeffler Kelly,GA,Georgia,Sen.,R,True
+Manchin Joe,WV,West Virginia,Sen.,D,True
+Markey Edward,MA,Massachusetts,Sen.,D,True
+McConnell Mitch,KY,Kentucky,Sen.,R,True
+McSally Martha,AZ,Arizona,Sen.,R,True
+Menendez Bob,NJ,New Jersey,Sen.,D,True
+Merkley Jeff,OR,Oregon,Sen.,D,True
+Moran Jerry,KS,Kansas,Sen.,R,True
+Murkowski Lisa,AK,Alaska,Sen.,R,True
+Murphy Christopher,CT,Connecticut,Sen.,D,True
+Murray Patty,WA,Washington,Sen.,D,True
+Paul Rand,KY,Kentucky,Sen.,R,True
+Perdue David,GA,Georgia,Sen.,R,True
+Peters Gary,MI,Michigan,Sen.,D,True
+Portman Rob,OH,Ohio,Sen.,R,True
+Reed Jack,RI,Rhode Island,Sen.,D,True
+Risch Jim,ID,Idaho,Sen.,R,True
+Roberts Pat,KS,Kansas,Sen.,R,True
+Romney Mitt,UT,Utah,Sen.,R,True
+Rosen Jacky,NV,Nevada,Sen.,D,True
+Rounds Mike,SD,South Dakota,Sen.,R,True
+Rubio Marco,FL,Florida,Sen.,R,True
+Sanders Bernie,VT,Vermont,Sen.,I,True
+Sasse Ben,NE,Nebraska,Sen.,R,True
+Schatz Brian,HI,Hawaii,Sen.,D,True
+Schumer Charles,NY,New York,Sen.,D,True
+Scott Rick,FL,Florida,Sen.,R,True
+Scott Tim,SC,South Carolina,Sen.,R,True
+Shaheen Jeanne,NH,New Hampshire,Sen.,D,True
+Shelby Richard,AL,Alabama,Sen.,R,True
+Sinema Kyrsten,AZ,Arizona,Sen.,D,True
+Smith Tina,MN,Minnesota,Sen.,D,True
+Stabenow Debbie,MI,Michigan,Sen.,D,True
+Sullivan Dan,AK,Alaska,Sen.,R,True
+Tester Jon,MT,Montana,Sen.,D,True
+Thune John,SD,South Dakota,Sen.,R,True
+Tillis Thom,NC,North Carolina,Sen.,R,True
+Toomey Patrick,PA,Pennsylvania,Sen.,R,True
+Udall Tom,NM,New Mexico,Sen.,D,True
+Van Hollen Chris,MD,Maryland,Sen.,D,True
+Warner Mark,VA,Virginia,Sen.,D,True
+Warren Elizabeth,MA,Massachusetts,Sen.,D,True
+Whitehouse Sheldon,RI,Rhode Island,Sen.,D,True
+Wicker Roger,MS,Mississippi,Sen.,R,True
+Wyden Ron,OR,Oregon,Sen.,D,True
+Young Todd,IN,Indiana,Sen.,R,True
