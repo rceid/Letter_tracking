@@ -4,7 +4,10 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from warnings import filterwarnings
+import us
 filterwarnings('ignore', message=r'.*received a naive datetime')
+
+STATE_LIST = list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"]
 
 class Legislator(models.Model):
 
@@ -17,20 +20,45 @@ class Legislator(models.Model):
         R = 'R', _('Republican')
         I = 'I', _('Independent')
 
+    STATES = zip(STATE_LIST, STATE_LIST)
     name = models.CharField(max_length=100)
     jurisdiction = models.CharField(max_length=100)
+    state = models.CharField(max_length=30,
+                            choices=STATES)
     rep_or_sen = models.CharField(max_length=4,
                                  choices=RepSen.choices,
                                  verbose_name=_('Representative or Senator'))
     party = models.CharField(max_length=11, 
                             choices=PolParties.choices)
     active = models.BooleanField() 
-    letters_authored = []
-    letters_cosigned = []
+
+    @property
+    def letters_authored(self):
+        return list(Letter.objects.filter(legislator=self.name).all())
+
+    @property
+    def letters_cosigned(self):
+        cosigns = {letter:letter.cosigners.split(', ') for letter in Letter.objects.all() if letter.cosigners}
+        return [letter for letter, signers in cosigns.items() if self.name in signers]
 
     @property
     def all_letters(self):
-        return self.letters_athored + self.letters_cosigned
+        return self.letters_authored + self.letters_cosigned
+
+    @property
+    def num_letters_authored(self):
+        return len(self.letters_authored)
+
+    @property
+    def num_letters_cosigned(self):
+        return len(self.letters_cosigned)
+    
+    @property
+    def num_all_letters(self):
+        return len(self.all_letters)
+
+    def __str__(self):
+        return self.name
 
 class Letter(models.Model):
 
@@ -66,7 +94,6 @@ class Letter(models.Model):
     class Dummy(models.TextChoices):
         y = 1, _('Yes')
         n = 0, _('No')
-
 
     topic = models.CharField(max_length=25)
     specific_topic = models.CharField(max_length=100)
@@ -107,7 +134,10 @@ class Letter(models.Model):
     notice_num = models.CharField(max_length=30,
                                 verbose_name=_('If a notice was sent, specify the number'),
                                 default='N/a')
-    choices_ = [('one', 'ONE'), ('two', 'TWO')]
+
+    @property 
+    def cosign_sorted(self):
+        return ', '.join(sorted(self.cosigners.split(', '), key=lambda lname: (lname[0], lname[1])))
 
     @property
     def author(self):

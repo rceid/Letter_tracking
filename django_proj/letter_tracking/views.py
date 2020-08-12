@@ -5,8 +5,10 @@ from django.views.generic import (ListView,
                                  DetailView,
                                  CreateView,
                                  UpdateView,
-                                 DeleteView)
-from .models import Letter
+                                 DeleteView,
+                                 TemplateView)
+from .models import Letter, Legislator
+from django.db.models import Q
 
 FIELDS = ['topic', 'legislator', 'party','rep_or_sen','cosigners',
              'description', 'date', 'caucus', 'chamber', 'link', 'specific_topic',
@@ -27,9 +29,17 @@ class LetterListView(ListView):
     ordering = ['-date', '-date_posted']
     paginate_by = 15
 
-class UserLetterListView(ListView): #can adapt this to use for politicians. Video 11 pagination
+class LegLetterView(ListView):
+    model = Legislator 
+    template_name = 'letter_tracking/legislator_letters.html'
+    context_object_name = 'politician'
+    
+    def get_queryset(self):
+        return get_object_or_404(Legislator, name=self.kwargs.get('name'))
+
+class UserLetterListView(ListView):
     model = Letter
-    template_name = 'letter_tracking/user_letters.html'
+    template_name = 'letter_tracking/legislator_letters.html'
     context_object_name = 'letters'
     paginate_by = 5
 
@@ -74,6 +84,20 @@ class LetterDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         # if self.request.user == letter.posted_by:
         #     return True
         # return False
+
+class SearchFormView(TemplateView):
+    template_name = 'letter_tracking/search_form.html'
+
+class SearchResultsView(ListView):
+    model = Legislator
+    template_name = 'letter_tracking/search_results.html'
+    context_object_name = 'politician'
+    #paginate_by = 10
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        return get_object_or_404(Legislator, name__icontains=query)
+
 
 def about(request):
     return render(request, 'letter_tracking/about.html', {'title': 'About'})

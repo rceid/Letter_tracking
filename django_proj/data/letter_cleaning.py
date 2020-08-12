@@ -10,13 +10,14 @@ Run this file from the django_proj directory
 import pandas as pd
 import us
 
+## for spyder:
+# LETTER_DATA = './letters spreadsheet.xlsx'
+# REP_DATA = './factsheet_data.csv'
 
-LETTER_DATA = './letters spreadsheet.xlsx'
-REP_DATA = './factsheet_data.csv'
+LETTER_DATA = './data/letters spreadsheet.xlsx'
+REP_DATA = './data/factsheet_data.csv'
+
 POLITICIANS_OUT = './politicians.csv'
-# LETTER_DATA = './data/letters spreadsheet.xlsx'
-# REP_DATA = './data/factsheet_data.csv'
-
     
 def prepare_data():
     '''
@@ -27,7 +28,8 @@ def prepare_data():
     politicians = clean_politicians()
     letter_data =  pd.merge(letters, politicians, how='left', on='Legislator')
     politicians.to_csv(POLITICIANS_OUT, index=False)
-    return letter_data
+    
+    return letter_data, politicians
 
 def clean_letters():
         

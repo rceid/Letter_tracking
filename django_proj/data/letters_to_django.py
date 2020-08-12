@@ -9,20 +9,21 @@ import sys
 sys.path.insert(0, './data')
 import letter_cleaning
 sys.path.insert(0, './../letter_tracking')
-from letter_tracking.models import Letter, User
-
+from letter_tracking.models import Letter, Legislator
 
 def go():
     print('Fetching letters...\n')
-    signers = letter_sponsors()
-    print('\nLetters fetched, uploading letters...')
+    signers, politicians = letter_sponsors()
     signers = list(signers.items()) #list of tuples w code and dict
     signers = sorted(signers, key= lambda signers:(signers[1]['Date'], \
                                                   (signers[1]['Entry Order'])))
-    upload(signers)
-    
+    print('\nLetters fetched, uploading letters and legislators...')
+    upload_legislator(politicians)
+    upload_letters(signers)
+    print("Upload complete. Closing script")
+
 def letter_sponsors():
-    letters, s, r = letter_cleaning.prepare_data()
+    letters, politicians = letter_cleaning.prepare_data()
     letters.reset_index(inplace=True)
     daily_letters = letters.groupby('Date').__iter__()
     signers = {}
@@ -39,7 +40,7 @@ def letter_sponsors():
         else:
             letter_info(signers, info)
     
-    return signers
+    return signers, politicians
 
 def entry_order(daily_letters):
     '''
@@ -61,16 +62,33 @@ def letter_info(dic, daily_letters):
         cosigners = list(info[info['Counter'] == 0]['Legislator'])
         dic[code]['author'] = author
         dic[code]['cosigners'] = cosigners
+        
+def upload_legislator(pol_df):
+    '''
+    Uploads the dataframe containing Senator adn Representatives as django 
+    objects
+    '''
+    count = 0
+    for _, pol in pol_df.iterrows():
+        count += 1
+        legislator = Legislator(
+            name = pol['Legislator'],
+            state = pol['State'],
+            jurisdiction = pol['Jurisdiction'],
+            rep_or_sen = pol['Sen./Rep.'],
+            party = pol['Party Affiliation'],
+            active = pol['Active']
+            )
+        legislator.save()
+    print('{} Legislators added to database'.format(count))
+    
 
-def upload(signers):
+def upload_letters(signers):
     '''
     Uploads the collection of letters to the django web application
     '''
     count = 0
-    import datetime
     for _, info in signers:
-        if info['Date'] == datetime.date(2020, 4, 15):
-            print(info['Code'], info['Legislator'], info['Entry Order'])
         count += 1
         ###fix cosigners later, caucus field is constant
         cosign = ', '.join(info['cosigners'])
@@ -85,8 +103,8 @@ def upload(signers):
         recipient=info['Recipient'], kind_statement_party=info['Kind of statement Party'][0],
         comments=info['Comments'], action=info['Action'],\
         notice_num = info['If a notice was sent, specify the number'],
-        author=info['author'], cosigners=cosign
+        cosigners=cosign
         )
         letter.save()
-    print('{} Letters uploaded. Script closing..'.format(count))
-
+    print('{} Letters uploaded'.format(count))
+    

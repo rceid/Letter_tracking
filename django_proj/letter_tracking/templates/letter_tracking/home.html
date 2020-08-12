@@ -4,7 +4,7 @@
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" >by {{ letter.legislator }}</a>
+                    <a class="mr-2" href="{% url 'legislator-letters' letter.legislator%}">{{ letter.legislator }}</a>
                     <!-- href="{% url 'userletters' letter.posted_by %}"> <!-->
                     <small class="text-muted">{{ letter.date | date:"F d, Y" }}</small>
                 </div>
