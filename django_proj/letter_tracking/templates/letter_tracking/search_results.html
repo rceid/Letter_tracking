@@ -1,13 +1,40 @@
 {%extends "letter_tracking/base.html" %}
 {% block content %}
-    <h1 class="mb-3">Letters by {{ politician.name }} ({{ politician.num_all_letters }})</h1>
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+    <h1 style="text-align:center" class="mb-3">{{ politician.name }} </h1>
+        </div>
+    <h3 style="text-align:center">{{politician.party}}-{{politician.jurisdiction}} </h3>
+    <h3 style="text-align:center">Associated Letters ({{ politician.num_all_letters }})</h3>  
+        <style  >  
+         input[type=button], input[type=submit], input[type=reset] {
+          background-color: #4CAF50;
+          opacity: 0.9;
+          border: none;
+          color: white;
+          padding: 16px 32px;
+          text-decoration: none;
+          margin: 4px 2px;
+          cursor: pointer;
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+          width: 40%;
+        }
+        </style>
+    <form style="text-align: center;" action="{% url 'export-data-leg' politician.name %}">
+        <input type="submit" value="Export All Letters" />
+    </form>
+</div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
     <h2 class="mb-3">Letters Authored ({{politician.num_letters_authored}})</h1>
     {% if politician.letters_authored%}
         {% for letter in politician.letters_authored %}
             <article class="media content-section">
                 <div class="media-body">
                     <div class="article-metadata">
-                        <a class="mr-2" >by {{ letter.legislator }}</a>
+                        <a class="mr-2" >{{ letter.legislator }}</a>
                         <!-- href="{% url 'userletters' letter.posted_by %}"> <!-->
                         <small class="text-muted">{{ letter.date | date:"F d, Y" }}</small>
                     </div>
@@ -18,13 +45,17 @@
             </article>
         {% endfor %}
     {% endif %}
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
     <h2 class="mb-3">Letters Cosigned ({{politician.num_letters_cosigned}})</h1>
     {% if politician.letters_cosigned %}
         {% for letter in politician.letters_cosigned %}
             <article class="media content-section">
                 <div class="media-body">
                     <div class="article-metadata">
-                        <a class="mr-2" >by {{ letter.legislator }}</a>
+                        <a class="mr-2" href="{% url 'legislator-letters' letter.legislator%}">{{ letter.legislator }}</a>
                         <!-- href="{% url 'userletters' letter.posted_by %}"> <!-->
                         <small class="text-muted">{{ letter.date | date:"F d, Y" }}</small>
                     </div>
@@ -35,6 +66,8 @@
             </article>
         {% endfor %}
     {% endif %}
+    </div>
+</article>
     {% if is_paginated %}
         {% if page_obj.has_previous %}
             <a class="btn btn-outline-info mb-4" href="?page=1">First</a>

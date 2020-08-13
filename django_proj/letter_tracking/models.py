@@ -34,13 +34,15 @@ class Legislator(models.Model):
 
     @property
     def letters_authored(self):
-        return list(Letter.objects.filter(legislator=self.name).all())
+        authored = list(Letter.objects.filter(legislator=self.name).all())
+        return sorted(authored, key=lambda letter: (letter.date, letter.consecutive_number), reverse=True)
 
     @property
     def letters_cosigned(self):
         cosigns = {letter:letter.cosigners.split(', ') for letter in Letter.objects.all() if letter.cosigners}
-        return [letter for letter, signers in cosigns.items() if self.name in signers]
-
+        cosigns = [letter for letter, signers in cosigns.items() if self.name in signers]
+        return sorted(cosigns, key=lambda letter: (letter.date, letter.consecutive_number), reverse=True)
+        
     @property
     def all_letters(self):
         return self.letters_authored + self.letters_cosigned
@@ -137,7 +139,7 @@ class Letter(models.Model):
 
     @property 
     def cosign_sorted(self):
-        return ', '.join(sorted(self.cosigners.split(', '), key=lambda lname: (lname[0], lname[1])))
+        return ', '.join(sorted(self.cosigners.split(', '), key=lambda lname: (lname[0], lname[1]))) if self.cosigners else 'Na'
 
     @property
     def author(self):

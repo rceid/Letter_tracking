@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.http import HttpResponse, HttpRequest
 from django.views.generic import (ListView,
                                  DetailView,
                                  CreateView,
@@ -9,12 +10,17 @@ from django.views.generic import (ListView,
                                  TemplateView)
 from .models import Letter, Legislator
 from django.db.models import Q
+import csv, io
 
 FIELDS = ['topic', 'legislator', 'party','rep_or_sen','cosigners',
              'description', 'date', 'caucus', 'chamber', 'link', 'specific_topic',
              'kind_of_statement', 'positive_MX', 'MX_mentioned', 'recipient', 
              'kind_statement_party', 'comments', 'action', 'notice_num'
              ]
+
+
+def about(request):
+    return render(request, 'letter_tracking/about.html', {'title': 'About'})
 
 def home(request):
     context ={
@@ -28,12 +34,13 @@ class LetterListView(ListView):
     context_object_name = 'letters'
     ordering = ['-date', '-date_posted']
     paginate_by = 15
-
+    
 class LegLetterView(ListView):
     model = Legislator 
     template_name = 'letter_tracking/legislator_letters.html'
     context_object_name = 'politician'
-    
+    #paginate_by = 5
+
     def get_queryset(self):
         return get_object_or_404(Legislator, name=self.kwargs.get('name'))
 
@@ -92,12 +99,31 @@ class SearchResultsView(ListView):
     model = Legislator
     template_name = 'letter_tracking/search_results.html'
     context_object_name = 'politician'
-    #paginate_by = 10
 
     def get_queryset(self):
         query = self.request.GET.get('q')
         return get_object_or_404(Legislator, name__icontains=query)
 
 
-def about(request):
-    return render(request, 'letter_tracking/about.html', {'title': 'About'})
+def export(self, name=None):
+    attrs= list(Letter.objects.first().__dict__.keys())[2:] 
+    response = HttpResponse(content_type='text/csv')
+    response.write(u'\ufeff'.encode('utf8'))
+    writer = csv.writer(response)
+    writer.writerow(['Counter', 'Title'] + attrs + ['State'])
+    if not name:
+        letters = Letter.objects.all()
+    else:
+        letters = Legislator.objects.filter(name=name).first().all_letters
+    for letter in letters:
+        if letter.legislator == name:
+            counter = 1
+        else:
+            counter = 0
+        vals = [counter, letter.title] + list(letter.__dict__.values())[2:] + \
+                [Legislator.objects.filter(name=letter.legislator).first().state]
+        writer.writerow(vals)
+    
+    response['Content-Disposition'] = 'attachment; filename="letters.csv"'
+
+    return response

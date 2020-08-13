@@ -7,7 +7,8 @@ from .views import (LetterListView,
                 UserLetterListView,
                 SearchFormView,
                 SearchResultsView,
-                LegLetterView)
+                LegLetterView
+                )
 from . import views
 
 urlpatterns = [
@@ -21,4 +22,6 @@ urlpatterns = [
     path('search_result/', SearchResultsView.as_view(), name='search_results'),
     path('search/', SearchFormView.as_view(), name='search_form'),
     path('about/', views.about, name='letter_tracking-about'),
+    path('export/', views.export, name='export-data'),
+    path('export/<str:name>/', views.export, name='export-data-leg')
 ]
