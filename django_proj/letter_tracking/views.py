@@ -12,10 +12,10 @@ from .models import Letter, Legislator
 from django.db.models import Q
 import csv, io
 
-FIELDS = ['tema', 'legislator', 'party','rep_or_sen','cosigners',
-             'description', 'fecha', 'caucus', 'chamber', 'link', 'tema_específico',
-             'positive_MX', 'MX_mentioned', 'recipient', 
-             'kind_statement_party', 'comments', 'action', 'notice_num'
+FIELDS = ['tema', 'patrocinador','rep_or_sen','cosigners',
+             'descripción', 'fecha', 'caucus', 'cámara', 'link', 'tema_específico',
+             'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
+             'observaciones', 'acción', 'notice'
              ]
 
 
@@ -110,7 +110,7 @@ def export(self, name=None):
     response = HttpResponse(content_type='text/csv')
     response.write(u'\ufeff'.encode('utf8'))
     writer = csv.writer(response)
-    writer.writerow(['Código'] + attrs + ['State', 'Num Senators Signed', 'Num Reps Signed'])
+    writer.writerow(['Código'] + attrs + ['State', 'Senadores', 'Congresistas', 'Partido'])
     if not name:
         letters = Letter.objects.all()
     else:
@@ -118,8 +118,8 @@ def export(self, name=None):
     for letter in letters:
         num_sen, num_rep = letter.num_reps_sens
         vals = [letter.title] + list(letter.__dict__.values())[2:] + \
-                [Legislator.objects.filter(name=letter.legislator).first().state,\
-                num_sen, num_rep]
+                [Legislator.objects.filter(name=letter.patrocinador).first().state,\
+                num_sen, num_rep, letter.partido]
         writer.writerow(vals)
     
     response['Content-Disposition'] = 'attachment; filename="letters.csv"'

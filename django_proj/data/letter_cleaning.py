@@ -70,6 +70,13 @@ def clean_politicians():
     politicians = pd.concat([reps[cols], senators[cols]])
     
     return politicians
+
+def get_metatopics():
+    topics = pd.read_excel(LETTER_DATA, sheet_name='Dropdowns', header=2, \
+                             usecols=['TOPIC','SPECIFIC TOPIC','RECIPIENT',\
+                                      'CAUCUS','ACTION'])
+
+    return topics.iloc[:34]
         
         
 if __name__ == '__main__':

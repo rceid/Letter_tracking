@@ -3,11 +3,11 @@
     <article class="media content-section">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href= "{% url 'legislator-letters' object.legislator%}">by {{object.rep_or_sen}} {{ object.legislator }} ({{ object.party}}) </a>
+                <a class="mr-2" href= "{% url 'legislator-letters' object.patrocinador%}">by {{object.rep_or_sen}} {{ object.patrocinador }} ({{ object.party_affiliation}}) </a>
                 <small class="text-muted">{{ object.fecha | date:"F d, Y" }}</small>
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
-            <p class="article-content">{{ object.description }}</p>
+            <p class="article-content">{{ object.descripción }}</p>
             <div> 
                 <small>
                     {% if object.posted_by == None %}
@@ -20,7 +20,7 @@
 
             <div> 
                 <small>
-                    <b>Chamber:</b> {{object.chamber}}
+                    <b>Cámara:</b> {{object.cámara}}
                 </small>
             </div>
             <div>
@@ -40,17 +40,17 @@
             </div>
             <div>
                 <small>
-                    <b>Comments:</b> {{object.comments}}
+                    <b>Observaciones:</b> {{object.observaciones}}
                 </small>
             </div>
             <div>
                 <small>
-                    <b>Action:</b> {{object.action}}
+                    <b>Acción:</b> {{object.acción}}
                 </small>
             </div>
             <div>
                 <small>
-                    <b>Notice number:</b> {{object.notice_num}}
+                    <b>Notice number:</b> {{object.notice}}
                 </small>
             </div>
             <div>
@@ -63,7 +63,7 @@
             </div>
             <div>
                 <small>
-                    <b>Cosigners:</b> {{object.cosign_sorted}}
+                    <b>Copatrocinadores:</b> {{object.copatrocinador}}
                 </small>
             </div>
                 <div>

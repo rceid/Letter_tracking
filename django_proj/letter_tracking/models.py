@@ -9,6 +9,27 @@ filterwarnings('ignore', message=r'.*received a naive datetime')
 
 STATE_LIST = list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"]
 
+
+
+class Topic(models.Model):
+    topic_name = models.CharField(max_length=25)
+
+class Specific_Topic(models.Model):
+    specific_topic_name =  models.CharField(max_length=25)
+
+class Recipient(models.Model):
+    recipient_name =  models.CharField(max_length=50)
+
+class Caucus(models.Model):
+    caucus_name = models.CharField(max_length=25)
+
+class Legislature(models.Model):
+    legislature_name =  models.CharField(max_length=6)
+
+class Action(models.Model):
+    action_name =  models.CharField(max_length=40)
+
+
 class Legislator(models.Model):
 
     class RepSen(models.TextChoices):
@@ -34,7 +55,7 @@ class Legislator(models.Model):
 
     @property
     def letters_authored(self):
-        authored = list(Letter.objects.filter(legislator=self.name).all())
+        authored = list(Letter.objects.filter(patrocinador=self.name).all())
         return sorted(authored, key=lambda letter: (letter.fecha, letter.consecutive_number), reverse=True)
 
     @property
@@ -95,40 +116,39 @@ class Letter(models.Model):
     tema = models.CharField(max_length=25)
     tema_específico = models.CharField(max_length=100)
     fecha = models.DateTimeField(help_text="Enter dates in <em>MM/DD/YYYY</em> format")
-    description = models.TextField(verbose_name=_('Short Description'))
-    positive_MX = models.CharField(max_length=8,
+    descripción = models.TextField(verbose_name=_('Short Description'))
+    favorable_a_MX = models.CharField(max_length=8,
                                     choices=Sentiment.choices,
                                     verbose_name=_('Positive for Mexico?'))
-    MX_mentioned = models.CharField(max_length=3,
+    mención_directa_a_MX = models.IntegerField(
                                     choices=Dummy.choices,
                                     verbose_name=_('Was Mexico directly mentioned?'))
-    recipient = models.CharField(max_length=50, verbose_name=_('Recipient(s)'))
-    chamber = models.CharField(max_length=9,
+    destinatario = models.CharField(max_length=50, verbose_name=_('Recipient(s)'))
+    cámara = models.CharField(max_length=9,
                                  choices=Chamber.choices,
                                  verbose_name=_('Letter\'s Chamber of Origin'))  
-    kind_statement_party = models.CharField(max_length=12,
-                                            choices=Support.choices)
-    legislator = models.CharField(max_length=60,
+    caucus = models.CharField(max_length=100)
+    patrocinador = models.CharField(max_length=60,
                                  verbose_name=_('Legislator Name'),
                                  help_text=
                                  "Names are displayed in <em>Last Name, First Name</em> format")
     cosigners = models.CharField(max_length=500)
-    party = models.CharField(max_length=11, 
-                            choices=PolParties.choices)
     rep_or_sen = models.CharField(max_length=4,
                                  choices=RepSen.choices,
                                  verbose_name=_('Representative or Senator'))
-    caucus = models.CharField(max_length=100)
-
     link = models.URLField("Letter URL")
     date_posted = models.DateTimeField(default=timezone.now)
     posted_by = models.ForeignKey(User, 
                                  on_delete=models.SET_NULL, null=True)
-    comments =  models.TextField(default='N/a')
-    action = models.CharField(max_length=100)
-    notice_num = models.CharField(max_length=30,
+    observaciones =  models.TextField(default='N/a')
+    acción = models.CharField(max_length=100)
+    notice = models.CharField(max_length=9,
                                 verbose_name=_('If a notice was sent, specify the number'),
                                 default='N/a')
+
+    @property
+    def party_affiliation(self):
+        return Legislator.objects.filter(name=self.patrocinador).first().party[0]
 
     @property 
     def cosign_sorted(self):
@@ -136,7 +156,7 @@ class Letter(models.Model):
 
     @property
     def author(self):
-        return self.legislator
+        return self.patrocinador
 
     @property
     def consecutive_number(self):
@@ -145,8 +165,8 @@ class Letter(models.Model):
 
     @property
     def title(self):
-        return str(self.fecha)[:10].replace('-', '.') + '.' + str(self.chamber)[0] +\
-                '.' + str(self.party) + '.' + str(self.tema) + '.' + str(self.consecutive_number)
+        return str(self.fecha)[:10].replace('-', '.') + '.' + str(self.cámara)[0] +\
+                '.' + str(self.party_affiliation) + '.' + str(self.tema) + '.' + str(self.consecutive_number)
     
     @property
     def num_reps_sens(self):
@@ -159,6 +179,45 @@ class Letter(models.Model):
         sen = sen_rep.count('Sen.')
         rep = len(sen_rep) - sen
         return sen, rep
+
+    @property
+    def num_sens(self):
+        return self.num_reps_sens[0]
+
+    @property
+    def num_reps(self):
+        return self.num_reps_sens[1]
+
+    @property
+    def partido(self):
+        if not self.cosigners:
+            return "Demócrata" if Legislator.objects.filter(name=self.patrocinador).first().party == 'D' else "Republicano"
+        signers = (self.author + ', ' + self.cosigners).split(', ')
+        parties = list(map(lambda leg: Legislator.objects.filter(name=leg).first().party == 'D', signers))
+        if all(parties):
+            return 'Demócrata'
+        if not any(parties):
+            return "Republicano"
+        else:
+            return "Bipartidista"
+
+    @property
+    def copatrocinador(self):
+        if not self.cosigners:
+            return 'Na'
+        def get_dist(self):
+            if self.rep_or_sen == "Sen.":
+                return ''
+            if self.jurisdiction[-2:].isdigit():
+                return '-' + jurisdiction[-2]
+            elif self.jusridiction[-1].isdigit():
+                return '-' + self.jusridiction[-1]
+            else:
+                return '-at large'
+        leg_list = list(map(lambda name_: Legislator.objects.filter(name=name_).first(), self.cosigners.split(', ')))
+        leg_list = list(map(lambda leg_obj: leg_obj.name + ' ' + leg_obj.party + '-' +  leg_obj.state + get_dist(leg_obj)\
+                    , leg_list))
+        return ', '.join(sorted(leg_list))
 
     def __str__(self):
         return self.title

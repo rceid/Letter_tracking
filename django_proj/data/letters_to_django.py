@@ -9,8 +9,9 @@ import sys
 sys.path.insert(0, './data')
 import letter_cleaning
 sys.path.insert(0, './../letter_tracking')
-from letter_tracking.models import Letter, Legislator
-
+from letter_tracking.models import (Letter, Legislator, Topic, Specific_Topic,
+                                    Recipient, Caucus, Legislature, Action)
+            
 def go():
     print('Fetching letters...\n')
     signers, politicians = letter_sponsors()
@@ -20,6 +21,8 @@ def go():
     print('\nLetters fetched, uploading letters and legislators...')
     upload_legislator(politicians)
     upload_letters(signers)
+    print('Now uplaoding metatopics...')
+    upload_metatopics()
     print("Upload complete. Closing script")
 
 def letter_sponsors():
@@ -65,7 +68,7 @@ def letter_info(dic, daily_letters):
         
 def upload_legislator(pol_df):
     '''
-    Uploads the dataframe containing Senator adn Representatives as django 
+    Uploads the dataframe containing Senator and Representatives as django 
     objects
     '''
     count = 0
@@ -93,18 +96,49 @@ def upload_letters(signers):
         ###fix cosigners later, caucus field is constant
         cosign = ', '.join(info['cosigners'])
         letter = Letter(
-        topic=info['Topic'], legislator=info['Legislator'],
-        party=info['Party Affiliation'], rep_or_sen=info['Sen./Rep.'], 
-        description=info['Short description'],
-        caucus='Na', date=info['Date'], 
-        chamber=info['Kind of statement Chamber'],
-        link=info['Link'],specific_topic=info['Specific topic'],
-        positive_MX =info['Positive for MX'], MX_mentioned=info['MX was directly mentioned'],
-        recipient=info['Recipient'], kind_statement_party=info['Kind of statement Party'][0],
-        comments=info['Comments'], action=info['Action'],\
-        notice_num = info['If a notice was sent, specify the number'],
+        tema=info['Topic'], patrocinador=info['Legislator'],
+        rep_or_sen=info['Sen./Rep.'], 
+        descripción=info['Short description'],
+        caucus='Na', fecha=info['Date'], 
+        cámara=info['Kind of statement Chamber'],
+        link=info['Link'], tema_específico=info['Specific topic'],
+        favorable_a_MX =info['Positive for MX'], \
+        mención_directa_a_MX=info['MX was directly mentioned'],
+        destinatario=info['Recipient'],
+        observaciones=info['Comments'], acción=info['Action'],\
+        notice = info['If a notice was sent, specify the number'],
         cosigners=cosign
         )
         letter.save()
     print('{} Letters uploaded'.format(count))
+    
+def upload_metatopics():
+    meta_t = letter_cleaning.get_metatopics()
+    for col in meta_t.columns:
+        mask = meta_t[col].apply(lambda x: type(x) == str)
+        iterrator = meta_t[col][mask]
+        if col == 'TOPIC':
+            for _, val in iterrator.iteritems():
+                topic = Topic(topic_name=val)
+                topic.save()
+        if col == 'SPECIFIC TOPIC':
+            for _, val in iterrator.iteritems():
+                s_topic = Specific_Topic(specific_topic_name=val)
+                s_topic.save()
+        if col == 'RECIPIENT':
+            for _, val in iterrator.iteritems():
+                recip = Recipient(recipient_name=val)
+                recip.save()
+        if col == 'CAUCUS':
+            for _, val in iterrator.iteritems():
+                caucus = Caucus(caucus_name=val)
+                caucus.save()
+        if col == 'ACTION':
+            for _, val in iterrator.iteritems():
+                action = Action(action_name=val)
+                action.save()
+    legislature = Legislature(legislature_name='116th')
+    legislature.save()
+    
+    
     
