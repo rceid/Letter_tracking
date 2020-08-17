@@ -13,7 +13,7 @@ from django.db.models import Q
 import csv, io
 
 FIELDS = ['tema', 'patrocinador','rep_or_sen','cosigners',
-             'descripción', 'fecha', 'caucus', 'cámara', 'link', 'tema_específico',
+             'descripción', 'fecha', 'caucus', 'legislatura', 'cámara', 'link', 'tema_específico',
              'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
              'observaciones', 'acción', 'notice'
              ]

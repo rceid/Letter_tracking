@@ -68,6 +68,7 @@ def clean_politicians():
     reps['Active'] = True
     senators['Active'] = True
     politicians = pd.concat([reps[cols], senators[cols]])
+    politicians['Legislature'] = '116th'
     
     return politicians
 

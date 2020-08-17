@@ -21,7 +21,7 @@ def go():
     print('\nLetters fetched, uploading letters and legislators...')
     upload_legislator(politicians)
     upload_letters(signers)
-    print('Now uplaoding metatopics...')
+    print('Now uploading metatopics...')
     upload_metatopics()
     print("Upload complete. Closing script")
 
@@ -107,6 +107,7 @@ def upload_letters(signers):
         destinatario=info['Recipient'],
         observaciones=info['Comments'], acción=info['Action'],\
         notice = info['If a notice was sent, specify the number'],
+        legislatura = info['Legislature'],
         cosigners=cosign
         )
         letter.save()

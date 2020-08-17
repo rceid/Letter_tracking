@@ -7,29 +7,46 @@ from warnings import filterwarnings
 import us
 filterwarnings('ignore', message=r'.*received a naive datetime')
 
-STATE_LIST = list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"]
-
-
-
+#Meta topic models for dropdown menus and organization
 class Topic(models.Model):
     topic_name = models.CharField(max_length=25)
 
+    def __str__(self):
+        return self.topic_name
+
 class Specific_Topic(models.Model):
     specific_topic_name =  models.CharField(max_length=25)
+    
+    def __str__(self):
+        return self.specific_topic_name
 
 class Recipient(models.Model):
     recipient_name =  models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.recipient_name
 
 class Caucus(models.Model):
     caucus_name = models.CharField(max_length=25)
+    class Meta:
+        verbose_name_plural = "Caucuses"
+    def __str__(self):
+        return self.caucus_name
 
 class Legislature(models.Model):
     legislature_name =  models.CharField(max_length=6)
+    def __str__(self):
+        return self.legislature_name
 
 class Action(models.Model):
     action_name =  models.CharField(max_length=40)
+    def __str__(self):
+        return self.action_name
 
+def zip_choices(choice_list):
+    return zip(choice_list, choice_list)
 
+#Legislator and Letter Models 
 class Legislator(models.Model):
 
     class RepSen(models.TextChoices):
@@ -41,7 +58,7 @@ class Legislator(models.Model):
         R = 'R', _('Republican')
         I = 'I', _('Independent')
 
-    STATES = zip(STATE_LIST, STATE_LIST)
+    STATES = zip_choices(list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"])
     name = models.CharField(max_length=100)
     jurisdiction = models.CharField(max_length=100)
     state = models.CharField(max_length=30,
@@ -113,8 +130,8 @@ class Letter(models.Model):
         y = 1, _('Yes')
         n = 0, _('No')
 
-    tema = models.CharField(max_length=25)
-    tema_específico = models.CharField(max_length=100)
+    tema = models.CharField(max_length=25, choices= zip_choices(Topic.objects.all()))
+    tema_específico = models.CharField(max_length=25, choices= zip_choices(Specific_Topic.objects.all()))
     fecha = models.DateTimeField(help_text="Enter dates in <em>MM/DD/YYYY</em> format")
     descripción = models.TextField(verbose_name=_('Short Description'))
     favorable_a_MX = models.CharField(max_length=8,
@@ -123,11 +140,12 @@ class Letter(models.Model):
     mención_directa_a_MX = models.IntegerField(
                                     choices=Dummy.choices,
                                     verbose_name=_('Was Mexico directly mentioned?'))
-    destinatario = models.CharField(max_length=50, verbose_name=_('Recipient(s)'))
+    destinatario = models.CharField(max_length=50, choices= zip_choices(Recipient.objects.all()))
     cámara = models.CharField(max_length=9,
                                  choices=Chamber.choices,
                                  verbose_name=_('Letter\'s Chamber of Origin'))  
-    caucus = models.CharField(max_length=100)
+    caucus = models.CharField(max_length=50, choices=zip_choices(Caucus.objects.all()))
+    legislatura = models.CharField(max_length=50, choices=zip_choices(Legislature.objects.all()))
     patrocinador = models.CharField(max_length=60,
                                  verbose_name=_('Legislator Name'),
                                  help_text=
@@ -141,7 +159,7 @@ class Letter(models.Model):
     posted_by = models.ForeignKey(User, 
                                  on_delete=models.SET_NULL, null=True)
     observaciones =  models.TextField(default='N/a')
-    acción = models.CharField(max_length=100)
+    acción = models.CharField(max_length=100, choices=zip_choices(Action.objects.all()))
     notice = models.CharField(max_length=9,
                                 verbose_name=_('If a notice was sent, specify the number'),
                                 default='N/a')
