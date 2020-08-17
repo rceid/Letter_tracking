@@ -78,11 +78,6 @@ class Letter(models.Model):
         S = 'S', _('Senado')
         C = 'C', _('Congreso')
     
-    class Statements(models.TextChoices):
-        Carta = 'Carta'
-        Consulta = 'Consulta'
-        Declaracion = 'Declaración'
-    
     class Support(models.TextChoices):
         rep = 'Republicano', _('Republican')
         dem = 'Demócrata', _('Democrat')
@@ -97,11 +92,9 @@ class Letter(models.Model):
         y = 1, _('Yes')
         n = 0, _('No')
 
-    topic = models.CharField(max_length=25)
+    tema = models.CharField(max_length=25)
     specific_topic = models.CharField(max_length=100)
     date = models.DateTimeField(help_text="Enter dates in <em>MM/DD/YYYY</em> format")
-    kind_of_statement = models.CharField(max_length=15,
-                                        choices=Statements.choices)
     description = models.TextField(verbose_name=_('Short Description'))
     positive_MX = models.CharField(max_length=8,
                                     choices=Sentiment.choices,
@@ -153,7 +146,19 @@ class Letter(models.Model):
     @property
     def title(self):
         return str(self.date)[:10].replace('-', '.') + '.' + str(self.chamber)[0] +\
-                '.' + str(self.party) + '.' + str(self.topic) + '.' + str(self.consecutive_number)
+                '.' + str(self.party) + '.' + str(self.tema) + '.' + str(self.consecutive_number)
+    
+    @property
+    def num_reps_sens(self):
+        signers = (self.author + ', ' + self.cosigners).split(', ')
+        #if no cosigners:
+        if not signers[1]:
+            sen_rep =  Legislator.objects.filter(name=signers[0]).first().rep_or_sen
+            return (1, 0) if sen_rep == 'Sen.' else (0, 1)
+        sen_rep = list(map(lambda name_: Legislator.objects.filter(name=name_).first().rep_or_sen, signers))
+        sen = sen_rep.count('Sen.')
+        rep = len(sen_rep) - sen
+        return sen, rep
 
     def __str__(self):
         return self.title

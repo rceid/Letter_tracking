@@ -98,7 +98,7 @@ def upload_letters(signers):
         description=info['Short description'],
         caucus='Na', date=info['Date'], 
         chamber=info['Kind of statement Chamber'],
-        link=info['Link'],specific_topic=info['Specific topic'], kind_of_statement=info['Kind of statement'],
+        link=info['Link'],specific_topic=info['Specific topic'],
         positive_MX =info['Positive for MX'], MX_mentioned=info['MX was directly mentioned'],
         recipient=info['Recipient'], kind_statement_party=info['Kind of statement Party'][0],
         comments=info['Comments'], action=info['Action'],\
