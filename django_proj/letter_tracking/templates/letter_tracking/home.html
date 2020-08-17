@@ -6,7 +6,7 @@
                 <div class="article-metadata">
                     <a class="mr-2" href="{% url 'legislator-letters' letter.legislator%}">{{ letter.legislator }}</a>
                     <!-- href="{% url 'userletters' letter.posted_by %}"> <!-->
-                    <small class="text-muted">{{ letter.date | date:"F d, Y" }}</small>
+                    <small class="text-muted">{{ letter.fecha | date:"F d, Y" }}</small>
                 </div>
                 <h2><a class="article-title">{{ letter.title }}</a></h2>
                 <p class="article-content">{{ letter.description }}</p>

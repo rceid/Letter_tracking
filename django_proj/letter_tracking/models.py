@@ -35,13 +35,13 @@ class Legislator(models.Model):
     @property
     def letters_authored(self):
         authored = list(Letter.objects.filter(legislator=self.name).all())
-        return sorted(authored, key=lambda letter: (letter.date, letter.consecutive_number), reverse=True)
+        return sorted(authored, key=lambda letter: (letter.fecha, letter.consecutive_number), reverse=True)
 
     @property
     def letters_cosigned(self):
         cosigns = {letter:letter.cosigners.split(', ') for letter in Letter.objects.all() if letter.cosigners}
         cosigns = [letter for letter, signers in cosigns.items() if self.name in signers]
-        return sorted(cosigns, key=lambda letter: (letter.date, letter.consecutive_number), reverse=True)
+        return sorted(cosigns, key=lambda letter: (letter.fecha, letter.consecutive_number), reverse=True)
         
     @property
     def all_letters(self):
@@ -93,8 +93,8 @@ class Letter(models.Model):
         n = 0, _('No')
 
     tema = models.CharField(max_length=25)
-    specific_topic = models.CharField(max_length=100)
-    date = models.DateTimeField(help_text="Enter dates in <em>MM/DD/YYYY</em> format")
+    tema_específico = models.CharField(max_length=100)
+    fecha = models.DateTimeField(help_text="Enter dates in <em>MM/DD/YYYY</em> format")
     description = models.TextField(verbose_name=_('Short Description'))
     positive_MX = models.CharField(max_length=8,
                                     choices=Sentiment.choices,
@@ -140,12 +140,12 @@ class Letter(models.Model):
 
     @property
     def consecutive_number(self):
-        daily_order = list(Letter.objects.filter(date=self.date).order_by('date'))
+        daily_order = list(Letter.objects.filter(fecha=self.fecha).order_by('fecha'))
         return daily_order.index(self) + 1
 
     @property
     def title(self):
-        return str(self.date)[:10].replace('-', '.') + '.' + str(self.chamber)[0] +\
+        return str(self.fecha)[:10].replace('-', '.') + '.' + str(self.chamber)[0] +\
                 '.' + str(self.party) + '.' + str(self.tema) + '.' + str(self.consecutive_number)
     
     @property

@@ -3,8 +3,8 @@
     <article class="media content-section">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2">by {{object.rep_or_sen}} {{ object.legislator }} ({{ object.party}}) </a>
-                <small class="text-muted">{{ object.date | date:"F d, Y" }}</small>
+                <a class="mr-2" href= "{% url 'legislator-letters' object.legislator%}">by {{object.rep_or_sen}} {{ object.legislator }} ({{ object.party}}) </a>
+                <small class="text-muted">{{ object.fecha | date:"F d, Y" }}</small>
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
             <p class="article-content">{{ object.description }}</p>
@@ -25,17 +25,12 @@
             </div>
             <div>
                 <small>
-                    <b>Topic:</b> {{object.topic}}
+                    <b>Tema:</b> {{object.tema}}
                 </small>
             </div>
             <div>
                 <small>
-                    <b>Specific Topic:</b> {{object.topic}}
-                </small>
-            </div>
-            <div>
-                <small>
-                    <b>Kind of statement:</b> {{object.kind_of_statement}}
+                    <b>Tema Específico:</b> {{object.tema_específico}}
                 </small>
             </div>
             <div>

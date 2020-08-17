@@ -13,7 +13,7 @@ from django.db.models import Q
 import csv, io
 
 FIELDS = ['tema', 'legislator', 'party','rep_or_sen','cosigners',
-             'description', 'date', 'caucus', 'chamber', 'link', 'specific_topic',
+             'description', 'fecha', 'caucus', 'chamber', 'link', 'tema_específico',
              'positive_MX', 'MX_mentioned', 'recipient', 
              'kind_statement_party', 'comments', 'action', 'notice_num'
              ]
@@ -32,7 +32,7 @@ class LetterListView(ListView):
     model = Letter
     template_name = 'letter_tracking/home.html'
     context_object_name = 'letters'
-    ordering = ['-date', '-date_posted']
+    ordering = ['-fecha', '-date_posted']
     paginate_by = 15
     
 class LegLetterView(ListView):
