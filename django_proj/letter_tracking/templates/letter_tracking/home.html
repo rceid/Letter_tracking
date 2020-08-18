@@ -4,23 +4,24 @@
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" href="{% url 'legislator-letters' letter.patrocinador%}">{{ letter.patrocinador }}</a>
+                    <a class="mr-2" href="{% url 'legislator-letters' letter.patrocinador.name %}">{{letter.patrocinador.rep_or_sen}} {{ letter.patrocinador.name }} ({{ letter.patrocinador.party}})</a>
                     <small class="text-muted">{{ letter.fecha | date:"F d, Y" }}</small>
                 </div>
                 <h2><a class="article-title">{{ letter.title }}</a></h2>
-                <p class="article-content">Tema específico: {{ letter.tema_específico }}</p>
+                <p style="line-height:.4"> </p>
+                <p class="article-content" style="line-height:.4">Tema específico: {{ letter.tema_específico }}</p>
                 {% if letter.mención_directa_a_MX == 1%}
-                    <p class="article-content">- Mención directa a MX</p>
+                    <p class="article-content" style="line-height:.4">- Mención directa a MX</p>
                 {% endif %}
-                <p class="article-content">Destinatario: {{ letter.destinatario }}</p>
-                <p class="article-content">Caucus: {{ letter.caucus }}</p>
-                <p class="article-content">Congresistas: {{ letter.num_reps }}</p>
-                <p class="article-content">Senadores: {{ letter.num_sens }}</p>
+                <p class="article-content" style="line-height:.4">Destinatario: {{ letter.destinatario }}</p>
+                <p class="article-content" style="line-height:.4">Caucus: {{ letter.caucus }}</p>
+                <p class="article-content" style="line-height:.4">Congresistas: {{ letter.num_reps }}</p>
+                <p class="article-content" style="line-height:.4">Senadores: {{ letter.num_sens }}</p>
+                <p class="article-content" style="line-height:.4">Notice: {{ letter.notice }}</p>
                 {% if letter.observaciones %}
-                <p class="article-content">Observaciones: {{ letter.observaciones }}</p>
+                <p class="article-content" style="line-height:1.3">Observaciones: {{ letter.observaciones }}</p>
                 {% endif %}
-                <p class="article-content">Notice: {{ letter.notice }}</p>
-                <div> <small> <a  href="{% url 'letter-detail' letter.id%}">see more info</a></small></div>
+                <div> <small> <a  href="{% url 'letter-detail' letter.id%}">ver más</a></small></div>
             </div>
         </article>
     {% endfor %}

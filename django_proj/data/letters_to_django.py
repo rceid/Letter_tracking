@@ -18,11 +18,11 @@ def go():
     signers = list(signers.items()) #list of tuples w code and dict
     signers = sorted(signers, key= lambda signers:(signers[1]['Date'], \
                                                   (signers[1]['Entry Order'])))
-    print('\nLetters fetched, uploading letters and legislators...')
+    print('\nLetters fetched, uploading metatopics...')
+    upload_metatopics()
+    print('Now uploading letters and legislators...')
     upload_legislator(politicians)
     upload_letters(signers)
-    print('Now uploading metatopics...')
-    upload_metatopics()
     print("Upload complete. Closing script")
 
 def letter_sponsors():
@@ -96,18 +96,19 @@ def upload_letters(signers):
         ###fix cosigners later, caucus field is constant
         cosign = ', '.join(info['cosigners'])
         letter = Letter(
-        tema=info['Topic'], patrocinador=info['Legislator'],
-        rep_or_sen=info['Sen./Rep.'], 
-        descripción=info['Short description'],
-        caucus='Na', fecha=info['Date'], 
-        cámara=info['Kind of statement Chamber'],
-        link=info['Link'], tema_específico=info['Specific topic'],
-        favorable_a_MX =info['Positive for MX'], \
+        tema=Topic.objects.filter(topic_name=info['Topic']).first(), 
+        patrocinador=Legislator.objects.filter(name=info['Legislator']).first(),
+        caucus=Caucus.objects.filter(caucus_name='None Selected').first(),
+        tema_específico=Specific_Topic.objects.filter(specific_topic_name=info['Specific topic']).first(),
+        destinatario=Recipient.objects.filter(recipient_name=info['Recipient']).first(),
+        acción=Action.objects.filter(action_name=info['Action']).first(),
+        legislatura = Legislature.objects.filter(legislature_name=info['Legislature']).first(),
+        descripción=info['Short description'], fecha=info['Date'], 
+        cámara=info['Kind of statement Chamber'], link=info['Link'], 
+        favorable_a_MX =info['Positive for MX'], 
         mención_directa_a_MX=info['MX was directly mentioned'],
-        destinatario=info['Recipient'],
-        observaciones=info['Comments'], acción=info['Action'],\
-        notice = info['If a notice was sent, specify the number'],
-        legislatura = info['Legislature'],
+        observaciones=info['Comments'], 
+        notice = info['If a notice was sent, specify the number'], 
         cosigners=cosign
         )
         letter.save()

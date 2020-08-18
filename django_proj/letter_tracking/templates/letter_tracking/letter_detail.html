@@ -3,7 +3,7 @@
     <article class="media content-section">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href= "{% url 'legislator-letters' object.patrocinador%}">by {{object.rep_or_sen}} {{ object.patrocinador }} ({{ object.party_affiliation}}) </a>
+                <a class="mr-2" href= "{% url 'legislator-letters' object.patrocinador%}">by {{object.patrocinador.rep_or_sen}} {{ object.patrocinador.name }} ({{ object.patrocinador.party}}) </a>
                 <small class="text-muted">{{ object.fecha | date:"F d, Y" }}</small>
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
@@ -62,8 +62,13 @@
                 </small> 
             </div>
             <div>
+                <small> 
+                    <b>File path: </b>{{object.letter_path }}
+                </small> 
+            </div>
+            <div>
                 <small>
-                    <b>Copatrocinadores:</b> {{object.copatrocinador}}
+                    <b>Copatrocinadores:</b> {{object.copatrocinador.name}}
                 </small>
             </div>
                 <div>

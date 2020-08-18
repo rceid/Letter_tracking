@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'letter_tracking.apps.LetterTrackingConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'dal',
+    'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

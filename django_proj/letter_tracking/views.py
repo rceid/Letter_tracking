@@ -8,14 +8,18 @@ from django.views.generic import (ListView,
                                  UpdateView,
                                  DeleteView,
                                  TemplateView)
-from .models import Letter, Legislator
+from .models import (Letter, Legislator, 
+                    Topic, Specific_Topic, 
+                    Recipient, Caucus, 
+                    Legislature, Action)
 from django.db.models import Q
+from dal import autocomplete
 import csv, io
 
-FIELDS = ['tema', 'patrocinador','rep_or_sen','cosigners',
-             'descripción', 'fecha', 'caucus', 'legislatura', 'cámara', 'link', 'tema_específico',
-             'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
-             'observaciones', 'acción', 'notice'
+FIELDS = ['tema', 'patrocinador', 'cosigners', 'descripción', 
+         'fecha', 'caucus', 'legislatura', 'cámara', 'link', 'tema_específico',
+         'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
+         'observaciones', 'acción', 'notice'
              ]
 
 
@@ -36,7 +40,7 @@ class LetterListView(ListView):
     paginate_by = 15
     
 class LegLetterView(ListView):
-    model = Legislator 
+    model = Letter#Legislator 
     template_name = 'letter_tracking/legislator_letters.html'
     context_object_name = 'politician'
     #paginate_by = 5
@@ -92,8 +96,16 @@ class LetterDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         #     return True
         # return False
 
-class SearchFormView(TemplateView):
-    template_name = 'letter_tracking/search_form.html'
+# class SearchFormView(TemplateView):
+#     template_name = 'letter_tracking/search_form.html'
+
+###
+class SearchFormView(autocomplete.Select2ListView):
+    def get_queryset(self):
+        qs = Legislator.objects.all()
+        if self.q:
+            qs = qs.filter(name__istartswith=self.q)
+        return qs
 
 class SearchResultsView(ListView):
     model = Legislator
@@ -106,22 +118,44 @@ class SearchResultsView(ListView):
 
 
 def export(self, name=None):
-    attrs= list(Letter.objects.first().__dict__.keys())[2:] 
+    attrs = ['Código', 'Tema', 'Tema específico', 'Fecha', 'Descripción', 'Favorable a MX', 'Mención directa a MX', 
+            'Destinatario',  'Cámara', 'Partido', 'Caucus', 'Legislatura', 'Congresistas', 'Senadores',
+            'Patrocinador/a', 'Copatrocinador/a', 'Link', 'Observaciones', 'Acción', 'Notice']
+    #zip rows and the attrs into a dict in the loop
     response = HttpResponse(content_type='text/csv')
     response.write(u'\ufeff'.encode('utf8'))
     writer = csv.writer(response)
-    writer.writerow(['Código'] + attrs + ['State', 'Senadores', 'Congresistas', 'Partido'])
+    writer.writerow(attrs)
     if not name:
         letters = Letter.objects.all()
     else:
         letters = Legislator.objects.filter(name=name).first().all_letters
     for letter in letters:
-        num_sen, num_rep = letter.num_reps_sens
-        vals = [letter.title] + list(letter.__dict__.values())[2:] + \
-                [Legislator.objects.filter(name=letter.patrocinador).first().state,\
-                num_sen, num_rep, letter.partido]
+        tema, tema_específico, destinatario, caucus, legislatura, senadores, congresistas, acción = get_letter_values(letter)
+        vals = [letter.title, tema, tema_específico, letter.fecha, letter.descripción, letter.favorable_a_MX, letter.mención_directa_a_MX,
+                letter.destinatario, letter.cámara, letter.partido, caucus, legislatura, congresistas, senadores, letter.patrocinador.name,
+                letter.cosign_sorted, letter.letter_path, letter.observaciones, acción, letter.notice]
         writer.writerow(vals)
     
     response['Content-Disposition'] = 'attachment; filename="letters.csv"'
 
     return response
+def get_letter_values(letter):
+    tema = lookup_attr(Topic, letter.tema_id, 'topic_name')
+    tema_específico = lookup_attr(Specific_Topic, letter.tema_específico_id, 'specific_topic_name')
+    destinatario = lookup_attr(Recipient, letter.destinatario_id, 'recipient_name')
+    caucus = lookup_attr(Caucus, letter.caucus_id, 'caucus_name')
+    legislatura = lookup_attr(Legislature, letter.legislatura_id, 'legislature_name')
+    senadores, congresistas = letter.num_reps_sens
+    acción = lookup_attr(Action, letter.acción_id, 'action_name')
+
+    return tema, tema_específico, destinatario, caucus, legislatura, senadores, congresistas, acción
+
+def lookup_attr(obj, id_, attr):
+    obj
+    try:
+        rv = obj.objects.filter(id=id_).first().__dict__[attr]
+    except:
+        rv = None
+    return rv
+
