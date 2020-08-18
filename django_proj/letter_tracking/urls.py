@@ -5,7 +5,7 @@ from .views import (LetterListView,
                 LetterUpdateView,
                 LetterDeleteView,
                 UserLetterListView,
-                SearchFormView,
+                #SearchFormView,
                 SearchResultsView,
                 LegLetterView
                 )
@@ -20,7 +20,7 @@ urlpatterns = [
     path('letter/int:<pk>/update/', LetterUpdateView.as_view(), name='letter-update'),
     path('letter/int:<pk>/delete/', LetterDeleteView.as_view(), name='letter-delete'),
     path('search_result/', SearchResultsView.as_view(), name='search_results'),
-    path('search/', SearchFormView.as_view(), name='search_form'),
+    path('search/', views.get_name, name='search_form'),
     path('about/', views.about, name='letter_tracking-about'),
     path('export/', views.export, name='export-data'),
     path('export/<str:name>/', views.export, name='export-data-leg')

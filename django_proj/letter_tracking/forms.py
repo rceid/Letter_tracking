@@ -1,14 +1,12 @@
 from dal import autocomplete
-from .models import Legislator
+from .models import Legislator, zip_choices
 from django import forms
 
-
-class ItemForm(forms.ModelForm):
-    legislator = forms.ModelChoiceField(
-        queryset=Legislator.objects.all(),
-        widget=autocomplete.ModelSelect2(url='search_form')
+class LegSearchForm(forms.Form):
+    legs = sorted(list(Legislator.objects.all()), key= lambda leg: leg.name)
+    leg = forms.MultipleChoiceField(
+        label="",
+        required=True,
+        widget=forms.Select,
+        choices=zip_choices(legs)
     )
-
-    class Meta:
-        model = Legislator
-        fields = ('__all__')

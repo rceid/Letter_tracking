@@ -219,8 +219,6 @@ class Letter(models.Model):
 
     @property
     def copatrocinador(self):
-        if not self.cosigners:
-            return 'Na'
         def get_dist(self):
             if self.rep_or_sen == "Sen.":
                 return ''
@@ -230,6 +228,8 @@ class Letter(models.Model):
                 return '-' + self.jusridiction[-1]
             else:
                 return '-at large'
+        if not self.cosigners:
+            return 'Na'
         leg_list = list(map(lambda name_: Legislator.objects.filter(name=name_).first(), self.cosigners.split(', ')))
         leg_list = list(map(lambda leg_obj: leg_obj.name + ' ' + leg_obj.party + '-' +  leg_obj.state + get_dist(leg_obj)\
                     , leg_list))

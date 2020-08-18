@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
-from django.http import HttpResponse, HttpRequest
+from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.views.generic import (ListView,
                                  DetailView,
                                  CreateView,
@@ -13,7 +13,7 @@ from .models import (Letter, Legislator,
                     Recipient, Caucus, 
                     Legislature, Action)
 from django.db.models import Q
-from dal import autocomplete
+from .forms import LegSearchForm
 import csv, io
 
 FIELDS = ['tema', 'patrocinador', 'cosigners', 'descripción', 
@@ -40,7 +40,7 @@ class LetterListView(ListView):
     paginate_by = 15
     
 class LegLetterView(ListView):
-    model = Letter#Legislator 
+    model = Legislator 
     template_name = 'letter_tracking/legislator_letters.html'
     context_object_name = 'politician'
     #paginate_by = 5
@@ -68,7 +68,6 @@ class LetterCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.posted_by = self.request.user
         return super().form_valid(form)
-
 
 class LetterUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Letter
@@ -99,13 +98,31 @@ class LetterDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 # class SearchFormView(TemplateView):
 #     template_name = 'letter_tracking/search_form.html'
 
-###
-class SearchFormView(autocomplete.Select2ListView):
-    def get_queryset(self):
-        qs = Legislator.objects.all()
-        if self.q:
-            qs = qs.filter(name__istartswith=self.q)
-        return qs
+def get_name(request):
+    print('here')
+    # if this is a POST request we need to process the form data
+    if request.method == 'GET':
+        print('here get')
+        # create a form instance and populate it with data from the request:
+        form = LegSearchForm(request.POST)
+        print('form', form)
+        # check whether it's valid:
+        if form.is_valid():
+            print('form valid')
+            form.save()
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect('/')
+        else:
+            print('here form')
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        print('HERE ELSE')
+        form = LegSearchForm()
+
+    return render(request, 'letter_tracking/search_form.html', {'form': form})
 
 class SearchResultsView(ListView):
     model = Legislator
@@ -114,6 +131,7 @@ class SearchResultsView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
+        print('HERE', query)
         return get_object_or_404(Legislator, name__icontains=query)
 
 
