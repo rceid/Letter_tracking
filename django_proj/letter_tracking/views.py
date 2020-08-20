@@ -17,7 +17,7 @@ from .forms import LegSearchForm
 import csv, io
 
 FIELDS = ['tema', 'patrocinador', 'cosigners', 'descripción', 
-         'fecha', 'caucus', 'legislatura', 'cámara', 'link', 'tema_específico',
+         'fecha', 'caucus', 'legislatura', 'link', 'tema_específico',
          'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
          'observaciones', 'acción', 'notice'
              ]
@@ -99,39 +99,33 @@ class LetterDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 #     template_name = 'letter_tracking/search_form.html'
 
 def get_name(request):
-    print('here')
     # if this is a POST request we need to process the form data
-    if request.method == 'GET':
-        print('here get')
+    if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = LegSearchForm(request.POST)
-        print('form', form)
         # check whether it's valid:
         if form.is_valid():
-            print('form valid')
-            form.save()
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/search_results/')
         else:
-            print('here form')
+            print(form.cleaned_data)
+            
 
-    # if a GET (or any other method) we'll create a blank form
+    # if a POST (or any other method) we'll create a blank form
     else:
-        print('HERE ELSE')
         form = LegSearchForm()
 
     return render(request, 'letter_tracking/search_form.html', {'form': form})
 
 class SearchResultsView(ListView):
     model = Legislator
-    template_name = 'letter_tracking/search_results.html'
+    template_name = 'letter_tracking/legislator_letters.html'
     context_object_name = 'politician'
 
     def get_queryset(self):
-        query = self.request.GET.get('q')
-        print('HERE', query)
+        query = self.request.GET.get('leg')
         return get_object_or_404(Legislator, name__icontains=query)
 
 

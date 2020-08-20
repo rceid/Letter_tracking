@@ -104,7 +104,7 @@ def upload_letters(signers):
         acción=Action.objects.filter(action_name=info['Action']).first(),
         legislatura = Legislature.objects.filter(legislature_name=info['Legislature']).first(),
         descripción=info['Short description'], fecha=info['Date'], 
-        cámara=info['Kind of statement Chamber'], link=info['Link'], 
+        link=info['Link'], 
         favorable_a_MX =info['Positive for MX'], 
         mención_directa_a_MX=info['MX was directly mentioned'],
         observaciones=info['Comments'], 

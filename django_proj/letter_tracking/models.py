@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from warnings import filterwarnings
+from multiselectfield import MultiSelectField
 import us
 filterwarnings('ignore', message=r'.*received a naive datetime')
 
@@ -27,7 +28,7 @@ class Recipient(models.Model):
         return self.recipient_name
 
 class Caucus(models.Model):
-    caucus_name = models.CharField(max_length=25)
+    caucus_name = models.CharField(max_length=25, blank=True, null=True, default='Na')
     class Meta:
         verbose_name_plural = "Caucuses"
     def __str__(self):
@@ -151,17 +152,17 @@ class Letter(models.Model):
     favorable_a_MX = models.CharField(max_length=8,
                                     choices=Sentiment.choices,
                                     verbose_name=_('Positive for Mexico?'))
-    mención_directa_a_MX = models.IntegerField(
+    mención_directa_a_MX = models.CharField(max_length=3,
                                     choices=Dummy.choices,
                                     verbose_name=_('Was Mexico directly mentioned?'))
     destinatario = models.ForeignKey(Recipient, on_delete=models.SET_NULL, null=True)
-    cámara = models.CharField(max_length=9,
-                                 choices=Chamber.choices,
-                                 verbose_name=_('Letter\'s Chamber of Origin'))  
     caucus = models.ForeignKey(Caucus, on_delete=models.SET_NULL, null=True)
     legislatura = models.ForeignKey(Legislature, on_delete=models.SET_NULL, null=True)
     patrocinador = models.ForeignKey(Legislator, on_delete=models.SET_NULL, null=True, verbose_name=_('Patrocinador/a'))
     cosigners = models.CharField(max_length=500, verbose_name=_('Copatrocinador/a'))
+    #cosigners = models.ManyToManyField(Legislator, related_name='copatrocinador',verbose_name=_('Copatrocinador/a'))
+    #cosigners = MultiSelectField(choices=zip_choices(sorted(list(Legislator.objects.all()), key= lambda leg: leg.name)),\
+                                                    #verbose_name=_('Copatrocinador/a'))
     link = models.URLField("Letter URL")
     date_posted = models.DateTimeField(default=timezone.now)
     posted_by = models.ForeignKey(User, 

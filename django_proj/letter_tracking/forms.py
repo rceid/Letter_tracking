@@ -1,4 +1,3 @@
-from dal import autocomplete
 from .models import Legislator, zip_choices
 from django import forms
 
