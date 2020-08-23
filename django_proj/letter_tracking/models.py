@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from warnings import filterwarnings
 from multiselectfield import MultiSelectField
+from django import forms
 import us
 filterwarnings('ignore', message=r'.*received a naive datetime')
 
@@ -50,7 +51,7 @@ def zip_choices(choice_list):
 def classify_letter(letter, attr, measure, options):
     if not letter.cosigners:
         return options[0] if letter.patrocinador.__dict__[attr] == measure else options[1]
-    signers = (letter.patrocinador.name + ', ' + letter.cosigners).split(', ')
+    signers = (letter.patrocinador.name + ', ' + ', '.join(letter.cosigners)).split(', ')
     classified = list(map(lambda leg: Legislator.objects.filter(name=leg).first().party == 'D', signers))
     if all(classified):
         return options[0]
@@ -92,7 +93,7 @@ class Legislator(models.Model):
 
     @property
     def letters_cosigned(self):
-        cosigns = {letter:letter.cosigners.split(', ') for letter in Letter.objects.all() if letter.cosigners}
+        cosigns = {letter:list(letter.cosigners) for letter in Letter.objects.all() if letter.cosigners}
         cosigns = [letter for letter, signers in cosigns.items() if self.name in signers]
         return sorted(cosigns, key=lambda letter: (letter.fecha, letter.consecutive_number), reverse=True)
         
@@ -159,10 +160,7 @@ class Letter(models.Model):
     caucus = models.ForeignKey(Caucus, on_delete=models.SET_NULL, null=True)
     legislatura = models.ForeignKey(Legislature, on_delete=models.SET_NULL, null=True)
     patrocinador = models.ForeignKey(Legislator, on_delete=models.SET_NULL, null=True, verbose_name=_('Patrocinador/a'))
-    cosigners = models.CharField(max_length=500, verbose_name=_('Copatrocinador/a'))
-    #cosigners = models.ManyToManyField(Legislator, related_name='copatrocinador',verbose_name=_('Copatrocinador/a'))
-    #cosigners = MultiSelectField(choices=zip_choices(sorted(list(Legislator.objects.all()), key= lambda leg: leg.name)),\
-                                                    #verbose_name=_('Copatrocinador/a'))
+    cosigners = MultiSelectField(choices=zip_choices(Legislator.objects.all()), verbose_name=_('Copatrocinador/a'), default='None')
     link = models.URLField("Letter URL")
     date_posted = models.DateTimeField(default=timezone.now)
     posted_by = models.ForeignKey(User, 
@@ -200,7 +198,7 @@ class Letter(models.Model):
 
     @property
     def num_reps_sens(self):
-        signers = (self.patrocinador.name + ', ' + self.cosigners).split(', ')
+        signers = (self.patrocinador.name + ', ' + ', '.join(self.cosigners)).split(', ')
         #if no cosigners:
         if not signers[1]:
             sen_rep =  self.patrocinador.rep_or_sen
@@ -224,14 +222,14 @@ class Letter(models.Model):
             if self.rep_or_sen == "Sen.":
                 return ''
             if self.jurisdiction[-2:].isdigit():
-                return '-' + jurisdiction[-2]
-            elif self.jusridiction[-1].isdigit():
-                return '-' + self.jusridiction[-1]
+                return '-' + self.jurisdiction[-2]
+            elif self.jurisdiction[-1].isdigit(): 
+                return '-' + self.jurisdiction[-1]
             else:
                 return '-at large'
         if not self.cosigners:
             return 'Na'
-        leg_list = list(map(lambda name_: Legislator.objects.filter(name=name_).first(), self.cosigners.split(', ')))
+        leg_list = list(map(lambda name_: Legislator.objects.filter(name=name_).first(), self.cosigners))
         leg_list = list(map(lambda leg_obj: leg_obj.name + ' ' + leg_obj.party + '-' +  leg_obj.state + get_dist(leg_obj)\
                     , leg_list))
         return ', '.join(sorted(leg_list))

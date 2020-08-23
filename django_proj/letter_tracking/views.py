@@ -16,10 +16,10 @@ from django.db.models import Q
 from .forms import LegSearchForm
 import csv, io
 
-FIELDS = ['tema', 'patrocinador', 'cosigners', 'descripción', 
+FIELDS = ['tema', 'patrocinador', 'descripción', 
          'fecha', 'caucus', 'legislatura', 'link', 'tema_específico',
          'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
-         'observaciones', 'acción', 'notice'
+         'observaciones', 'acción', 'notice', 'cosigners'
              ]
 
 
@@ -152,6 +152,7 @@ def export(self, name=None):
     response['Content-Disposition'] = 'attachment; filename="letters.csv"'
 
     return response
+    
 def get_letter_values(letter):
     tema = lookup_attr(Topic, letter.tema_id, 'topic_name')
     tema_específico = lookup_attr(Specific_Topic, letter.tema_específico_id, 'specific_topic_name')
