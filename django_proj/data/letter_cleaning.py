@@ -48,29 +48,45 @@ def clean_letters():
     
     return letters
 
-def clean_politicians():
 
-    cols = ['Legislator', 'State', 'Jurisdiction', 'Sen./Rep.', 'Party Affiliation', 'Active']
-    senators = pd.read_excel(LETTER_DATA, sheet_name='Catálogos', header=1, \
-                             usecols=['Sen./Rep.','Legislador','Estado','Partido'])
-    senators.rename(columns={'Estado': 'State'}, inplace=True)
-    senators['Jurisdiction'] = senators['State']\
-        .replace(us.states.mapping('abbr', 'name'))
-    senators.rename(columns={'Legislador': 'Legislator', \
-                             'Partido':'Party Affiliation'}, inplace=True)
-    reps = pd.read_csv(REP_DATA, usecols=['Name', 'Namelsad', 'Nombre',\
-                                          'Apellido', 'Party Affiliation'])
-    reps['Sen./Rep.'] = 'Rep.'
-    reps['State'] = reps['Name'].replace(us.states.mapping('name', 'abbr'))
-    reps['Jurisdiction'] = reps['Name'] + ' ' + reps['Namelsad']
-    reps['Legislator'] = reps['Apellido'] + ' ' + reps['Nombre']
-    reps['Party Affiliation'] = reps['Party Affiliation'].str[0]
-    reps['Active'] = True
-    senators['Active'] = True
-    politicians = pd.concat([reps[cols], senators[cols]])
-    politicians['Legislature'] = '116th'
+def clean_politicians():
+    cols = ['SEN/REP', 'CONGRESSPERSON FIRST NAME','CONGRESSPERSON LAST NAME',\
+            'PARTY', 'STATE', 'DISTRICT']
+    pols = pd.read_excel(LETTER_DATA, sheet_name='Dropdowns', header=2, \
+                             usecols=cols)
+    pols['Legislator'] =  pols['CONGRESSPERSON LAST NAME'] + ' ' + \
+                          pols['CONGRESSPERSON FIRST NAME']
+    pols['Active'] = True
+    pols['Legislature'] = '116th'
+    pols['DISTRICT'] = pols['DISTRICT'].apply\
+    (lambda dist: str(dist) if type(dist) == int or dist == 'at large' else '')
     
-    return politicians
+    return pols[['Legislator', 'Active', 'Legislature'] + cols]
+
+
+# def clean_politicians():
+
+#     cols = ['Legislator', 'State', 'Jurisdiction', 'Sen./Rep.', 'Party Affiliation', 'Active']
+#     senators = pd.read_excel(LETTER_DATA, sheet_name='Catálogos', header=1, \
+#                              usecols=['Sen./Rep.','Legislador','Estado','Partido'])
+#     senators.rename(columns={'Estado': 'State'}, inplace=True)
+#     senators['Jurisdiction'] = senators['State']\
+#         .replace(us.states.mapping('abbr', 'name'))
+#     senators.rename(columns={'Legislador': 'Legislator', \
+#                              'Partido':'Party Affiliation'}, inplace=True)
+#     reps = pd.read_csv(REP_DATA, usecols=['Name', 'Namelsad', 'Nombre',\
+#                                           'Apellido', 'Party Affiliation'])
+#     reps['Sen./Rep.'] = 'Rep.'
+#     reps['State'] = reps['Name'].replace(us.states.mapping('name', 'abbr'))
+#     reps['Jurisdiction'] = reps['Name'] + ' ' + reps['Namelsad']
+#     reps['Legislator'] = reps['Apellido'] + ' ' + reps['Nombre']
+#     reps['Party Affiliation'] = reps['Party Affiliation'].str[0]
+#     reps['Active'] = True
+#     senators['Active'] = True
+#     politicians = pd.concat([reps[cols], senators[cols]])
+#     politicians['Legislature'] = '116th'
+    
+#     return politicians
 
 def get_metatopics():
     topics = pd.read_excel(LETTER_DATA, sheet_name='Dropdowns', header=2, \
@@ -81,6 +97,6 @@ def get_metatopics():
         
         
 if __name__ == '__main__':
-    letters = prepare_data()
+    letters, pols = prepare_data()
 
     

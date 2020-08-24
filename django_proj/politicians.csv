@@ -1,537 +1,539 @@
-Legislator,State,Jurisdiction,Sen./Rep.,Party Affiliation,Active,Legislature
-Larson John,CT,Connecticut Congressional District 1,Rep.,D,True,116th
-DeLauro Rosa,CT,Connecticut Congressional District 3,Rep.,D,True,116th
-Himes Jim,CT,Connecticut Congressional District 4,Rep.,D,True,116th
-Hayes Jahana,CT,Connecticut Congressional District 5,Rep.,D,True,116th
-Courtney Joe,CT,Connecticut Congressional District 2,Rep.,D,True,116th
-Pingree Chellie,ME,Maine Congressional District 1,Rep.,D,True,116th
-Golden Jared,ME,Maine Congressional District 2,Rep.,D,True,116th
-Neal Richie,MA,Massachusetts Congressional District 1,Rep.,D,True,116th
-Trahan Lori,MA,Massachusetts Congressional District 3,Rep.,D,True,116th
-Clark Katherine,MA,Massachusetts Congressional District 5,Rep.,D,True,116th
-Kennedy Joe,MA,Massachusetts Congressional District 4,Rep.,D,True,116th
-Pressley Ayanna,MA,Massachusetts Congressional District 7,Rep.,D,True,116th
-McGovern Jim,MA,Massachusetts Congressional District 2,Rep.,D,True,116th
-Keating Bill,MA,Massachusetts Congressional District 9,Rep.,D,True,116th
-Moulton Seth,MA,Massachusetts Congressional District 6,Rep.,D,True,116th
-Lynch Stephen,MA,Massachusetts Congressional District 8,Rep.,D,True,116th
-Pappas Chris,NH,New Hampshire Congressional District 1,Rep.,D,True,116th
-Kuster Annie,NH,New Hampshire Congressional District 2,Rep.,D,True,116th
-Cicilline David,RI,Rhode Island Congressional District 1,Rep.,D,True,116th
-Langevin Jim,RI,Rhode Island Congressional District 2,Rep.,D,True,116th
-Welch Peter,VT,Vermont Congressional District (at Large),Rep.,D,True,116th
-Norcross Donald,NJ,New Jersey Congressional District 1,Rep.,D,True,116th
-Kim Andy,NJ,New Jersey Congressional District 3,Rep.,D,True,116th
-Payne Donald,NJ,New Jersey Congressional District 10,Rep.,D,True,116th
-Smith Chris,NJ,New Jersey Congressional District 4,Rep.,R,True,116th
-Gottheimer Josh,NJ,New Jersey Congressional District 5,Rep.,D,True,116th
-Malinowski Tom,NJ,New Jersey Congressional District 7,Rep.,D,True,116th
-Van Drew Jeff,NJ,New Jersey Congressional District 2,Rep.,R,True,116th
-Pascrell Bill,NJ,New Jersey Congressional District 9,Rep.,D,True,116th
-Sherrill Mikie,NJ,New Jersey Congressional District 11,Rep.,D,True,116th
-Pallone Frank,NJ,New Jersey Congressional District 6,Rep.,D,True,116th
-Coleman Bonnie Watson,NJ,New Jersey Congressional District 12,Rep.,D,True,116th
-Sires Albio,NJ,New Jersey Congressional District 8,Rep.,D,True,116th
-Zeldin Lee,NY,New York Congressional District 1,Rep.,R,True,116th
-Velázquez Nydia,NY,New York Congressional District 7,Rep.,D,True,116th
-Jacobs Chris,NY,New York Congressional District 27,Rep.,R,True,116th
-Lowey Nita,NY,New York Congressional District 17,Rep.,D,True,116th
-Ocasio-Cortez Alexandria,NY,New York Congressional District 14,Rep.,D,True,116th
-Meng Grace,NY,New York Congressional District 6,Rep.,D,True,116th
-Meeks Gregory,NY,New York Congressional District 5,Rep.,D,True,116th
-Katko John,NY,New York Congressional District 24,Rep.,R,True,116th
-Engel Eliot,NY,New York Congressional District 16,Rep.,D,True,116th
-Rose Max,NY,New York Congressional District 11,Rep.,D,True,116th
-Serrano José,NY,New York Congressional District 15,Rep.,D,True,116th
-Reed Tom,NY,New York Congressional District 23,Rep.,R,True,116th
-Jeffries Hakeem,NY,New York Congressional District 8,Rep.,D,True,116th
-Maloney Carolyn,NY,New York Congressional District 12,Rep.,D,True,116th
-Maloney Sean Patrick,NY,New York Congressional District 18,Rep.,D,True,116th
-King Pete,NY,New York Congressional District 2,Rep.,R,True,116th
-Tonko Paul,NY,New York Congressional District 20,Rep.,D,True,116th
-Morelle Joe,NY,New York Congressional District 25,Rep.,D,True,116th
-Suozzi Tom,NY,New York Congressional District 3,Rep.,D,True,116th
-Stefanik Elise,NY,New York Congressional District 21,Rep.,R,True,116th
-Nadler Jerry,NY,New York Congressional District 10,Rep.,D,True,116th
-Rice Kathleen,NY,New York Congressional District 4,Rep.,D,True,116th
-Espaillat Adriano,NY,New York Congressional District 13,Rep.,D,True,116th
-Higgins Brian,NY,New York Congressional District 26,Rep.,D,True,116th
-Brindisi Anthony,NY,New York Congressional District 22,Rep.,D,True,116th
-Clarke Yvette,NY,New York Congressional District 9,Rep.,D,True,116th
-Delgado Antonio,NY,New York Congressional District 19,Rep.,D,True,116th
-Fitzpatrick Brian,PA,Pennsylvania Congressional District 1,Rep.,R,True,116th
-Doyle Mike,PA,Pennsylvania Congressional District 18,Rep.,D,True,116th
-Wild Susan,PA,Pennsylvania Congressional District 7,Rep.,D,True,116th
-Boyle Brendan,PA,Pennsylvania Congressional District 2,Rep.,D,True,116th
-Lamb Conor,PA,Pennsylvania Congressional District 17,Rep.,D,True,116th
-Reschenthaler Guy,PA,Pennsylvania Congressional District 14,Rep.,R,True,116th
-Houlahan Chrissy,PA,Pennsylvania Congressional District 6,Rep.,D,True,116th
-Evans Dwight,PA,Pennsylvania Congressional District 3,Rep.,D,True,116th
-Perry Scott,PA,Pennsylvania Congressional District 10,Rep.,R,True,116th
-Dean Madeleine,PA,Pennsylvania Congressional District 4,Rep.,D,True,116th
-Scanlon Mary Gay,PA,Pennsylvania Congressional District 5,Rep.,D,True,116th
-Kelly Mike,PA,Pennsylvania Congressional District 16,Rep.,R,True,116th
-Joyce John,PA,Pennsylvania Congressional District 13,Rep.,R,True,116th
-Smucker Lloyd,PA,Pennsylvania Congressional District 11,Rep.,R,True,116th
-Meuser Dan,PA,Pennsylvania Congressional District 9,Rep.,R,True,116th
-Thompson Glenn,PA,Pennsylvania Congressional District 15,Rep.,R,True,116th
-Keller Fred,PA,Pennsylvania Congressional District 12,Rep.,R,True,116th
-Cartwright Matt,PA,Pennsylvania Congressional District 8,Rep.,D,True,116th
-Rush Bobby,IL,Illinois Congressional District 1,Rep.,D,True,116th
-LaHood Darin,IL,Illinois Congressional District 18,Rep.,R,True,116th
-Davis Danny,IL,Illinois Congressional District 7,Rep.,R,True,116th
-Kelly Robin,IL,Illinois Congressional District 2,Rep.,D,True,116th
-Underwood Lauren,IL,Illinois Congressional District 14,Rep.,D,True,116th
-Quigley Mike,IL,Illinois Congressional District 5,Rep.,D,True,116th
-Kinzinger Adam,IL,Illinois Congressional District 16,Rep.,R,True,116th
-Davis Rodney,IL,Illinois Congressional District 13,Rep.,R,True,116th
-Bustos Cheri,IL,Illinois Congressional District 17,Rep.,D,True,116th
-Casten Sean,IL,Illinois Congressional District 6,Rep.,D,True,116th
-Lipinski Dan,IL,Illinois Congressional District 3,Rep.,D,True,116th
-Schneider Brad,IL,Illinois Congressional District 10,Rep.,D,True,116th
-Garcia Chuy,IL,Illinois Congressional District 4,Rep.,D,True,116th
-Foster Bill,IL,Illinois Congressional District 11,Rep.,D,True,116th
-Schakowsky Jan,IL,Illinois Congressional District 9,Rep.,D,True,116th
-Shimkus John,IL,Illinois Congressional District 15,Rep.,R,True,116th
-Bost Mike,IL,Illinois Congressional District 12,Rep.,R,True,116th
-Krishnamoorthi Raja,IL,Illinois Congressional District 8,Rep.,D,True,116th
-Walorski Jackie,IN,Indiana Congressional District 2,Rep.,R,True,116th
-Hollingsworth Trey,IN,Indiana Congressional District 9,Rep.,R,True,116th
-Pence Greg,IN,Indiana Congressional District 6,Rep.,R,True,116th
-Bucshon Larry,IN,Indiana Congressional District 8,Rep.,R,True,116th
-Visclosky Pete,IN,Indiana Congressional District 1,Rep.,D,True,116th
-Banks Jim,IN,Indiana Congressional District 3,Rep.,R,True,116th
-Brooks Susan,IN,Indiana Congressional District 5,Rep.,R,True,116th
-Baird Jim,IN,Indiana Congressional District 4,Rep.,R,True,116th
-Carson André,IN,Indiana Congressional District 7,Rep.,D,True,116th
-Bergman Jack,MI,Michigan Congressional District 1,Rep.,R,True,116th
-Walberg Tim,MI,Michigan Congressional District 7,Rep.,R,True,116th
-Huizenga Bill,MI,Michigan Congressional District 2,Rep.,R,True,116th
-Upton Fred,MI,Michigan Congressional District 6,Rep.,R,True,116th
-Lawrence Brenda,MI,Michigan Congressional District 14,Rep.,D,True,116th
-Amash Justin,MI,Michigan Congressional District 3,Rep.,L,True,116th
-Mitchell Paul,MI,Michigan Congressional District 10,Rep.,R,True,116th
-Kildee Dan,MI,Michigan Congressional District 5,Rep.,D,True,116th
-Moolenaar John,MI,Michigan Congressional District 4,Rep.,R,True,116th
-Tlaib Rashida,MI,Michigan Congressional District 13,Rep.,D,True,116th
-Stevens Haley,MI,Michigan Congressional District 11,Rep.,D,True,116th
-Levin Andy,MI,Michigan Congressional District 9,Rep.,D,True,116th
-Dingell Debbie,MI,Michigan Congressional District 12,Rep.,D,True,116th
-Slotkin Elissa,MI,Michigan Congressional District 8,Rep.,D,True,116th
-Chabot Steve,OH,Ohio Congressional District 1,Rep.,R,True,116th
-Gibbs Bob,OH,Ohio Congressional District 7,Rep.,R,True,116th
-Wenstrup Brad,OH,Ohio Congressional District 2,Rep.,R,True,116th
-Joyce David,OH,Ohio Congressional District 14,Rep.,R,True,116th
-Johnson Bill,OH,Ohio Congressional District 6,Rep.,R,True,116th
-Beatty Joyce,OH,Ohio Congressional District 3,Rep.,D,True,116th
-Turner Mike,OH,Ohio Congressional District 10,Rep.,R,True,116th
-Jordan Jim,OH,Ohio Congressional District 4,Rep.,R,True,116th
-Latta Bob,OH,Ohio Congressional District 5,Rep.,R,True,116th
-Gonzalez Anthony,OH,Ohio Congressional District 16,Rep.,R,True,116th
-Ryan Tim,OH,Ohio Congressional District 13,Rep.,D,True,116th
-Stivers Steve,OH,Ohio Congressional District 15,Rep.,R,True,116th
-Fudge Marcia,OH,Ohio Congressional District 11,Rep.,D,True,116th
-Kaptur Marcy,OH,Ohio Congressional District 9,Rep.,D,True,116th
-Davidson Warren,OH,Ohio Congressional District 8,Rep.,R,True,116th
-Balderson Troy,OH,Ohio Congressional District 12,Rep.,R,True,116th
-Steil Bryan,WI,Wisconsin Congressional District 1,Rep.,R,True,116th
-Kind Ron,WI,Wisconsin Congressional District 3,Rep.,D,True,116th
-Moore Gwen,WI,Wisconsin Congressional District 4,Rep.,D,True,116th
-Sensenbrenner Jim,WI,Wisconsin Congressional District 5,Rep.,R,True,116th
-Tiffany Tom,WI,Wisconsin Congressional District 7,Rep.,R,True,116th
-Pocan Mark,WI,Wisconsin Congressional District 2,Rep.,D,True,116th
-Grothman Glenn,WI,Wisconsin Congressional District 6,Rep.,R,True,116th
-Gallagher Mike,WI,Wisconsin Congressional District 8,Rep.,R,True,116th
-Finkenauer Abby,IA,Iowa Congressional District 1,Rep.,D,True,116th
-King Steve,IA,Iowa Congressional District 4,Rep.,R,True,116th
-Loebsack Dave,IA,Iowa Congressional District 2,Rep.,D,True,116th
-Axne Cindy,IA,Iowa Congressional District 3,Rep.,D,True,116th
-Marshall Roger,KS,Kansas Congressional District 1,Rep.,R,True,116th
-Davids Sharice,KS,Kansas Congressional District 3,Rep.,D,True,116th
-Estes Ron,KS,Kansas Congressional District 4,Rep.,R,True,116th
-Watkins Steve,KS,Kansas Congressional District 2,Rep.,R,True,116th
-Peterson Collin,MN,Minnesota Congressional District 7,Rep.,D,True,116th
-Craig Angie,MN,Minnesota Congressional District 2,Rep.,D,True,116th
-Emmer Tom,MN,Minnesota Congressional District 6,Rep.,R,True,116th
-Stauber Pete,MN,Minnesota Congressional District 8,Rep.,R,True,116th
-Hagedorn Jim,MN,Minnesota Congressional District 1,Rep.,R,True,116th
-Phillips Dean,MN,Minnesota Congressional District 3,Rep.,D,True,116th
-McCollum Betty,MN,Minnesota Congressional District 4,Rep.,D,True,116th
-Omar Ilhan,MN,Minnesota Congressional District 5,Rep.,D,True,116th
-Clay Lacy,MO,Missouri Congressional District 1,Rep.,D,True,116th
-Luetkemeyer Blaine,MO,Missouri Congressional District 3,Rep.,R,True,116th
-Cleaver Emanuel,MO,Missouri Congressional District 5,Rep.,D,True,116th
-Hartzler Vicky,MO,Missouri Congressional District 4,Rep.,R,True,116th
-Long Billy,MO,Missouri Congressional District 7,Rep.,R,True,116th
-Wagner Ann,MO,Missouri Congressional District 2,Rep.,R,True,116th
-Graves Sam,MO,Missouri Congressional District 6,Rep.,R,True,116th
-Smith Jason,MO,Missouri Congressional District 8,Rep.,R,True,116th
-Fortenberry Jeff,NE,Nebraska Congressional District 1,Rep.,R,True,116th
-Smith Adrian,NE,Nebraska Congressional District 3,Rep.,R,True,116th
-Bacon Don,NE,Nebraska Congressional District 2,Rep.,R,True,116th
-Armstrong Kelly,ND,North Dakota Congressional District (at Large),Rep.,R,True,116th
-Johnson Dusty,SD,South Dakota Congressional District (at Large),Rep.,R,True,116th
-Blunt Rochester Lisa,DE,Delaware Congressional District (at Large),Rep.,D,True,116th
-Holmes Norton Eleanor,DC,District of Columbia Delegate District (at Large),Rep.,D,True,116th
-Crist Charlie,FL,Florida Congressional District 13,Rep.,D,True,116th
-Mucarsel-Powell Debbie,FL,Florida Congressional District 26,Rep.,D,True,116th
-Deutch Ted,FL,Florida Congressional District 22,Rep.,D,True,116th
-Soto Darren,FL,Florida Congressional District 9,Rep.,D,True,116th
-Rooney Francis,FL,Florida Congressional District 19,Rep.,R,True,116th
-Gaetz Matt,FL,Florida Congressional District 1,Rep.,R,True,116th
-Murphy Stephanie,FL,Florida Congressional District 7,Rep.,D,True,116th
-Shalala Donna,FL,Florida Congressional District 27,Rep.,D,True,116th
-Steube Greg,FL,Florida Congressional District 17,Rep.,R,True,116th
-Waltz Michael,FL,Florida Congressional District 6,Rep.,R,True,116th
-Castor Kathy,FL,Florida Congressional District 14,Rep.,D,True,116th
-Lawson Al,FL,Florida Congressional District 5,Rep.,D,True,116th
-Wilson Frederica,FL,Florida Congressional District 24,Rep.,D,True,116th
-Buchanan Vern,FL,Florida Congressional District 16,Rep.,R,True,116th
-Webster Daniel,FL,Florida Congressional District 11,Rep.,R,True,116th
-Spano Ross,FL,Florida Congressional District 15,Rep.,R,True,116th
-Wasserman Schultz Debbie,FL,Florida Congressional District 23,Rep.,D,True,116th
-Posey Bill,FL,Florida Congressional District 8,Rep.,R,True,116th
-Bilirakis Gus,FL,Florida Congressional District 12,Rep.,R,True,116th
-Mast Brian,FL,Florida Congressional District 18,Rep.,R,True,116th
-Dunn Neal,FL,Florida Congressional District 2,Rep.,R,True,116th
-Hastings Alcee,FL,Florida Congressional District 20,Rep.,D,True,116th
-Diaz-Balart Mario,FL,Florida Congressional District 25,Rep.,R,True,116th
-Frankel Lois,FL,Florida Congressional District 21,Rep.,D,True,116th
-Yoho Ted,FL,Florida Congressional District 3,Rep.,R,True,116th
-Demings Val,FL,Florida Congressional District 10,Rep.,D,True,116th
-Rutherford John,FL,Florida Congressional District 4,Rep.,R,True,116th
-Ferguson Drew,GA,Georgia Congressional District 3,Rep.,R,True,116th
-Hice Jody,GA,Georgia Congressional District 10,Rep.,R,True,116th
-Johnson Hank,GA,Georgia Congressional District 4,Rep.,D,True,116th
-Lewis John,GA,Georgia Congressional District 5,Rep.,D,True,116th
-Scott David,GA,Georgia Congressional District 13,Rep.,D,True,116th
-Collins Doug,GA,Georgia Congressional District 9,Rep.,R,True,116th
-Woodall Rob,GA,Georgia Congressional District 7,Rep.,R,True,116th
-Bishop Sanford,GA,Georgia Congressional District 2,Rep.,D,True,116th
-McBath Lucy,GA,Georgia Congressional District 6,Rep.,D,True,116th
-Graves Tom,GA,Georgia Congressional District 14,Rep.,R,True,116th
-Carter Buddy,GA,Georgia Congressional District 1,Rep.,R,True,116th
-Loudermilk Barry,GA,Georgia Congressional District 11,Rep.,R,True,116th
-Allen Rick,GA,Georgia Congressional District 12,Rep.,R,True,116th
-Scott Austin,GA,Georgia Congressional District 8,Rep.,D,True,116th
-Harris Andy,MD,Maryland Congressional District 1,Rep.,R,True,116th
-Sarbanes John,MD,Maryland Congressional District 3,Rep.,D,True,116th
-Brown Anthony,MD,Maryland Congressional District 4,Rep.,D,True,116th
-Hoyer Steny,MD,Maryland Congressional District 5,Rep.,D,True,116th
-Mfume Kweisi,MD,Maryland Congressional District 7,Rep.,D,True,116th
-Ruppersberger Dutch,MD,Maryland Congressional District 2,Rep.,D,True,116th
-Trone David,MD,Maryland Congressional District 6,Rep.,D,True,116th
-Raskin Jamie,MD,Maryland Congressional District 8,Rep.,D,True,116th
-Butterfield G.K.,NC,North Carolina Congressional District 1,Rep.,D,True,116th
-Rouzer David,NC,North Carolina Congressional District 7,Rep.,R,True,116th
-Holding George,NC,North Carolina Congressional District 2,Rep.,R,True,116th
-Walker Mark,NC,North Carolina Congressional District 6,Rep.,R,True,116th
-Murphy Greg,NC,North Carolina Congressional District 3,Rep.,R,True,116th
-McHenry Patrick,NC,North Carolina Congressional District 10,Rep.,R,True,116th
-Price David,NC,North Carolina Congressional District 4,Rep.,D,True,116th
-Foxx Virginia,NC,North Carolina Congressional District 5,Rep.,R,True,116th
-Budd Ted,NC,North Carolina Congressional District 13,Rep.,R,True,116th
-Meadows (resigned) Mark,NC,North Carolina Congressional District 11,Rep.,R,True,116th
-Bishop Dan,NC,North Carolina Congressional District 9,Rep.,R,True,116th
-Hudson Richard,NC,North Carolina Congressional District 8,Rep.,R,True,116th
-Adams Alma,NC,North Carolina Congressional District 12,Rep.,D,True,116th
-Cunningham Joe,SC,South Carolina Congressional District 1,Rep.,D,True,116th
-Duncan Jeff,SC,South Carolina Congressional District 3,Rep.,R,True,116th
-Timmons William,SC,South Carolina Congressional District 4,Rep.,R,True,116th
-Norman Ralph,SC,South Carolina Congressional District 5,Rep.,R,True,116th
-Rice Tom,SC,South Carolina Congressional District 7,Rep.,R,True,116th
-Wilson Joe,SC,South Carolina Congressional District 2,Rep.,R,True,116th
-Clyburn Jim,SC,South Carolina Congressional District 6,Rep.,D,True,116th
-Wittman Rob,VA,Virginia Congressional District 1,Rep.,R,True,116th
-Scott Bobby,VA,Virginia Congressional District 3,Rep.,D,True,116th
-Wexton Jennifer,VA,Virginia Congressional District 10,Rep.,D,True,116th
-Riggleman Denver,VA,Virginia Congressional District 5,Rep.,R,True,116th
-McEachin Donald,VA,Virginia Congressional District 4,Rep.,D,True,116th
-Spanberger Abigail,VA,Virginia Congressional District 7,Rep.,D,True,116th
-Luria Elaine,VA,Virginia Congressional District 2,Rep.,D,True,116th
-Connolly Gerry,VA,Virginia Congressional District 11,Rep.,D,True,116th
-Griffith Morgan,VA,Virginia Congressional District 9,Rep.,R,True,116th
-Cline Ben,VA,Virginia Congressional District 6,Rep.,R,True,116th
-Beyer Don,VA,Virginia Congressional District 8,Rep.,D,True,116th
-McKinley David,WV,West Virginia Congressional District 1,Rep.,R,True,116th
-Miller Carol,WV,West Virginia Congressional District 3,Rep.,R,True,116th
-Mooney Alex,WV,West Virginia Congressional District 2,Rep.,R,True,116th
-Byrne Bradley,AL,Alabama Congressional District 1,Rep.,R,True,116th
-Rogers Mike,AL,Alabama Congressional District 3,Rep.,R,True,116th
-Brooks Mo,AL,Alabama Congressional District 5,Rep.,R,True,116th
-Aderholt Robert,AL,Alabama Congressional District 4,Rep.,R,True,116th
-Sewell Terri,AL,Alabama Congressional District 7,Rep.,D,True,116th
-Roby Martha,AL,Alabama Congressional District 2,Rep.,R,True,116th
-Palmer Gary,AL,Alabama Congressional District 6,Rep.,R,True,116th
-Guthrie Brett,KY,Kentucky Congressional District 2,Rep.,R,True,116th
-Barr Andy,KY,Kentucky Congressional District 6,Rep.,R,True,116th
-Comer James,KY,Kentucky Congressional District 1,Rep.,R,True,116th
-Yarmuth John,KY,Kentucky Congressional District 3,Rep.,D,True,116th
-Rogers Hal,KY,Kentucky Congressional District 5,Rep.,R,True,116th
-Massie Thomas,KY,Kentucky Congressional District 4,Rep.,R,True,116th
-Kelly Trent,MS,Mississippi Congressional District 1,Rep.,R,True,116th
-Guest Michael,MS,Mississippi Congressional District 3,Rep.,R,True,116th
-Palazzo Steven,MS,Mississippi Congressional District 4,Rep.,R,True,116th
-Thompson Bennie,MS,Mississippi Congressional District 2,Rep.,D,True,116th
-Roe Phil,TN,Tennessee Congressional District 1,Rep.,R,True,116th
-Fleischmann Chuck,TN,Tennessee Congressional District 3,Rep.,R,True,116th
-Cooper Jim,TN,Tennessee Congressional District 5,Rep.,D,True,116th
-DesJarlais Scott,TN,Tennessee Congressional District 4,Rep.,R,True,116th
-Green Mark,TN,Tennessee Congressional District 7,Rep.,R,True,116th
-Burchett Tim,TN,Tennessee Congressional District 2,Rep.,R,True,116th
-Kustoff David,TN,Tennessee Congressional District 8,Rep.,R,True,116th
-Cohen Steve,TN,Tennessee Congressional District 9,Rep.,D,True,116th
-Rose John,TN,Tennessee Congressional District 6,Rep.,R,True,116th
-Crawford Rick,AR,Arkansas Congressional District 1,Rep.,R,True,116th
-Womack Steve,AR,Arkansas Congressional District 3,Rep.,R,True,116th
-Westerman Bruce,AR,Arkansas Congressional District 4,Rep.,R,True,116th
-Hill French,AR,Arkansas Congressional District 2,Rep.,R,True,116th
-Johnson Mike,LA,Louisiana Congressional District 4,Rep.,R,True,116th
-Richmond Cedric,LA,Louisiana Congressional District 2,Rep.,D,True,116th
-Graves Garret,LA,Louisiana Congressional District 6,Rep.,R,True,116th
-Scalise Steve,LA,Louisiana Congressional District 1,Rep.,R,True,116th
-Higgins Clay,LA,Louisiana Congressional District 3,Rep.,R,True,116th
-Abraham Ralph,LA,Louisiana Congressional District 5,Rep.,R,True,116th
-Hern Kevin,OK,Oklahoma Congressional District 1,Rep.,R,True,116th
-Lucas Frank,OK,Oklahoma Congressional District 3,Rep.,R,True,116th
-Horn Kendra,OK,Oklahoma Congressional District 5,Rep.,D,True,116th
-Cole Tom,OK,Oklahoma Congressional District 4,Rep.,R,True,116th
-Mullin Markwayne,OK,Oklahoma Congressional District 2,Rep.,R,True,116th
-Cuellar Henry,TX,Texas Congressional District 28,Rep.,D,True,116th
-Gohmert Louie,TX,Texas Congressional District 1,Rep.,R,True,116th
-Garcia Sylvia,TX,Texas Congressional District 29,Rep.,D,True,116th
-Fletcher Lizzie,TX,Texas Congressional District 7,Rep.,D,True,116th
-Cloud Michael,TX,Texas Congressional District 27,Rep.,R,True,116th
-Wright Ron,TX,Texas Congressional District 6,Rep.,R,True,116th
-Flores Bill,TX,Texas Congressional District 17,Rep.,R,True,116th
-Weber Randy,TX,Texas Congressional District 14,Rep.,R,True,116th
-Babin Brian,TX,Texas Congressional District 36,Rep.,R,True,116th
-Gooden Lance,TX,Texas Congressional District 5,Rep.,R,True,116th
-Escobar Veronica,TX,Texas Congressional District 16,Rep.,D,True,116th
-Marchant Kenny,TX,Texas Congressional District 24,Rep.,R,True,116th
-Veasey Marc,TX,Texas Congressional District 33,Rep.,D,True,116th
-Conaway Mike,TX,Texas Congressional District 11,Rep.,R,True,116th
-González Vicente,TX,Texas Congressional District 15,Rep.,D,True,116th
-Hurd Will,TX,Texas Congressional District 23,Rep.,R,True,116th
-Granger Kay,TX,Texas Congressional District 12,Rep.,R,True,116th
-Brady Kevin,TX,Texas Congressional District 8,Rep.,R,True,116th
-Vela Filemon,TX,Texas Congressional District 34,Rep.,D,True,116th
-Johnson Eddie Bernice,TX,Texas Congressional District 30,Rep.,D,True,116th
-Lee Shelia Jackson,TX,Texas Congressional District 18,Rep.,D,True,116th
-Crenshaw Dan,TX,Texas Congressional District 2,Rep.,R,True,116th
-Castro Joaquin,TX,Texas Congressional District 20,Rep.,D,True,116th
-Carter John,TX,Texas Congressional District 31,Rep.,R,True,116th
-Williams Roger,TX,Texas Congressional District 25,Rep.,R,True,116th
-Allred Colin,TX,Texas Congressional District 32,Rep.,D,True,116th
-Roy Chip,TX,Texas Congressional District 21,Rep.,R,True,116th
-Taylor Van,TX,Texas Congressional District 3,Rep.,R,True,116th
-McCaul Michael,TX,Texas Congressional District 10,Rep.,R,True,116th
-Ratcliffe (resigned) John,TX,Texas Congressional District 4,Rep.,R,True,116th
-Doggett Lloyd,TX,Texas Congressional District 35,Rep.,D,True,116th
-Thornberry Mac,TX,Texas Congressional District 13,Rep.,R,True,116th
-Burgess Michael,TX,Texas Congressional District 26,Rep.,R,True,116th
-Olson Pete,TX,Texas Congressional District 22,Rep.,R,True,116th
-Green Al,TX,Texas Congressional District 9,Rep.,D,True,116th
-Arrington Jodey,TX,Texas Congressional District 19,Rep.,R,True,116th
-O'Halleran Tom,AZ,Arizona Congressional District 1,Rep.,D,True,116th
-Grijalva Raúl,AZ,Arizona Congressional District 3,Rep.,D,True,116th
-Biggs Andy,AZ,Arizona Congressional District 5,Rep.,R,True,116th
-Gosar Paul,AZ,Arizona Congressional District 4,Rep.,R,True,116th
-Gallego Ruben,AZ,Arizona Congressional District 7,Rep.,D,True,116th
-Kirkpatrick Ann,AZ,Arizona Congressional District 2,Rep.,D,True,116th
-Stanton Greg,AZ,Arizona Congressional District 9,Rep.,D,True,116th
-Schweikert David,AZ,Arizona Congressional District 6,Rep.,R,True,116th
-Lesko Debbie,AZ,Arizona Congressional District 8,Rep.,R,True,116th
-DeGette Diana,CO,Colorado Congressional District 1,Rep.,D,True,116th
-Tipton Scott,CO,Colorado Congressional District 3,Rep.,R,True,116th
-Lamborn Doug,CO,Colorado Congressional District 5,Rep.,R,True,116th
-Buck Ken,CO,Colorado Congressional District 4,Rep.,R,True,116th
-Perlmutter Ed,CO,Colorado Congressional District 7,Rep.,D,True,116th
-Neguse Joe,CO,Colorado Congressional District 2,Rep.,D,True,116th
-Crow Jason,CO,Colorado Congressional District 6,Rep.,D,True,116th
-Fulcher Russ,ID,Idaho Congressional District 1,Rep.,R,True,116th
-Simpson Mike,ID,Idaho Congressional District 2,Rep.,R,True,116th
-Gianforte Greg,MT,Montana Congressional District (at Large),Rep.,R,True,116th
-Titus Dina,NV,Nevada Congressional District 1,Rep.,D,True,116th
-Lee Susie,NV,Nevada Congressional District 3,Rep.,D,True,116th
-Horsford Steven,NV,Nevada Congressional District 4,Rep.,D,True,116th
-Amodei Mark,NV,Nevada Congressional District 2,Rep.,R,True,116th
-Haaland Deb,NM,New Mexico Congressional District 1,Rep.,D,True,116th
-Luján Ben Ray,NM,New Mexico Congressional District 3,Rep.,D,True,116th
-Torres Small Xochitl,NM,New Mexico Congressional District 2,Rep.,D,True,116th
-Bishop Rob,UT,Utah Congressional District 1,Rep.,R,True,116th
-Curtis John,UT,Utah Congressional District 3,Rep.,R,True,116th
-McAdams Ben,UT,Utah Congressional District 4,Rep.,D,True,116th
-Stewart Chris,UT,Utah Congressional District 2,Rep.,R,True,116th
-Cheney Liz,WY,Wyoming Congressional District (at Large),Rep.,R,True,116th
-Young Don,AK,Alaska Congressional District (at Large),Rep.,R,True,116th
-Ruiz Raul,CA,California Congressional District 36,Rep.,D,True,116th
-Costa Jim,CA,California Congressional District 16,Rep.,D,True,116th
-Correa Lou,CA,California Congressional District 46,Rep.,D,True,116th
-Bass Karen,CA,California Congressional District 37,Rep.,D,True,116th
-Lieu Ted,CA,California Congressional District 33,Rep.,D,True,116th
-Swalwell Eric,CA,California Congressional District 15,Rep.,D,True,116th
-Davis Susan,CA,California Congressional District 53,Rep.,D,True,116th
-Lowenthal Alan,CA,California Congressional District 47,Rep.,D,True,116th
-Aguilar Pete,CA,California Congressional District 31,Rep.,D,True,116th
-Garamendi John,CA,California Congressional District 3,Rep.,D,True,116th
-Cox T.J.,CA,California Congressional District 21,Rep.,D,True,116th
-Rouda Harley,CA,California Congressional District 48,Rep.,D,True,116th
-Harder Josh,CA,California Congressional District 10,Rep.,D,True,116th
-Gomez Jimmy,CA,California Congressional District 34,Rep.,D,True,116th
-Peters Scott,CA,California Congressional District 52,Rep.,D,True,116th
-Sherman Brad,CA,California Congressional District 30,Rep.,D,True,116th
-Eshoo Anna,CA,California Congressional District 18,Rep.,D,True,116th
-Panetta Jimmy,CA,California Congressional District 20,Rep.,D,True,116th
-Calvert Ken,CA,California Congressional District 42,Rep.,R,True,116th
-Garcia Mike,CA,California Congressional District 25,Rep.,R,True,116th
-Napolitano Grace,CA,California Congressional District 32,Rep.,D,True,116th
-Waters Maxine,CA,California Congressional District 43,Rep.,D,True,116th
-Torres Norma,CA,California Congressional District 35,Rep.,D,True,116th
-Lee Barbara,CA,California Congressional District 13,Rep.,D,True,116th
-Brownley Julia,CA,California Congressional District 26,Rep.,D,True,116th
-Barragan Nanette,CA,California Congressional District 44,Rep.,D,True,116th
-Lofgren Zoe,CA,California Congressional District 19,Rep.,D,True,116th
-Levin Mike,CA,California Congressional District 49,Rep.,D,True,116th
-Thompson Mike,CA,California Congressional District 5,Rep.,D,True,116th
-Carbajal Salud,CA,California Congressional District 24,Rep.,D,True,116th
-Cardenas Tony,CA,California Congressional District 29,Rep.,D,True,116th
-Bera Ami,CA,California Congressional District 7,Rep.,D,True,116th
-Matsui Doris,CA,California Congressional District 6,Rep.,D,True,116th
-Cisneros Gil,CA,California Congressional District 39,Rep.,D,True,116th
-DeSaulnier Mark,CA,California Congressional District 11,Rep.,D,True,116th
-Hunter (Resigned) Duncan,CA,California Congressional District 50,Rep.,R,True,116th
-McCarthy Kevin,CA,California Congressional District 23,Rep.,R,True,116th
-Cook Paul,CA,California Congressional District 8,Rep.,R,True,116th
-Vargas Juan,CA,California Congressional District 51,Rep.,D,True,116th
-Schiff Adam,CA,California Congressional District 28,Rep.,D,True,116th
-LaMalfa Doug,CA,California Congressional District 1,Rep.,R,True,116th
-Roybal-Allard Lucille,CA,California Congressional District 40,Rep.,D,True,116th
-Pelosi Nancy,CA,California Congressional District 12,Rep.,D,True,116th
-Porter Katie,CA,California Congressional District 45,Rep.,D,True,116th
-McClintock Tom,CA,California Congressional District 4,Rep.,R,True,116th
-Nunes Devin,CA,California Congressional District 22,Rep.,R,True,116th
-McNerney Jerry,CA,California Congressional District 9,Rep.,D,True,116th
-Takano Mark,CA,California Congressional District 41,Rep.,D,True,116th
-Chu Judy,CA,California Congressional District 27,Rep.,D,True,116th
-Khanna Ro,CA,California Congressional District 17,Rep.,D,True,116th
-Speier Jackie,CA,California Congressional District 14,Rep.,D,True,116th
-Huffman Jared,CA,California Congressional District 2,Rep.,D,True,116th
-Sánchez Linda,CA,California Congressional District 38,Rep.,D,True,116th
-Case Ed,HI,Hawaii Congressional District 1,Rep.,D,True,116th
-Gabbard Tulsi,HI,Hawaii Congressional District 2,Rep.,D,True,116th
-Bonamici Suzanne,OR,Oregon Congressional District 1,Rep.,D,True,116th
-Blumenauer Earl,OR,Oregon Congressional District 3,Rep.,D,True,116th
-Schrader Kurt,OR,Oregon Congressional District 5,Rep.,D,True,116th
-DeFazio Peter,OR,Oregon Congressional District 4,Rep.,D,True,116th
-Walden Greg,OR,Oregon Congressional District 2,Rep.,R,True,116th
-DelBene Suzan,WA,Washington Congressional District 1,Rep.,D,True,116th
-Beutler Jaime Herrera,WA,Washington Congressional District 3,Rep.,R,True,116th
-Heck Denny,WA,Washington Congressional District 10,Rep.,D,True,116th
-McMorris Rodgers Cathy,WA,Washington Congressional District 5,Rep.,R,True,116th
-Newhouse Dan,WA,Washington Congressional District 4,Rep.,R,True,116th
-Jayapal Pramila,WA,Washington Congressional District 7,Rep.,D,True,116th
-Larsen Rick,WA,Washington Congressional District 2,Rep.,D,True,116th
-Smith Adam,WA,Washington Congressional District 9,Rep.,D,True,116th
-Kilmer Derek,WA,Washington Congressional District 6,Rep.,D,True,116th
-Schrier Kim,WA,Washington Congressional District 8,Rep.,D,True,116th
-Alexander Lamar,TN,Tennessee,Sen.,R,True,116th
-Baldwin Tammy,WI,Wisconsin,Sen.,D,True,116th
-Barrasso John,WY,Wyoming,Sen.,R,True,116th
-Bennet Michael,CO,Colorado,Sen.,D,True,116th
-Blackburn Marsha,TN,Tennessee,Sen.,R,True,116th
-Blumenthal Richard,CT,Connecticut,Sen.,D,True,116th
-Blunt Roy,MO,Missouri,Sen.,R,True,116th
-Booker Cory,NJ,New Jersey,Sen.,D,True,116th
-Boozman John,AR,Arkansas,Sen.,R,True,116th
-Braun Mike,IN,Indiana,Sen.,R,True,116th
-Brown Sherrod,OH,Ohio,Sen.,D,True,116th
-Burr Richard,NC,North Carolina,Sen.,R,True,116th
-Cantwell Maria,WA,Washington,Sen.,D,True,116th
-Capito Shelley,WV,West Virginia,Sen.,R,True,116th
-Cardin Benjamin,MD,Maryland,Sen.,D,True,116th
-Carper Thomas,DE,Delaware,Sen.,D,True,116th
-Casey Bob,PA,Pennsylvania,Sen.,D,True,116th
-Cassidy Bill,LA,Louisiana,Sen.,R,True,116th
-Collins Susan,ME,Maine,Sen.,R,True,116th
-Coons Chris,DE,Delaware,Sen.,D,True,116th
-Cornyn John,TX,Texas,Sen.,R,True,116th
-Cortez Masto Catherine,NV,Nevada,Sen.,D,True,116th
-Cotton Tom,AR,Arkansas,Sen.,R,True,116th
-Cramer Kevin,ND,North Dakota,Sen.,R,True,116th
-Crapo Michael,ID,Idaho,Sen.,R,True,116th
-Cruz Ted,TX,Texas,Sen.,R,True,116th
-Daines Steve,MT,Montana,Sen.,R,True,116th
-Duckworth Tammy,IL,Illinois,Sen.,D,True,116th
-Durbin Richard,IL,Illinois,Sen.,D,True,116th
-Enzi Michael,WY,Wyoming,Sen.,R,True,116th
-Ernst Joni,IA,Iowa,Sen.,R,True,116th
-Feinstein Dianne,CA,California,Sen.,D,True,116th
-Fischer Deb,NE,Nebraska,Sen.,R,True,116th
-Gardner Cory,CO,Colorado,Sen.,R,True,116th
-Gillibrand Kirsten,NY,New York,Sen.,D,True,116th
-Graham Lindsey,SC,South Carolina,Sen.,R,True,116th
-Grassley Charles,IA,Iowa,Sen.,R,True,116th
-Harris Kamala,CA,California,Sen.,D,True,116th
-Hassan Maggie,NH,New Hampshire,Sen.,D,True,116th
-Hawley Josh,MO,Missouri,Sen.,R,True,116th
-Heinrich Martin,NM,New Mexico,Sen.,D,True,116th
-Hirono Mazie,HI,Hawaii,Sen.,D,True,116th
-Hoeven John,ND,North Dakota,Sen.,R,True,116th
-Hyde-Smith Cindy,MS,Mississippi,Sen.,R,True,116th
-Inhofe James,OK,Oklahoma,Sen.,R,True,116th
-Johnson Ron,WI,Wisconsin,Sen.,R,True,116th
-Jones Doug,AL,Alabama,Sen.,D,True,116th
-Kaine Tim,VA,Virginia,Sen.,D,True,116th
-Kennedy John,LA,Louisiana,Sen.,R,True,116th
-King Angus,ME,Maine,Sen.,I,True,116th
-Klobuchar Amy,MN,Minnesota,Sen.,D,True,116th
-Lankford James,OK,Oklahoma,Sen.,R,True,116th
-Leahy Patrick,VT,Vermont,Sen.,D,True,116th
-Lee Mike,UT,Utah,Sen.,R,True,116th
-Loeffler Kelly,GA,Georgia,Sen.,R,True,116th
-Manchin Joe,WV,West Virginia,Sen.,D,True,116th
-Markey Edward,MA,Massachusetts,Sen.,D,True,116th
-McConnell Mitch,KY,Kentucky,Sen.,R,True,116th
-McSally Martha,AZ,Arizona,Sen.,R,True,116th
-Menendez Bob,NJ,New Jersey,Sen.,D,True,116th
-Merkley Jeff,OR,Oregon,Sen.,D,True,116th
-Moran Jerry,KS,Kansas,Sen.,R,True,116th
-Murkowski Lisa,AK,Alaska,Sen.,R,True,116th
-Murphy Christopher,CT,Connecticut,Sen.,D,True,116th
-Murray Patty,WA,Washington,Sen.,D,True,116th
-Paul Rand,KY,Kentucky,Sen.,R,True,116th
-Perdue David,GA,Georgia,Sen.,R,True,116th
-Peters Gary,MI,Michigan,Sen.,D,True,116th
-Portman Rob,OH,Ohio,Sen.,R,True,116th
-Reed Jack,RI,Rhode Island,Sen.,D,True,116th
-Risch Jim,ID,Idaho,Sen.,R,True,116th
-Roberts Pat,KS,Kansas,Sen.,R,True,116th
-Romney Mitt,UT,Utah,Sen.,R,True,116th
-Rosen Jacky,NV,Nevada,Sen.,D,True,116th
-Rounds Mike,SD,South Dakota,Sen.,R,True,116th
-Rubio Marco,FL,Florida,Sen.,R,True,116th
-Sanders Bernie,VT,Vermont,Sen.,I,True,116th
-Sasse Ben,NE,Nebraska,Sen.,R,True,116th
-Schatz Brian,HI,Hawaii,Sen.,D,True,116th
-Schumer Charles,NY,New York,Sen.,D,True,116th
-Scott Rick,FL,Florida,Sen.,R,True,116th
-Scott Tim,SC,South Carolina,Sen.,R,True,116th
-Shaheen Jeanne,NH,New Hampshire,Sen.,D,True,116th
-Shelby Richard,AL,Alabama,Sen.,R,True,116th
-Sinema Kyrsten,AZ,Arizona,Sen.,D,True,116th
-Smith Tina,MN,Minnesota,Sen.,D,True,116th
-Stabenow Debbie,MI,Michigan,Sen.,D,True,116th
-Sullivan Dan,AK,Alaska,Sen.,R,True,116th
-Tester Jon,MT,Montana,Sen.,D,True,116th
-Thune John,SD,South Dakota,Sen.,R,True,116th
-Tillis Thom,NC,North Carolina,Sen.,R,True,116th
-Toomey Patrick,PA,Pennsylvania,Sen.,R,True,116th
-Udall Tom,NM,New Mexico,Sen.,D,True,116th
-Van Hollen Chris,MD,Maryland,Sen.,D,True,116th
-Warner Mark,VA,Virginia,Sen.,D,True,116th
-Warren Elizabeth,MA,Massachusetts,Sen.,D,True,116th
-Whitehouse Sheldon,RI,Rhode Island,Sen.,D,True,116th
-Wicker Roger,MS,Mississippi,Sen.,R,True,116th
-Wyden Ron,OR,Oregon,Sen.,D,True,116th
-Young Todd,IN,Indiana,Sen.,R,True,116th
+Legislator,Active,Legislature,SEN/REP,CONGRESSPERSON FIRST NAME,CONGRESSPERSON LAST NAME,PARTY,STATE,DISTRICT
+Alexander Lamar,True,116th,Sen.,Lamar,Alexander,R,TN,
+Baldwin Tammy,True,116th,Sen.,Tammy,Baldwin,D,WI,
+Barrasso John,True,116th,Sen.,John,Barrasso,R,WY,
+Bennet Michael,True,116th,Sen.,Michael,Bennet,D,CO,
+Blackburn Marsha,True,116th,Sen.,Marsha,Blackburn,R,TN,
+Blumenthal Richard,True,116th,Sen.,Richard,Blumenthal,D,CT,
+Blunt Roy,True,116th,Sen.,Roy,Blunt,R,MO,
+Booker Cory,True,116th,Sen.,Cory,Booker,D,NJ,
+Boozman John,True,116th,Sen.,John,Boozman,R,AR,
+Braun Mike,True,116th,Sen.,Mike,Braun,R,IN,
+Brown Sherrod,True,116th,Sen.,Sherrod,Brown,D,OH,
+Burr Richard,True,116th,Sen.,Richard,Burr,R,NC,
+Cantwell Maria,True,116th,Sen.,Maria,Cantwell,D,WA,
+Capito Shelley,True,116th,Sen.,Shelley,Capito,R,WV,
+Cardin Benjamin,True,116th,Sen.,Benjamin,Cardin,D,MD,
+Carper Thomas,True,116th,Sen.,Thomas,Carper,D,DE,
+Casey Bob,True,116th,Sen.,Bob,Casey,D,PA,
+Cassidy Bill,True,116th,Sen.,Bill,Cassidy,R,LA,
+Collins Susan,True,116th,Sen.,Susan,Collins,R,ME,
+Coons Chris,True,116th,Sen.,Chris,Coons,D,DE,
+Cornyn John,True,116th,Sen.,John,Cornyn,R,TX,
+Cortez Masto Catherine,True,116th,Sen.,Catherine,Cortez Masto,D,NV,
+Cotton Tom,True,116th,Sen.,Tom,Cotton,R,AR,
+Cramer Kevin,True,116th,Sen.,Kevin,Cramer,R,ND,
+Crapo Michael,True,116th,Sen.,Michael,Crapo,R,ID,
+Cruz Ted,True,116th,Sen.,Ted,Cruz,R,TX,
+Daines Steve,True,116th,Sen.,Steve,Daines,R,MT,
+Duckworth Tammy,True,116th,Sen.,Tammy,Duckworth,D,IL,
+Durbin Richard,True,116th,Sen.,Richard,Durbin,D,IL,
+Enzi Michael,True,116th,Sen.,Michael,Enzi,R,WY,
+Ernst Joni,True,116th,Sen.,Joni,Ernst,R,IA,
+Feinstein Dianne,True,116th,Sen.,Dianne,Feinstein,D,CA,
+Fischer Deb,True,116th,Sen.,Deb,Fischer,R,NE,
+Gardner Cory,True,116th,Sen.,Cory,Gardner,R,CO,
+Gillibrand Kirsten,True,116th,Sen.,Kirsten,Gillibrand,D,NY,
+Graham Lindsey,True,116th,Sen.,Lindsey,Graham,R,SC,
+Grassley Charles,True,116th,Sen.,Charles,Grassley,R,IA,
+Harris Kamala,True,116th,Sen.,Kamala,Harris,D,CA,
+Hassan Maggie,True,116th,Sen.,Maggie,Hassan,D,NH,
+Hawley Josh,True,116th,Sen.,Josh,Hawley,R,MO,
+Heinrich Martin,True,116th,Sen.,Martin,Heinrich,D,NM,
+Hirono Mazie,True,116th,Sen.,Mazie,Hirono,D,HI,
+Hoeven John,True,116th,Sen.,John,Hoeven,R,ND,
+Hyde-Smith Cindy,True,116th,Sen.,Cindy,Hyde-Smith,R,MS,
+Inhofe James,True,116th,Sen.,James,Inhofe,R,OK,
+Johnson Ron,True,116th,Sen.,Ron,Johnson,R,WI,
+Jones Doug,True,116th,Sen.,Doug,Jones,D,AL,
+Kaine Tim,True,116th,Sen.,Tim,Kaine,D,VA,
+Kennedy John,True,116th,Sen.,John,Kennedy,R,LA,
+King Angus,True,116th,Sen.,Angus,King,I,ME,
+Klobuchar Amy,True,116th,Sen.,Amy,Klobuchar,D,MN,
+Lankford James,True,116th,Sen.,James,Lankford,R,OK,
+Leahy Patrick,True,116th,Sen.,Patrick,Leahy,D,VT,
+Lee Mike,True,116th,Sen.,Mike,Lee,R,UT,
+Loeffler Kelly,True,116th,Sen.,Kelly,Loeffler,R,GA,
+Manchin Joe,True,116th,Sen.,Joe,Manchin,D,WV,
+Markey Edward,True,116th,Sen.,Edward,Markey,D,MA,
+McConnell Mitch,True,116th,Sen.,Mitch,McConnell,R,KY,
+McSally Martha,True,116th,Sen.,Martha,McSally,R,AZ,
+Menendez Bob,True,116th,Sen.,Bob,Menendez,D,NJ,
+Merkley Jeff,True,116th,Sen.,Jeff,Merkley,D,OR,
+Moran Jerry,True,116th,Sen.,Jerry,Moran,R,KS,
+Murkowski Lisa,True,116th,Sen.,Lisa,Murkowski,R,AK,
+Murphy Christopher,True,116th,Sen.,Christopher,Murphy,D,CT,
+Murray Patty,True,116th,Sen.,Patty,Murray,D,WA,
+Paul Rand,True,116th,Sen.,Rand,Paul,R,KY,
+Perdue David,True,116th,Sen.,David,Perdue,R,GA,
+Peters Gary,True,116th,Sen.,Gary,Peters,D,MI,
+Portman Rob,True,116th,Sen.,Rob,Portman,R,OH,
+Reed Jack,True,116th,Sen.,Jack,Reed,D,RI,
+Risch Jim,True,116th,Sen.,Jim,Risch,R,ID,
+Roberts Pat,True,116th,Sen.,Pat,Roberts,R,KS,
+Romney Mitt,True,116th,Sen.,Mitt,Romney,R,UT,
+Rosen Jacky,True,116th,Sen.,Jacky,Rosen,D,NV,
+Rounds Mike,True,116th,Sen.,Mike,Rounds,R,SD,
+Rubio Marco,True,116th,Sen.,Marco,Rubio,R,FL,
+Sanders Bernie,True,116th,Sen.,Bernie,Sanders,I,VT,
+Sasse Ben,True,116th,Sen.,Ben,Sasse,R,NE,
+Schatz Brian,True,116th,Sen.,Brian,Schatz,D,HI,
+Schumer Charles,True,116th,Sen.,Charles,Schumer,D,NY,
+Scott Rick,True,116th,Sen.,Rick,Scott,R,FL,
+Scott Tim,True,116th,Sen.,Tim,Scott,R,SC,
+Shaheen Jeanne,True,116th,Sen.,Jeanne,Shaheen,D,NH,
+Shelby Richard,True,116th,Sen.,Richard,Shelby,R,AL,
+Sinema Kyrsten,True,116th,Sen.,Kyrsten,Sinema,D,AZ,
+Smith Tina,True,116th,Sen.,Tina,Smith,D,MN,
+Stabenow Debbie,True,116th,Sen.,Debbie,Stabenow,D,MI,
+Sullivan Dan,True,116th,Sen.,Dan,Sullivan,R,AK,
+Tester Jon,True,116th,Sen.,Jon,Tester,D,MT,
+Thune John,True,116th,Sen.,John,Thune,R,SD,
+Tillis Thom,True,116th,Sen.,Thom,Tillis,R,NC,
+Toomey Patrick,True,116th,Sen.,Patrick,Toomey,R,PA,
+Udall Tom,True,116th,Sen.,Tom,Udall,D,NM,
+Van Hollen Chris,True,116th,Sen.,Chris,Van Hollen,D,MD,
+Warner Mark,True,116th,Sen.,Mark,Warner,D,VA,
+Warren Elizabeth,True,116th,Sen.,Elizabeth,Warren,D,MA,
+Whitehouse Sheldon,True,116th,Sen.,Sheldon,Whitehouse,D,RI,
+Wicker Roger,True,116th,Sen.,Roger,Wicker,R,MS,
+Wyden Ron,True,116th,Sen.,Ron,Wyden,D,OR,
+Young Todd,True,116th,Sen.,Todd,Young,R,IN,
+Abraham Ralph,True,116th,Rep.,Ralph,Abraham,R,LA,5
+Adams Alma,True,116th,Rep.,Alma,Adams,D,NC,12
+Aderholt Robert,True,116th,Rep.,Robert,Aderholt,R,AL,4
+Aguilar Pete,True,116th,Rep.,Pete,Aguilar,D,CA,31
+Allen Rick,True,116th,Rep.,Rick,Allen,R,GA,12
+Allred Colin,True,116th,Rep.,Colin,Allred,D,TX,32
+Amash Justin,True,116th,Rep.,Justin,Amash,I,MI,3
+Amodei Mark,True,116th,Rep.,Mark,Amodei,R,NV,2
+Armstrong Kelly,True,116th,Rep.,Kelly,Armstrong,R,ND,at large
+Arrington Jodey,True,116th,Rep.,Jodey,Arrington,R,TX,19
+Axne Cindy,True,116th,Rep.,Cindy,Axne,D,IA,3
+Babin Brian,True,116th,Rep.,Brian,Babin,R,TX,36
+Bacon Don,True,116th,Rep.,Don,Bacon,R,NE,2
+Baird Jim,True,116th,Rep.,Jim,Baird,R,IN,4
+Balderson Troy,True,116th,Rep.,Troy,Balderson,R,OH,12
+Banks Jim,True,116th,Rep.,Jim,Banks,R,IN,3
+Barr Andy,True,116th,Rep.,Andy,Barr,R,KY,6
+Diaz Barragan Nanette,True,116th,Rep.,Nanette,Diaz Barragan,D,CA,44
+Bass Karen,True,116th,Rep.,Karen,Bass,D,CA,37
+Beatty Joyce,True,116th,Rep.,Joyce,Beatty,D,OH,3
+Bera Ami,True,116th,Rep.,Ami,Bera,D,CA,7
+Bergman Jack,True,116th,Rep.,Jack,Bergman,R,MI,1
+Beyer Don,True,116th,Rep.,Don,Beyer,D,VA,8
+Biggs Andy,True,116th,Rep.,Andy,Biggs,R,AZ,5
+Bilirakis Gus,True,116th,Rep.,Gus,Bilirakis,R,FL,12
+Bishop Dan,True,116th,Rep.,Dan,Bishop,R,NC,9
+Bishop Rob,True,116th,Rep.,Rob,Bishop,R,UT,1
+Bishop Sanford,True,116th,Rep.,Sanford,Bishop,D,GA,2
+Blumenauer Earl,True,116th,Rep.,Earl,Blumenauer,D,OR,3
+Blunt Rochester Lisa,True,116th,Rep.,Lisa,Blunt Rochester,D,DE,at large
+Bonamici Suzanne,True,116th,Rep.,Suzanne,Bonamici,D,OR,1
+Bost Mike,True,116th,Rep.,Mike,Bost,R,IL,12
+Boyle Brendan,True,116th,Rep.,Brendan,Boyle,D,PA,2
+Brady Kevin,True,116th,Rep.,Kevin,Brady,R,TX,8
+Brindisi Anthony,True,116th,Rep.,Anthony,Brindisi,D,NY,22
+Brooks Mo,True,116th,Rep.,Mo,Brooks,R,AL,5
+Brooks Susan,True,116th,Rep.,Susan,Brooks,R,IN,5
+Brown Anthony,True,116th,Rep.,Anthony,Brown,D,MD,4
+Brownley Julia,True,116th,Rep.,Julia,Brownley,D,CA,26
+Buchanan Vern,True,116th,Rep.,Vern,Buchanan,R,FL,16
+Buck Ken,True,116th,Rep.,Ken,Buck,R,CO,4
+Bucshon Larry,True,116th,Rep.,Larry,Bucshon,R,IN,8
+Budd Ted,True,116th,Rep.,Ted,Budd,R,NC,13
+Burchett Tim,True,116th,Rep.,Tim,Burchett,R,TN,2
+Burgess Mike,True,116th,Rep.,Mike,Burgess,R,TX,26
+Bustos Cheri,True,116th,Rep.,Cheri,Bustos,D,IL,17
+Butterfield G.K.,True,116th,Rep.,G.K.,Butterfield,D,NC,1
+Byrne Bradley,True,116th,Rep.,Bradley,Byrne,R,AL,1
+Calvert Ken,True,116th,Rep.,Ken,Calvert,R,CA,42
+Carbajal Salud,True,116th,Rep.,Salud,Carbajal,D,CA,24
+Cardenas Tony,True,116th,Rep.,Tony,Cardenas,D,CA,29
+Carson Andre,True,116th,Rep.,Andre,Carson,D,IN,7
+Carter Buddy,True,116th,Rep.,Buddy,Carter,R,GA,1
+Carter John,True,116th,Rep.,John,Carter,R,TX,31
+Cartwright Matt,True,116th,Rep.,Matt,Cartwright,D,PA,8
+Case Ed,True,116th,Rep.,Ed,Case,D,HI,1
+Casten Sean,True,116th,Rep.,Sean,Casten,D,IL,6
+Castor Kathy,True,116th,Rep.,Kathy,Castor,D,FL,14
+Castro Joaquin,True,116th,Rep.,Joaquin,Castro,D,TX,20
+Chabot Steve,True,116th,Rep.,Steve,Chabot,R,OH,1
+Cheney Liz,True,116th,Rep.,Liz,Cheney,R,WY,1
+Chu Judy,True,116th,Rep.,Judy,Chu,D,CA,27
+Cicilline David,True,116th,Rep.,David,Cicilline,D,RI,1
+Cisneros Gil,True,116th,Rep.,Gil,Cisneros,D,CA,39
+Clark Katherine,True,116th,Rep.,Katherine,Clark,D,MA,5
+Clarke Yvette,True,116th,Rep.,Yvette,Clarke,D,NY,9
+Clay Lacy,True,116th,Rep.,Lacy,Clay,D,MO,1
+Cleaver Emanuel,True,116th,Rep.,Emanuel,Cleaver,D,MO,5
+Cline Ben,True,116th,Rep.,Ben,Cline,R,VA,6
+Cloud Michael,True,116th,Rep.,Michael,Cloud,R,TX,27
+Clyburn Jim,True,116th,Rep.,Jim,Clyburn,D,SC,6
+Cohen Steve,True,116th,Rep.,Steve,Cohen,D,TN,9
+Cole Tom,True,116th,Rep.,Tom,Cole,R,OK,4
+Collins Doug,True,116th,Rep.,Doug,Collins,R,GA,9
+Comer James,True,116th,Rep.,James,Comer,R,KY,1
+Conaway Mike,True,116th,Rep.,Mike,Conaway,R,TX,11
+Connolly Gerry,True,116th,Rep.,Gerry,Connolly,D,VA,11
+Cook Paul,True,116th,Rep.,Paul,Cook,R,CA,8
+Cooper Jim,True,116th,Rep.,Jim,Cooper,D,TN,5
+Correa Lou,True,116th,Rep.,Lou,Correa,D,CA,46
+Costa Jim,True,116th,Rep.,Jim,Costa,D,CA,16
+Courtney Joe,True,116th,Rep.,Joe,Courtney,D,CT,2
+Cox TJ,True,116th,Rep.,TJ,Cox,D,CA,21
+Craig Angie,True,116th,Rep.,Angie,Craig,D,MN,2
+Crawford Rick,True,116th,Rep.,Rick,Crawford,R,AR,1
+Crenshaw Dan,True,116th,Rep.,Dan,Crenshaw,R,TX,2
+Crist Charlie,True,116th,Rep.,Charlie,Crist,D,FL,13
+Crow Jason,True,116th,Rep.,Jason,Crow,D,CO,6
+Cuellar Henry,True,116th,Rep.,Henry,Cuellar,D,TX,28
+Cunningham Joe,True,116th,Rep.,Joe,Cunningham,D,SC,1
+Curtis John,True,116th,Rep.,John,Curtis,R,UT,3
+Davids Sharice,True,116th,Rep.,Sharice,Davids,D,KS,3
+Davidson Warren,True,116th,Rep.,Warren,Davidson,R,OH,8
+Davis Danny,True,116th,Rep.,Danny,Davis,D,IL,7
+Davis Rodney,True,116th,Rep.,Rodney,Davis,R,IL,13
+Davis Susan,True,116th,Rep.,Susan,Davis,D,CA,53
+Dean Madeleine,True,116th,Rep.,Madeleine,Dean,D,PA,4
+DeFazio Peter,True,116th,Rep.,Peter,DeFazio,D,OR,4
+DeGette Diana,True,116th,Rep.,Diana,DeGette,D,CO,1
+DeLauro Rosa,True,116th,Rep.,Rosa,DeLauro,D,CT,3
+DelBene Suzan,True,116th,Rep.,Suzan,DelBene,D,WA,1
+Delgado Antonio,True,116th,Rep.,Antonio,Delgado,D,NY,19
+Demings Val,True,116th,Rep.,Val,Demings,D,FL,10
+DeSaulnier Mark,True,116th,Rep.,Mark,DeSaulnier,D,CA,11
+DesJarlais Scott,True,116th,Rep.,Scott,DesJarlais,R,TN,4
+Deutch Ted,True,116th,Rep.,Ted,Deutch,D,FL,22
+Diaz-Balart Mario,True,116th,Rep.,Mario,Diaz-Balart,R,FL,25
+Dingell Debbie,True,116th,Rep.,Debbie,Dingell,D,MI,12
+Doggett Lloyd,True,116th,Rep.,Lloyd,Doggett,D,TX,35
+Doyle Mike,True,116th,Rep.,Mike,Doyle,D,PA,18
+Duncan Jeff,True,116th,Rep.,Jeff,Duncan,R,SC,3
+Dunn Neal,True,116th,Rep.,Neal,Dunn,R,FL,2
+Emmer Tom,True,116th,Rep.,Tom,Emmer,R,MN,6
+Engel Eliot,True,116th,Rep.,Eliot,Engel,D,NY,16
+Escobar Veronica,True,116th,Rep.,Veronica,Escobar,D,TX,16
+Eshoo Anna,True,116th,Rep.,Anna,Eshoo,D,CA,18
+Espaillat Adriano,True,116th,Rep.,Adriano,Espaillat,D,NY,13
+Estes Ron,True,116th,Rep.,Ron,Estes,R,KS,4
+Evans Dwight,True,116th,Rep.,Dwight,Evans,D,PA,3
+Ferguson Drew,True,116th,Rep.,Drew,Ferguson,R,GA,3
+Finkenauer Abby,True,116th,Rep.,Abby,Finkenauer,D,IA,1
+Fitzpatrick Brian,True,116th,Rep.,Brian,Fitzpatrick,R,PA,1
+Fleischmann Chuck,True,116th,Rep.,Chuck,Fleischmann,R,TN,3
+Fletcher Lizzie,True,116th,Rep.,Lizzie,Fletcher,D,TX,7
+Flores Bill,True,116th,Rep.,Bill,Flores,R,TX,17
+Fortenberry Jeff,True,116th,Rep.,Jeff,Fortenberry,R,NE,1
+Foster Bill,True,116th,Rep.,Bill,Foster,D,IL,11
+Foxx Virginia,True,116th,Rep.,Virginia,Foxx,R,NC,5
+Frankel Lois,True,116th,Rep.,Lois,Frankel,D,FL,21
+Fudge Marcia,True,116th,Rep.,Marcia,Fudge,D,OH,11
+Fulcher Russ,True,116th,Rep.,Russ,Fulcher,R,ID,1
+Gabbard Tulsi,True,116th,Rep.,Tulsi,Gabbard,D,HI,2
+Gaetz Matt,True,116th,Rep.,Matt,Gaetz,R,FL,1
+Gallagher Mike,True,116th,Rep.,Mike,Gallagher,R,WI,8
+Gallego Ruben,True,116th,Rep.,Ruben,Gallego,D,AZ,7
+Garamendi John,True,116th,Rep.,John,Garamendi,D,CA,3
+Garcia Chuy,True,116th,Rep.,Chuy,Garcia,D,IL,4
+Garcia Sylvia,True,116th,Rep.,Sylvia,Garcia,D,TX,29
+Gianforte Greg,True,116th,Rep.,Greg,Gianforte,R,MT,1
+Gibbs Bob,True,116th,Rep.,Bob,Gibbs,R,OH,7
+Gohmert Louie,True,116th,Rep.,Louie,Gohmert,R,TX,1
+Golden Jared,True,116th,Rep.,Jared,Golden,D,ME,2
+Gomez Jimmy,True,116th,Rep.,Jimmy,Gomez,D,CA,34
+Gonzalez Anthony,True,116th,Rep.,Anthony,Gonzalez,R,OH,16
+Gonzalez Vicente,True,116th,Rep.,Vicente,Gonzalez,D,TX,15
+Gonzalez-Colon Jenniffer,True,116th,Rep.,Jenniffer,Gonzalez-Colon,R,PR,at large
+Gooden Lance,True,116th,Rep.,Lance,Gooden,R,TX,5
+Gosar Paul,True,116th,Rep.,Paul,Gosar,R,AZ,4
+Gottheimer Josh,True,116th,Rep.,Josh,Gottheimer,D,NJ,5
+Granger Kay,True,116th,Rep.,Kay,Granger,R,TX,12
+Graves Garret,True,116th,Rep.,Garret,Graves,R,LA,6
+Graves Tom,True,116th,Rep.,Tom,Graves,R,GA,14
+Graves Sam,True,116th,Rep.,Sam,Graves,R,MO,6
+Green Al,True,116th,Rep.,Al,Green,D,TX,9
+Green Mark,True,116th,Rep.,Mark,Green,R,TN,7
+Griffith Morgan,True,116th,Rep.,Morgan,Griffith,R,VA,9
+Grijalva Raul,True,116th,Rep.,Raul,Grijalva,D,AZ,3
+Grothman Glenn,True,116th,Rep.,Glenn,Grothman,R,WI,6
+Guest Michael,True,116th,Rep.,Michael,Guest,R,MS,3
+Guthrie Brett,True,116th,Rep.,Brett,Guthrie,R,KY,2
+Haaland Deb,True,116th,Rep.,Deb,Haaland,D,NM,1
+Hagedorn Jim,True,116th,Rep.,Jim,Hagedorn,R,MN,1
+Harder Josh,True,116th,Rep.,Josh,Harder,D,CA,10
+Harris Andy,True,116th,Rep.,Andy,Harris,R,MD,1
+Hartzler Vicky,True,116th,Rep.,Vicky,Hartzler,R,MO,4
+Hastings Alcee,True,116th,Rep.,Alcee,Hastings,D,FL,20
+Hayes Jahana,True,116th,Rep.,Jahana,Hayes,D,CT,5
+Heck Denny,True,116th,Rep.,Denny,Heck,D,WA,10
+Hern Kevin,True,116th,Rep.,Kevin,Hern,R,OK,1
+Herrera Beutler Jaime,True,116th,Rep.,Jaime,Herrera Beutler,R,WA,3
+Hice Jody,True,116th,Rep.,Jody,Hice,R,GA,10
+Higgins Brian,True,116th,Rep.,Brian,Higgins,D,NY,26
+Higgins Clay,True,116th,Rep.,Clay,Higgins,R,LA,3
+Hill French,True,116th,Rep.,French,Hill,R,AR,2
+Himes Jim,True,116th,Rep.,Jim,Himes,D,CT,4
+Holding George,True,116th,Rep.,George,Holding,R,NC,2
+Hollingsworth Trey,True,116th,Rep.,Trey,Hollingsworth,R,IN,9
+Horn Kendra,True,116th,Rep.,Kendra,Horn,D,OK,5
+Horsford Steven,True,116th,Rep.,Steven,Horsford,D,NV,4
+Houlahan Chrissy,True,116th,Rep.,Chrissy,Houlahan,D,PA,6
+Hoyer Steny,True,116th,Rep.,Steny,Hoyer,D,MD,5
+Hudson Richard,True,116th,Rep.,Richard,Hudson,R,NC,8
+Huffman Jared,True,116th,Rep.,Jared,Huffman,D,CA,2
+Huizenga Bill,True,116th,Rep.,Bill,Huizenga,R,MI,2
+Hurd Will,True,116th,Rep.,Will,Hurd,R,TX,23
+Jacobs Christopher,True,116th,Rep.,Christopher,Jacobs,R,NY,27
+Jackson Lee Sheila,True,116th,Rep.,Sheila,Jackson Lee,D,TX,18
+Jayapal Pramila,True,116th,Rep.,Pramila,Jayapal,D,WA,7
+Jeffries Hakeem,True,116th,Rep.,Hakeem,Jeffries,D,NY,8
+Johnson Dusty,True,116th,Rep.,Dusty,Johnson,R,SD,1
+Johnson Eddie Bernice ,True,116th,Rep.,Eddie Bernice ,Johnson,D,TX,30
+Johnson Hank,True,116th,Rep.,Hank,Johnson,D,GA,4
+Johnson Mike,True,116th,Rep.,Mike,Johnson,R,LA,4
+Johnson Bill,True,116th,Rep.,Bill,Johnson,R,OH,6
+Jordan Jim,True,116th,Rep.,Jim,Jordan,R,OH,4
+Joyce Dave,True,116th,Rep.,Dave,Joyce,R,OH,14
+Joyce John,True,116th,Rep.,John,Joyce,R,PA,13
+Kaptur Marcy,True,116th,Rep.,Marcy,Kaptur,D,OH,9
+Katko John,True,116th,Rep.,John,Katko,R,NY,24
+Keating Bill,True,116th,Rep.,Bill,Keating,D,MA,9
+Keller Fred,True,116th,Rep.,Fred,Keller,R,PA,12
+Kelly Mike,True,116th,Rep.,Mike,Kelly,R,PA,16
+Kelly Robin,True,116th,Rep.,Robin,Kelly,D,IL,2
+Kelly Trent,True,116th,Rep.,Trent,Kelly,R,MS,1
+Kennedy III Joe,True,116th,Rep.,Joe,Kennedy III,D,MA,4
+Khanna Ro,True,116th,Rep.,Ro,Khanna,D,CA,17
+Kildee Dan,True,116th,Rep.,Dan,Kildee,D,MI,5
+Kilmer Derek,True,116th,Rep.,Derek,Kilmer,D,WA,6
+Kim Andy,True,116th,Rep.,Andy,Kim,D,NJ,3
+Kind Ron,True,116th,Rep.,Ron,Kind,D,WI,3
+King Pete,True,116th,Rep.,Pete,King,R,NY,2
+King Steve,True,116th,Rep.,Steve,King,R,IA,4
+Kinzinger Adam,True,116th,Rep.,Adam,Kinzinger,R,IL,16
+Kirkpatrick Ann,True,116th,Rep.,Ann,Kirkpatrick,D,AZ,2
+Krishnamoorthi Raja,True,116th,Rep.,Raja,Krishnamoorthi,D,IL,8
+Kuster Ann,True,116th,Rep.,Ann,Kuster,D,NH,2
+Kustoff David,True,116th,Rep.,David,Kustoff,R,TN,8
+LaHood Darin,True,116th,Rep.,Darin,LaHood,R,IL,18
+LaMalfa Doug,True,116th,Rep.,Doug,LaMalfa,R,CA,1
+Lamb Conor,True,116th,Rep.,Conor,Lamb,D,PA,17
+Lamborn Doug,True,116th,Rep.,Doug,Lamborn,R,CO,5
+Langevin Jim,True,116th,Rep.,Jim,Langevin,D,RI,2
+Larsen Rick,True,116th,Rep.,Rick,Larsen,D,WA,2
+Larson John,True,116th,Rep.,John,Larson,D,CT,1
+Latta Bob,True,116th,Rep.,Bob,Latta,R,OH,5
+Lawrence Brenda,True,116th,Rep.,Brenda,Lawrence,D,MI,14
+Lawson Al,True,116th,Rep.,Al,Lawson,D,FL,5
+Lee Barbara,True,116th,Rep.,Barbara,Lee,D,CA,13
+Lee Susie,True,116th,Rep.,Susie,Lee,D,NV,3
+Lesko Debbie,True,116th,Rep.,Debbie,Lesko,R,AZ,8
+Levin Andy,True,116th,Rep.,Andy,Levin,D,MI,9
+Levin Mike,True,116th,Rep.,Mike,Levin,D,CA,49
+Lewis John,True,116th,Rep.,John,Lewis,D,GA,5
+Lieu Ted,True,116th,Rep.,Ted,Lieu,D,CA,33
+Lipinski Dan,True,116th,Rep.,Dan,Lipinski,D,IL,3
+Loebsack Dave,True,116th,Rep.,Dave,Loebsack,D,IA,2
+Lofgren Zoe,True,116th,Rep.,Zoe,Lofgren,D,CA,19
+Long Billy,True,116th,Rep.,Billy,Long,R,MO,7
+Loudermilk Barry,True,116th,Rep.,Barry,Loudermilk,R,GA,11
+Lowenthal Alan,True,116th,Rep.,Alan,Lowenthal,D,CA,47
+Lowey Nita,True,116th,Rep.,Nita,Lowey,D,NY,17
+Lucas Frank,True,116th,Rep.,Frank,Lucas,R,OK,3
+Luetkemeyer Blaine,True,116th,Rep.,Blaine,Luetkemeyer,R,MO,3
+Ray Lujan Ben,True,116th,Rep.,Ben,Ray Lujan,D,NM,3
+Luria Elaine,True,116th,Rep.,Elaine,Luria,D,VA,2
+Lynch Stephen,True,116th,Rep.,Stephen,Lynch,D,MA,8
+Malinowski Tom,True,116th,Rep.,Tom,Malinowski,D,NJ,7
+Maloney Carolyn,True,116th,Rep.,Carolyn,Maloney,D,NY,12
+Maloney Sean Patrick ,True,116th,Rep.,Sean Patrick ,Maloney,D,NY,18
+Marchant Kenny,True,116th,Rep.,Kenny,Marchant,R,TX,24
+Marshall Roger,True,116th,Rep.,Roger,Marshall,R,KS,1
+Massie Thomas,True,116th,Rep.,Thomas,Massie,R,KY,4
+Mast Brian,True,116th,Rep.,Brian,Mast,R,FL,18
+Matsui Doris,True,116th,Rep.,Doris,Matsui,D,CA,6
+McAdams Ben,True,116th,Rep.,Ben,McAdams,D,UT,4
+McBath Lucy,True,116th,Rep.,Lucy,McBath,D,GA,6
+McCarthy Kevin,True,116th,Rep.,Kevin,McCarthy,R,CA,23
+McCaul Michael,True,116th,Rep.,Michael,McCaul,R,TX,10
+McClintock Tom,True,116th,Rep.,Tom,McClintock,R,CA,4
+McCollum Betty,True,116th,Rep.,Betty,McCollum,D,MN,4
+McEachin Donald,True,116th,Rep.,Donald,McEachin,D,VA,4
+McGovern Jim,True,116th,Rep.,Jim,McGovern,D,MA,2
+McHenry Patrick,True,116th,Rep.,Patrick,McHenry,R,NC,10
+McKinley David,True,116th,Rep.,David,McKinley,R,WV,1
+McMorris Rodgers Cathy,True,116th,Rep.,Cathy,McMorris Rodgers,R,WA,5
+McNerney Jerry,True,116th,Rep.,Jerry,McNerney,D,CA,9
+Meeks Gregory,True,116th,Rep.,Gregory,Meeks,D,NY,5
+Meng Grace,True,116th,Rep.,Grace,Meng,D,NY,6
+Meuser Dan,True,116th,Rep.,Dan,Meuser,R,PA,9
+Mfume Kweisi,True,116th,Rep.,Kweisi,Mfume,D,MD,7
+Miller Carol,True,116th,Rep.,Carol,Miller,R,WV,3
+Mitchell Paul,True,116th,Rep.,Paul,Mitchell,R,MI,10
+Moolenaar John,True,116th,Rep.,John,Moolenaar,R,MI,4
+Mooney Alex,True,116th,Rep.,Alex,Mooney,R,WV,2
+Moore Gwen,True,116th,Rep.,Gwen,Moore,D,WI,4
+Morelle Joe,True,116th,Rep.,Joe,Morelle,D,NY,25
+Moulton Seth,True,116th,Rep.,Seth,Moulton,D,MA,6
+Mucarsel-Powell Debbie,True,116th,Rep.,Debbie,Mucarsel-Powell,D,FL,26
+Mullin Markwayne,True,116th,Rep.,Markwayne,Mullin,R,OK,2
+Murphy Greg,True,116th,Rep.,Greg,Murphy,R,NC,3
+Murphy Stephanie,True,116th,Rep.,Stephanie,Murphy,D,FL,7
+Nadler Jerry,True,116th,Rep.,Jerry,Nadler,D,NY,10
+Napolitano Grace,True,116th,Rep.,Grace,Napolitano,D,CA,32
+Neal Richard,True,116th,Rep.,Richard,Neal,D,MA,1
+Neguse Joe,True,116th,Rep.,Joe,Neguse,D,CO,2
+Newhouse Dan,True,116th,Rep.,Dan,Newhouse,R,WA,4
+Norcross Donald,True,116th,Rep.,Donald,Norcross,D,NJ,1
+Norman Ralph,True,116th,Rep.,Ralph,Norman,R,SC,5
+Holmes Norton Eleanor,True,116th,Rep.,Eleanor,Holmes Norton,D,DC,1
+Nunes Devin,True,116th,Rep.,Devin,Nunes,R,CA,22
+O'Halleran Tom,True,116th,Rep.,Tom,O'Halleran,D,AZ,1
+Ocasio-Cortez Alexandria,True,116th,Rep.,Alexandria,Ocasio-Cortez,D,NY,14
+Olson Pete,True,116th,Rep.,Pete,Olson,R,TX,22
+Omar Ilhan,True,116th,Rep.,Ilhan,Omar,D,MN,5
+Palazzo Steven,True,116th,Rep.,Steven,Palazzo,R,MS,4
+Pallone Frank,True,116th,Rep.,Frank,Pallone,D,NJ,6
+Palmer Gary,True,116th,Rep.,Gary,Palmer,R,AL,6
+Panetta Jimmy,True,116th,Rep.,Jimmy,Panetta,D,CA,20
+Pappas Chris,True,116th,Rep.,Chris,Pappas,D,NH,1
+Pascrell Bill,True,116th,Rep.,Bill,Pascrell,D,NJ,9
+Payne Jr. Donald,True,116th,Rep.,Donald,Payne Jr.,D,NJ,10
+Pelosi Nancy,True,116th,Rep.,Nancy,Pelosi,D,CA,12
+Pence Greg,True,116th,Rep.,Greg,Pence,R,IN,6
+Perlmutter Ed,True,116th,Rep.,Ed,Perlmutter,D,CO,7
+Perry Scott,True,116th,Rep.,Scott,Perry,R,PA,10
+Peters Scott,True,116th,Rep.,Scott,Peters,D,CA,52
+Peterson Collin,True,116th,Rep.,Collin,Peterson,D,MN,7
+Phillips Dean,True,116th,Rep.,Dean,Phillips,D,MN,3
+Pingree Chellie,True,116th,Rep.,Chellie,Pingree,D,ME,1
+Plaskett Stacey,True,116th,Rep.,Stacey,Plaskett,D,VI,at large
+Pocan Mark,True,116th,Rep.,Mark,Pocan,D,WI,2
+Porter Katie,True,116th,Rep.,Katie,Porter,D,CA,45
+Posey Bill,True,116th,Rep.,Bill,Posey,R,FL,8
+Pressley Ayanna,True,116th,Rep.,Ayanna,Pressley,D,MA,7
+Price David,True,116th,Rep.,David,Price,D,NC,4
+Quigley Mike,True,116th,Rep.,Mike,Quigley,D,IL,5
+Coleman Radewagen Amata,True,116th,Rep.,Amata,Coleman Radewagen,R,AS,at large
+Raskin Jamie,True,116th,Rep.,Jamie,Raskin,D,MD,8
+Ratcliffe John,True,116th,Rep.,John,Ratcliffe,R,TX,4
+Reed Tom,True,116th,Rep.,Tom,Reed,R,NY,23
+Reschenthaler Guy,True,116th,Rep.,Guy,Reschenthaler,R,PA,14
+Rice Kathleen,True,116th,Rep.,Kathleen,Rice,D,NY,4
+Rice Tom,True,116th,Rep.,Tom,Rice,R,SC,7
+Richmond Cedric,True,116th,Rep.,Cedric,Richmond,D,LA,2
+Riggleman Denver,True,116th,Rep.,Denver,Riggleman,R,VA,5
+Roby Martha,True,116th,Rep.,Martha,Roby,R,AL,2
+Roe Phil,True,116th,Rep.,Phil,Roe,R,TN,1
+Rogers Hal,True,116th,Rep.,Hal,Rogers,R,KY,5
+Rogers Mike,True,116th,Rep.,Mike,Rogers,R,AL,3
+Rooney Francis,True,116th,Rep.,Francis,Rooney,R,FL,19
+Rose John,True,116th,Rep.,John,Rose,R,TN,6
+Rose Max,True,116th,Rep.,Max,Rose,D,NY,11
+Rouda Harley,True,116th,Rep.,Harley,Rouda,D,CA,48
+Rouzer David,True,116th,Rep.,David,Rouzer,R,NC,7
+Roy Chip,True,116th,Rep.,Chip,Roy,R,TX,21
+Roybal-Allard Lucille,True,116th,Rep.,Lucille,Roybal-Allard,D,CA,40
+Ruiz Raul,True,116th,Rep.,Raul,Ruiz,D,CA,36
+Ruppersberger Dutch,True,116th,Rep.,Dutch,Ruppersberger,D,MD,2
+Rush Bobby,True,116th,Rep.,Bobby,Rush,D,IL,1
+Rutherford John,True,116th,Rep.,John,Rutherford,R,FL,4
+Ryan Tim,True,116th,Rep.,Tim,Ryan,D,OH,13
+Sablan Gregorio Kilili Camacho,True,116th,Rep.,Gregorio Kilili Camacho,Sablan,D,MP,at large
+San Nicolas Michael,True,116th,Rep.,Michael,San Nicolas,D,GU,at large
+Sanchez Linda,True,116th,Rep.,Linda,Sanchez,D,CA,38
+Sarbanes John,True,116th,Rep.,John,Sarbanes,D,MD,3
+Scalise Steve,True,116th,Rep.,Steve,Scalise,R,LA,1
+Gay Scanlon Mary,True,116th,Rep.,Mary,Gay Scanlon,D,PA,5
+Schakowsky Jan,True,116th,Rep.,Jan,Schakowsky,D,IL,9
+Schiff Adam,True,116th,Rep.,Adam,Schiff,D,CA,28
+Schneider Brad,True,116th,Rep.,Brad,Schneider,D,IL,10
+Schrader Kurt,True,116th,Rep.,Kurt,Schrader,D,OR,5
+Schrier Kim,True,116th,Rep.,Kim,Schrier,D,WA,8
+Schweikert David,True,116th,Rep.,David,Schweikert,R,AZ,6
+Scott Austin,True,116th,Rep.,Austin,Scott,R,GA,8
+Scott David,True,116th,Rep.,David,Scott,D,GA,13
+Scott Bobby,True,116th,Rep.,Bobby,Scott,D,VA,3
+Sensenbrenner Jim,True,116th,Rep.,Jim,Sensenbrenner,R,WI,5
+Serrano Jose,True,116th,Rep.,Jose,Serrano,D,NY,15
+Sewell Terri,True,116th,Rep.,Terri,Sewell,D,AL,7
+Shalala Donna,True,116th,Rep.,Donna,Shalala,D,FL,27
+Sherman Brad,True,116th,Rep.,Brad,Sherman,D,CA,30
+Sherrill Mikie,True,116th,Rep.,Mikie,Sherrill,D,NJ,11
+Shimkus John,True,116th,Rep.,John,Shimkus,R,IL,15
+Simpson Mike,True,116th,Rep.,Mike,Simpson,R,ID,2
+Sires Albio,True,116th,Rep.,Albio,Sires,D,NJ,8
+Slotkin Elissa,True,116th,Rep.,Elissa,Slotkin,D,MI,8
+Torres Small Xochitl,True,116th,Rep.,Xochitl,Torres Small,D,NM,2
+Smith Adam,True,116th,Rep.,Adam,Smith,D,WA,9
+Smith Adrian,True,116th,Rep.,Adrian,Smith,R,NE,3
+Smith Chris,True,116th,Rep.,Chris,Smith,R,NJ,4
+Smith Jason,True,116th,Rep.,Jason,Smith,R,MO,8
+Smucker Lloyd,True,116th,Rep.,Lloyd,Smucker,R,PA,11
+Soto Darren,True,116th,Rep.,Darren,Soto,D,FL,9
+Spanberger Abigail,True,116th,Rep.,Abigail,Spanberger,D,VA,7
+Spano Ross,True,116th,Rep.,Ross,Spano,R,FL,15
+Speier Jackie,True,116th,Rep.,Jackie,Speier,D,CA,14
+Stanton Greg,True,116th,Rep.,Greg,Stanton,D,AZ,9
+Stauber Pete,True,116th,Rep.,Pete,Stauber,R,MN,8
+Stefanik Elise,True,116th,Rep.,Elise,Stefanik,R,NY,21
+Steil Bryan,True,116th,Rep.,Bryan,Steil,R,WI,1
+Steube Greg,True,116th,Rep.,Greg,Steube,R,FL,17
+Stevens Haley,True,116th,Rep.,Haley,Stevens,D,MI,11
+Stewart Chris,True,116th,Rep.,Chris,Stewart,R,UT,2
+Stivers Steve,True,116th,Rep.,Steve,Stivers,R,OH,15
+Suozzi Tom,True,116th,Rep.,Tom,Suozzi,D,NY,3
+Swalwell Eric,True,116th,Rep.,Eric,Swalwell,D,CA,15
+Takano Mark,True,116th,Rep.,Mark,Takano,D,CA,41
+Taylor Van,True,116th,Rep.,Van,Taylor,R,TX,3
+Thompson Bennie,True,116th,Rep.,Bennie,Thompson,D,MS,2
+Thompson Glenn,True,116th,Rep.,Glenn,Thompson,R,PA,15
+Thompson Mike,True,116th,Rep.,Mike,Thompson,D,CA,5
+Thornberry Mac,True,116th,Rep.,Mac,Thornberry,R,TX,13
+Tiffany Tom,True,116th,Rep.,Tom,Tiffany,R,WI,7
+Timmons William,True,116th,Rep.,William,Timmons,R,SC,4
+Tipton Scott,True,116th,Rep.,Scott,Tipton,R,CO,3
+Titus Dina,True,116th,Rep.,Dina,Titus,D,NV,1
+Tlaib Rashida,True,116th,Rep.,Rashida,Tlaib,D,MI,13
+Tonko Paul,True,116th,Rep.,Paul,Tonko,D,NY,20
+Torres Norma,True,116th,Rep.,Norma,Torres,D,CA,35
+Trahan Lori,True,116th,Rep.,Lori,Trahan,D,MA,3
+Trone David,True,116th,Rep.,David,Trone,D,MD,6
+Turner Mike,True,116th,Rep.,Mike,Turner,R,OH,10
+Underwood Lauren,True,116th,Rep.,Lauren,Underwood,D,IL,14
+Upton Fred,True,116th,Rep.,Fred,Upton,R,MI,6
+Van Drew Jeff,True,116th,Rep.,Jeff,Van Drew,R,NJ,2
+Vargas Juan,True,116th,Rep.,Juan,Vargas,D,CA,51
+Veasey Marc,True,116th,Rep.,Marc,Veasey,D,TX,33
+Vela Filemon,True,116th,Rep.,Filemon,Vela,D,TX,34
+Velazquez Nydia,True,116th,Rep.,Nydia,Velazquez,D,NY,7
+Visclosky Pete,True,116th,Rep.,Pete,Visclosky,D,IN,1
+Wagner Ann,True,116th,Rep.,Ann,Wagner,R,MO,2
+Walberg Tim,True,116th,Rep.,Tim,Walberg,R,MI,7
+Walden Greg,True,116th,Rep.,Greg,Walden,R,OR,2
+Walker Mark,True,116th,Rep.,Mark,Walker,R,NC,6
+Walorski Jackie,True,116th,Rep.,Jackie,Walorski,R,IN,2
+Waltz Michael,True,116th,Rep.,Michael,Waltz,R,FL,6
+Wasserman Schultz Debbie,True,116th,Rep.,Debbie,Wasserman Schultz,D,FL,23
+Waters Maxine,True,116th,Rep.,Maxine,Waters,D,CA,43
+Watkins Steve,True,116th,Rep.,Steve,Watkins,R,KS,2
+Watson Coleman Bonnie,True,116th,Rep.,Bonnie,Watson Coleman,D,NJ,12
+Weber Randy,True,116th,Rep.,Randy,Weber,R,TX,14
+Webster Dan,True,116th,Rep.,Dan,Webster,R,FL,11
+Welch Peter,True,116th,Rep.,Peter,Welch,D,VT,at large
+Wenstrup Brad,True,116th,Rep.,Brad,Wenstrup,R,OH,2
+Westerman Bruce,True,116th,Rep.,Bruce,Westerman,R,AR,4
+Wexton Jennifer,True,116th,Rep.,Jennifer,Wexton,D,VA,10
+Wild Susan,True,116th,Rep.,Susan,Wild,D,PA,7
+Williams Roger,True,116th,Rep.,Roger,Williams,R,TX,25
+Wilson Joe,True,116th,Rep.,Joe,Wilson,R,SC,2
+Wilson Frederica,True,116th,Rep.,Frederica,Wilson,D,FL,24
+Wittman Rob,True,116th,Rep.,Rob,Wittman,R,VA,1
+Womack Steve,True,116th,Rep.,Steve,Womack,R,AR,3
+Woodall Rob,True,116th,Rep.,Rob,Woodall,R,GA,7
+Wright Ron,True,116th,Rep.,Ron,Wright,R,TX,6
+Yarmuth John,True,116th,Rep.,John,Yarmuth,D,KY,3
+Yoho Ted,True,116th,Rep.,Ted,Yoho,R,FL,3
+Young Don,True,116th,Rep.,Don,Young,R,AK,1
+Zeldin Lee,True,116th,Rep.,Lee,Zeldin,R,NY,1

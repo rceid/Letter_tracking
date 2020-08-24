@@ -4,7 +4,7 @@
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" href="{% url 'legislator-letters' letter.patrocinador.name %}">{{letter.patrocinador.rep_or_sen}} {{ letter.patrocinador.name }} ({{ letter.patrocinador.party}})</a>
+                    <a class="mr-2" href="{% url 'legislator-letters' letter.patrocinador.name %}">{{letter.patrocinador.title}}</a>
                     <small class="text-muted">{{ letter.fecha | date:"F d, Y" }}</small>
                 </div>
                 <h2><a class="article-title">{{ letter.title }}</a></h2>

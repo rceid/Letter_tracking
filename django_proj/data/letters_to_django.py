@@ -76,10 +76,10 @@ def upload_legislator(pol_df):
         count += 1
         legislator = Legislator(
             name = pol['Legislator'],
-            state = pol['State'],
-            jurisdiction = pol['Jurisdiction'],
-            rep_or_sen = pol['Sen./Rep.'],
-            party = pol['Party Affiliation'],
+            state = pol['STATE'],
+            district = pol['DISTRICT'],
+            rep_or_sen = pol['SEN/REP'],
+            party = pol['PARTY'],
             active = pol['Active']
             )
         legislator.save()

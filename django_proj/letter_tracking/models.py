@@ -51,8 +51,10 @@ def zip_choices(choice_list):
 def classify_letter(letter, attr, measure, options):
     if not letter.cosigners:
         return options[0] if letter.patrocinador.__dict__[attr] == measure else options[1]
-    signers = (letter.patrocinador.name + ', ' + ', '.join(letter.cosigners)).split(', ')
-    classified = list(map(lambda leg: Legislator.objects.filter(name=leg).first().party == 'D', signers))
+    signers = [leg for leg in Legislator.objects.all() if leg.name in letter.cosigners]
+    #signers = (letter.patrocinador.name + ', ' + ', '.join(letter.cosigners)).split(', ')
+    classified = list(map(lambda leg_obj: leg_obj.party == 'D', signers))
+    #classified = list(map(lambda leg: Legislator.objects.filter(name=leg).first().party == 'D', signers))
     if all(classified):
         return options[0]
     if not any(classified):
@@ -74,17 +76,25 @@ class Legislator(models.Model):
         R = 'R', _('Republican')
         I = 'I', _('Independent')
 
-
-    name = models.CharField(max_length=100)
-    jurisdiction = models.CharField(max_length=100)
+    # first_name = models.CharField(max_length=100, default='None')
+    # last_name = models.CharField(max_length=100, default='None')
+    name = models.CharField(max_length=100, default='None')
     state = models.CharField(max_length=30,
                             choices=STATES)
+    district = models.CharField(max_length=10,\
+                                choices=[('N/a', '')] + list(zip_choices(['at large'] + list(map(lambda num: str(num), range(1,54))))),\
+                                help_text='If politician is a Sentor, please select N/a')
     rep_or_sen = models.CharField(max_length=4,
                                  choices=RepSen.choices,
                                  verbose_name=_('Representative or Senator'))
     party = models.CharField(max_length=11, 
                             choices=PolParties.choices)
     active = models.BooleanField() 
+
+    @property
+    def title(self):
+        return self.rep_or_sen + ' '+ self.name + ' (' + self.party + '-' + self.state + '-' +  self.district +')' if self.rep_or_sen == 'Rep.'\
+         else self.rep_or_sen + ' ' + self.name + ' (' + self.party + '-' + self.state + ')'
 
     @property
     def letters_authored(self):
@@ -160,7 +170,8 @@ class Letter(models.Model):
     caucus = models.ForeignKey(Caucus, on_delete=models.SET_NULL, null=True)
     legislatura = models.ForeignKey(Legislature, on_delete=models.SET_NULL, null=True)
     patrocinador = models.ForeignKey(Legislator, on_delete=models.SET_NULL, null=True, verbose_name=_('Patrocinador/a'))
-    cosigners = MultiSelectField(choices=zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all()))), verbose_name=_('Copatrocinador/a'), default='None')
+    cosigners = MultiSelectField(choices=zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all()))),\
+                                verbose_name=_('Copatrocinador/a'), default='None')
     link = models.URLField("Letter URL")
     date_posted = models.DateTimeField(default=timezone.now)
     posted_by = models.ForeignKey(User, 
@@ -192,6 +203,7 @@ class Letter(models.Model):
     def title(self):
         return str(self.fecha)[:10].replace('-', '.') + '.' + str(self.cámara)[0] +\
                 '.' + str(self.patrocinador.name) + '.' + str(self.tema) + '.' + str(self.consecutive_number)
+
     @property
     def chamber(self):
         return None
@@ -218,20 +230,10 @@ class Letter(models.Model):
 
     @property
     def copatrocinador(self):
-        def get_dist(self):
-            if self.rep_or_sen == "Sen.":
-                return ''
-            if self.jurisdiction[-2:].isdigit():
-                return '-' + self.jurisdiction[-2]
-            elif self.jurisdiction[-1].isdigit(): 
-                return '-' + self.jurisdiction[-1]
-            else:
-                return '-at large'
         if not self.cosigners:
             return 'Na'
         leg_list = list(map(lambda name_: Legislator.objects.filter(name=name_).first(), self.cosigners))
-        leg_list = list(map(lambda leg_obj: leg_obj.name + ' ' + leg_obj.party + '-' +  leg_obj.state + get_dist(leg_obj)\
-                    , leg_list))
+        leg_list = list(map(lambda leg_obj: leg_obj.title, leg_list))
         return ', '.join(sorted(leg_list))
 
     @property
