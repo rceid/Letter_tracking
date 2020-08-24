@@ -93,8 +93,12 @@ class Legislator(models.Model):
 
     @property
     def title(self):
-        return self.rep_or_sen + ' '+ self.name + ' (' + self.party + '-' + self.state + '-' +  self.district +')' if self.rep_or_sen == 'Rep.'\
-         else self.rep_or_sen + ' ' + self.name + ' (' + self.party + '-' + self.state + ')'
+        return self.name + ' (' + self.party + '-' + self.state + '-' +  self.district +')' if self.rep_or_sen == 'Rep.'\
+         else self.name + ' (' + self.party + '-' + self.state + ')'
+    
+    @property
+    def full_title(self):
+        return self.rep_or_sen + ' ' + self.title
 
     @property
     def letters_authored(self):

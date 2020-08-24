@@ -5,7 +5,6 @@ from .views import (LetterListView,
                 LetterUpdateView,
                 LetterDeleteView,
                 UserLetterListView,
-                #SearchFormView,
                 SearchResultsView,
                 LegLetterView
                 )

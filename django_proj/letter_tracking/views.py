@@ -90,13 +90,6 @@ class LetterDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return True
-        # letter = self.get_object()
-        # if self.request.user == letter.posted_by:
-        #     return True
-        # return False
-
-# class SearchFormView(TemplateView):
-#     template_name = 'letter_tracking/search_form.html'
 
 def get_name(request):
     # if this is a POST request we need to process the form data
@@ -111,8 +104,7 @@ def get_name(request):
             return HttpResponseRedirect('/search_results/')
         else:
             print(form.cleaned_data)
-            
-
+        
     # if a POST (or any other method) we'll create a blank form
     else:
         form = LegSearchForm()
@@ -127,7 +119,6 @@ class SearchResultsView(ListView):
     def get_queryset(self):
         query = self.request.GET.get('leg')
         return get_object_or_404(Legislator, name__icontains=query)
-
 
 def export(self, name=None):
     attrs = ['Código', 'Tema', 'Tema específico', 'Fecha', 'Descripción', 'Favorable a MX', 'Mención directa a MX', 
