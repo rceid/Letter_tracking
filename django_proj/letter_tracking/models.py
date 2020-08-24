@@ -160,7 +160,7 @@ class Letter(models.Model):
     caucus = models.ForeignKey(Caucus, on_delete=models.SET_NULL, null=True)
     legislatura = models.ForeignKey(Legislature, on_delete=models.SET_NULL, null=True)
     patrocinador = models.ForeignKey(Legislator, on_delete=models.SET_NULL, null=True, verbose_name=_('Patrocinador/a'))
-    cosigners = MultiSelectField(choices=zip_choices(Legislator.objects.all()), verbose_name=_('Copatrocinador/a'), default='None')
+    cosigners = MultiSelectField(choices=zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all()))), verbose_name=_('Copatrocinador/a'), default='None')
     link = models.URLField("Letter URL")
     date_posted = models.DateTimeField(default=timezone.now)
     posted_by = models.ForeignKey(User, 
