@@ -133,11 +133,17 @@ def export(self, name=None):
     else:
         letters = Legislator.objects.filter(name=name).first().all_letters
     for letter in letters:
-        authors = [letter.__dict__[attr].name if attr in letter.__dict__.keys() else '' for attr in ['patrocinador_sen', 'patrocinador_rep'] ]
+        authors = ['', '']
+        if letter.sen_author:
+            authors[0] = letter.patrocinador_sen.name
+        if letter.rep_author:
+            authors[1] = letter.patrocinador_rep.name
         tema, tema_específico, destinatario, caucus, legislatura, senadores, congresistas, acción = get_letter_values(letter)
         vals = [letter.title, tema, tema_específico, letter.fecha, letter.descripción, letter.favorable_a_MX, letter.mención_directa_a_MX,
-                letter.destinatario, letter.cámara, letter.partido, caucus, legislatura, congresistas, senadores] + authors +\
-                + [letter.cosign_sorted, letter.letter_path, letter.observaciones, acción, letter.notice]
+                letter.destinatario, letter.cámara, letter.partido, caucus, legislatura, congresistas, senadores, letter.cosign_sorted, 
+                letter.letter_path, letter.observaciones, acción, letter.notice]
+        vals.insert(14, authors[0])
+        vals.insert(15, authors[1])
         writer.writerow(vals)
     
     response['Content-Disposition'] = 'attachment; filename="letters.csv"'

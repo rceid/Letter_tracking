@@ -243,7 +243,7 @@ class Letter(models.Model):
     @property
     def two_authors(self):
         return True if len(self.authors) == 2 else False
-        
+
     @property
     def sen_author(self):
         return True if self.patrocinador_sen else False
@@ -262,7 +262,7 @@ class Letter(models.Model):
 
     @property 
     def cosign_sorted(self):
-        return ', '.join(sorted(self.cosigners.split(', '), key=lambda lname: (lname[0], lname[1]))) if self.cosigners else 'Na'
+        return ', '.join(sorted(self.cosigners)) if self.cosigners else 'N/a'
 
     @property
     def consecutive_number(self):
