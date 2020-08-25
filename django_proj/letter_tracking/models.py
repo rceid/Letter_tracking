@@ -173,7 +173,11 @@ class Letter(models.Model):
     destinatario = models.ForeignKey(Recipient, on_delete=models.SET_NULL, null=True)
     caucus = models.ForeignKey(Caucus, on_delete=models.SET_NULL, null=True)
     legislatura = models.ForeignKey(Legislature, on_delete=models.SET_NULL, null=True)
-    patrocinador = models.ForeignKey(Legislator, on_delete=models.SET_NULL, null=True, verbose_name=_('Patrocinador/a'))
+    patrocinador_sen = models.ForeignKey(Legislator, on_delete=models.SET_NULL, null=True, \
+                                    verbose_name=_('Senate Author'))
+    patrocinador_rep = models.CharField(max_length=100,
+                                 choices=zip_choices([None] + list(Legislator.objects.filter(rep_or_sen='Sen.'))),
+                                 verbose_name=_('House Author'))
     cosigners = MultiSelectField(choices=zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all()))),\
                                 verbose_name=_('Copatrocinador/a'), default='None')
     link = models.URLField("Letter URL")
@@ -183,8 +187,12 @@ class Letter(models.Model):
     observaciones =  models.TextField(default='N/a')
     acción = models.ForeignKey(Action, on_delete=models.SET_NULL, null=True)
     notice = models.CharField(max_length=9,
-                                verbose_name=_('If a notice was sent, specify the number'),
-                                default='N/a')
+                              verbose_name=_('If a notice was sent, specify the number'),
+                              default='N/a')
+    @property
+    def two_authors(self):
+        auths = [self.patrocinador_rep, self.patrocinador_sen]
+        return True if all(auths) else False
 
     @property
     def partido(self):

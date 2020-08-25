@@ -16,11 +16,10 @@ from django.db.models import Q
 from .forms import LegSearchForm
 import csv, io
 
-FIELDS = ['tema', 'patrocinador', 'descripción', 
+FIELDS = ['tema', 'patrocinador', 'patrocinador_sen', 'descripción', 
          'fecha', 'caucus', 'legislatura', 'link', 'tema_específico',
          'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
-         'observaciones', 'acción', 'notice', 'cosigners'
-             ]
+         'observaciones', 'acción', 'notice', 'cosigners']
 
 
 def about(request):
