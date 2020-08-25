@@ -4,7 +4,12 @@
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" href="{% url 'legislator-letters' letter.patrocinador.name %}">{{letter.patrocinador.full_title}}</a>
+                    {% if letter.sen_author %}
+                        <a class="mr-2" href="{% url 'legislator-letters' letter.patrocinador_sen.name %}">{{letter.patrocinador_sen.full_title}}</a>
+                    {% endif %}
+                    {% if letter.rep_author %}
+                        <a class="mr-2" href="{% url 'legislator-letters' letter.patrocinador_rep.name %}">{{letter.patrocinador_rep.full_title}}</a>
+                    {% endif %}
                     <small class="text-muted">{{ letter.fecha | date:"F d, Y" }}</small>
                 </div>
                 <h2><a class="article-title">{{ letter.title }}</a></h2>

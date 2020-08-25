@@ -97,7 +97,8 @@ def upload_letters(signers):
         cosign = ', '.join(info['cosigners'])
         letter = Letter(
         tema=Topic.objects.filter(topic_name=info['Topic']).first(), 
-        patrocinador=Legislator.objects.filter(name=info['Legislator']).first(),
+        patrocinador_sen=Legislator.objects.filter(name=info['Legislator']).first(),
+        patrocinador_rep = None,
         caucus=Caucus.objects.filter(caucus_name='None Selected').first(),
         tema_específico=Specific_Topic.objects.filter(specific_topic_name=info['Specific topic']).first(),
         destinatario=Recipient.objects.filter(recipient_name=info['Recipient']).first(),

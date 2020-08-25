@@ -48,19 +48,29 @@ class Action(models.Model):
 def zip_choices(choice_list):
     return zip(choice_list, choice_list)
     
-def classify_letter(letter, attr, measure, options):
+def classify_letter(letter, attr, class_, options):
     if not letter.cosigners:
-        return options[0] if letter.patrocinador.__dict__[attr] == measure else options[1]
-    signers = [leg for leg in Legislator.objects.all() if leg.name in letter.cosigners]
-    #signers = (letter.patrocinador.name + ', ' + ', '.join(letter.cosigners)).split(', ')
-    classified = list(map(lambda leg_obj: leg_obj.party == 'D', signers))
-    #classified = list(map(lambda leg: Legislator.objects.filter(name=leg).first().party == 'D', signers))
+        if len(letter.authors) == 1:
+            # letter.authors[0]
+            # if letter.sen_author:
+            #     leg = letter.patrocinador_sen
+            # else:
+            #     leg = letter.patrocinador_rep
+            return options[0] if letter.authors[0].__dict__[attr] == class_ else options[1]
+        elif len(letter.authors) == 2:
+            classified = list(map(lambda leg_obj: leg_obj.__dict__[attr] == class_, letter.authors))
+    else:
+        signers = letter.authors + [leg for leg in Legislator.objects.all() if leg.name in letter.cosigners]
+        classified = list(map(lambda leg_obj: leg_obj.__dict__[attr] == class_, signers))
     if all(classified):
         return options[0]
     if not any(classified):
         return options[1]
     else:
         return options[2]
+
+def obj_list_to_attr(obj_list, attr):
+    return list(map(lambda obj: obj.__dict__[attr], obj_list))
 
 STATES = zip_choices(list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"])
 
@@ -102,7 +112,7 @@ class Legislator(models.Model):
 
     @property
     def letters_authored(self):
-        authored = list(Letter.objects.filter(patrocinador=self).all())
+        authored = list(Letter.objects.filter(patrocinador_sen=self) | Letter.objects.filter(patrocinador_rep=self))
         return sorted(authored, key=lambda letter: (letter.fecha, letter.consecutive_number), reverse=True)
 
     @property
@@ -160,39 +170,87 @@ class Letter(models.Model):
         y = 1, _('Yes')
         n = 0, _('No')
 
-    tema = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
-    tema_específico = models.ForeignKey(Specific_Topic, on_delete=models.SET_NULL, null=True)
+    tema = models.ForeignKey(Topic, 
+                            on_delete=models.SET_NULL, 
+                            null=True
+                            )
+    tema_específico = models.ForeignKey(Specific_Topic, 
+                                        on_delete=models.SET_NULL, 
+                                        null=True
+                                        )
     fecha = models.DateTimeField(help_text="Enter dates in <em>MM/DD/YYYY</em> format")
     descripción = models.TextField()
     favorable_a_MX = models.CharField(max_length=8,
                                     choices=Sentiment.choices,
-                                    verbose_name=_('Positive for Mexico?'))
+                                    verbose_name=_('Positive for Mexico?')
+                                    )
     mención_directa_a_MX = models.CharField(max_length=3,
                                     choices=Dummy.choices,
-                                    verbose_name=_('Was Mexico directly mentioned?'))
-    destinatario = models.ForeignKey(Recipient, on_delete=models.SET_NULL, null=True)
-    caucus = models.ForeignKey(Caucus, on_delete=models.SET_NULL, null=True)
-    legislatura = models.ForeignKey(Legislature, on_delete=models.SET_NULL, null=True)
-    patrocinador_sen = models.ForeignKey(Legislator, on_delete=models.SET_NULL, null=True, \
-                                    verbose_name=_('Senate Author'))
-    patrocinador_rep = models.CharField(max_length=100,
-                                 choices=zip_choices([None] + list(Legislator.objects.filter(rep_or_sen='Sen.'))),
-                                 verbose_name=_('House Author'))
-    cosigners = MultiSelectField(choices=zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all()))),\
-                                verbose_name=_('Copatrocinador/a'), default='None')
+                                    verbose_name=_('Was Mexico directly mentioned?')
+                                    )
+    destinatario = models.ForeignKey(Recipient, 
+                                    on_delete=models.SET_NULL, 
+                                    null=True
+                                    )
+    caucus = models.ForeignKey(Caucus, 
+                               on_delete=models.SET_NULL, 
+                               null=True
+                               )
+    legislatura = models.ForeignKey(Legislature, 
+                                    on_delete=models.SET_NULL, 
+                                    null=True
+                                    )
+    patrocinador_sen = models.ForeignKey(Legislator, 
+                                        limit_choices_to={'rep_or_sen': 'Sen.'}, 
+                                        related_name='Senators',
+                                        verbose_name=_('Senate Author'), 
+                                        on_delete=models.SET_NULL, 
+                                        null=True,
+                                        blank=True
+                                        )
+    patrocinador_rep = models.ForeignKey(Legislator, 
+                                        limit_choices_to={'rep_or_sen': 'Rep.'}, 
+                                        related_name='Representatives',
+                                        verbose_name=_('House Author'), 
+                                        on_delete=models.SET_NULL, 
+                                        null=True,
+                                        blank=True
+                                        )
+    cosigners = MultiSelectField(choices=zip_choices([''] + list(map(lambda leg: leg.name, Legislator.objects.all()))),\
+                                verbose_name=_('Copatrocinador/a'), 
+                                default='None'
+                                )
     link = models.URLField("Letter URL")
     date_posted = models.DateTimeField(default=timezone.now)
     posted_by = models.ForeignKey(User, 
-                                 on_delete=models.SET_NULL, null=True)
+                                 on_delete=models.SET_NULL, 
+                                 null=True
+                                 )
     observaciones =  models.TextField(default='N/a')
-    acción = models.ForeignKey(Action, on_delete=models.SET_NULL, null=True)
+    acción = models.ForeignKey(Action,
+                               on_delete=models.SET_NULL, 
+                               null=True
+                               )
     notice = models.CharField(max_length=9,
                               verbose_name=_('If a notice was sent, specify the number'),
-                              default='N/a')
+                              default='N/a'
+                              )
+    @property
+    def authors(self):
+        auths = [leg for leg in [self.patrocinador_rep, self.patrocinador_sen] if leg]
+        return auths if auths else []
+
     @property
     def two_authors(self):
-        auths = [self.patrocinador_rep, self.patrocinador_sen]
-        return True if all(auths) else False
+        return True if len(self.authors) == 2 else False
+        
+    @property
+    def sen_author(self):
+        return True if self.patrocinador_sen else False
+
+    @property
+    def rep_author(self):
+        return True if self.patrocinador_rep else False
 
     @property
     def partido(self):
@@ -213,8 +271,12 @@ class Letter(models.Model):
 
     @property
     def title(self):
+        if not self.authors:
+            name = 'NO LEGISLATOR SELECTED: UPDATE LETTER'
+        else:
+            name = '-'.join(obj_list_to_attr(self.authors, 'name'))
         return str(self.fecha)[:10].replace('-', '.') + '.' + str(self.cámara)[0] +\
-                '.' + str(self.patrocinador.name) + '.' + str(self.tema) + '.' + str(self.consecutive_number)
+                '.' + name + '.' + str(self.tema) + '.' + str(self.consecutive_number)
 
     @property
     def chamber(self):
@@ -222,15 +284,20 @@ class Letter(models.Model):
 
     @property
     def num_reps_sens(self):
-        signers = (self.patrocinador.name + ', ' + ', '.join(self.cosigners)).split(', ')
+        if not self.authors:
+            return 0, 0
+        auths = obj_list_to_attr(self.authors, 'name') #list of name strings
+        signers = auths + ', '.join(self.cosigners).split(', ') #larger list of name strings
         #if no cosigners:
-        if not signers[1]:
-            sen_rep =  self.patrocinador.rep_or_sen
-            return (1, 0) if sen_rep == 'Sen.' else (0, 1)
+        if not self.cosigners:
+            sen_rep = obj_list_to_attr(self.authors, 'rep_or_sen')
+            if len(sen_rep) == 1:
+                return (1, 0) if [sen_rep] == 'Sen.' else (0, 1)
+            elif len(sen_rep) == 2:
+                return sen_rep.count('Sen.'), sen_rep.count('Rep.')
         sen_rep = list(map(lambda name_: Legislator.objects.filter(name=name_).first().rep_or_sen, signers))
-        sen = sen_rep.count('Sen.')
-        rep = len(sen_rep) - sen
-        return sen, rep
+
+        return sen_rep.count('Sen.'), sen_rep.count('Rep.')
 
     @property
     def num_sens(self):

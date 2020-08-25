@@ -16,7 +16,7 @@ from django.db.models import Q
 from .forms import LegSearchForm
 import csv, io
 
-FIELDS = ['tema', 'patrocinador', 'patrocinador_sen', 'descripción', 
+FIELDS = ['tema', 'patrocinador_sen', 'patrocinador_rep', 'descripción', 
          'fecha', 'caucus', 'legislatura', 'link', 'tema_específico',
          'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
          'observaciones', 'acción', 'notice', 'cosigners']
@@ -122,7 +122,7 @@ class SearchResultsView(ListView):
 def export(self, name=None):
     attrs = ['Código', 'Tema', 'Tema específico', 'Fecha', 'Descripción', 'Favorable a MX', 'Mención directa a MX', 
             'Destinatario',  'Cámara', 'Partido', 'Caucus', 'Legislatura', 'Congresistas', 'Senadores',
-            'Patrocinador/a', 'Copatrocinador/a', 'Link', 'Observaciones', 'Acción', 'Notice']
+            'Patrocinador/a (Sen.)', 'Patrocinador/a (Rep.)', 'Copatrocinador/a', 'Link', 'Observaciones', 'Acción', 'Notice']
     #zip rows and the attrs into a dict in the loop
     response = HttpResponse(content_type='text/csv')
     response.write(u'\ufeff'.encode('utf8'))
@@ -133,10 +133,11 @@ def export(self, name=None):
     else:
         letters = Legislator.objects.filter(name=name).first().all_letters
     for letter in letters:
+        authors = [letter.__dict__[attr].name if attr in letter.__dict__.keys() else '' for attr in ['patrocinador_sen', 'patrocinador_rep'] ]
         tema, tema_específico, destinatario, caucus, legislatura, senadores, congresistas, acción = get_letter_values(letter)
         vals = [letter.title, tema, tema_específico, letter.fecha, letter.descripción, letter.favorable_a_MX, letter.mención_directa_a_MX,
-                letter.destinatario, letter.cámara, letter.partido, caucus, legislatura, congresistas, senadores, letter.patrocinador.name,
-                letter.cosign_sorted, letter.letter_path, letter.observaciones, acción, letter.notice]
+                letter.destinatario, letter.cámara, letter.partido, caucus, legislatura, congresistas, senadores] + authors +\
+                + [letter.cosign_sorted, letter.letter_path, letter.observaciones, acción, letter.notice]
         writer.writerow(vals)
     
     response['Content-Disposition'] = 'attachment; filename="letters.csv"'
@@ -155,7 +156,6 @@ def get_letter_values(letter):
     return tema, tema_específico, destinatario, caucus, legislatura, senadores, congresistas, acción
 
 def lookup_attr(obj, id_, attr):
-    obj
     try:
         rv = obj.objects.filter(id=id_).first().__dict__[attr]
     except:
