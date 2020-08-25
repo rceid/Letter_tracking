@@ -72,7 +72,7 @@ def classify_letter(letter, attr, class_, options):
 def obj_list_to_attr(obj_list, attr):
     return list(map(lambda obj: obj.__dict__[attr], obj_list))
 
-STATES = sorted(zip_choices(list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"]))
+STATES = zip_choices(list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"])
 
 #Legislator and Letter Models 
 class Legislator(models.Model):
@@ -188,14 +188,16 @@ class Letter(models.Model):
                                     choices=Dummy.choices,
                                     verbose_name=_('Was Mexico directly mentioned?')
                                     )
-    destinatario = models.ForeignKey(Recipient, 
-                                    on_delete=models.SET_NULL, 
-                                    null=True
-                                    )
-    caucus = models.ForeignKey(Caucus, 
-                               on_delete=models.SET_NULL, 
-                               null=True
-                               )
+    destinatario = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda obj: obj.recipient_name, Recipient.objects.all())))),
+                                default='None',
+                                max_length=100
+                                )
+    other_destinatario_comments = models.TextField()
+
+    caucus = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda obj: obj.caucus_name, Caucus.objects.all())))),
+                                default='None',
+                                max_length=100
+                                )
     legislatura = models.ForeignKey(Legislature, 
                                     on_delete=models.SET_NULL, 
                                     null=True
@@ -216,9 +218,10 @@ class Letter(models.Model):
                                         null=True,
                                         blank=True
                                         )
-    cosigners = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all())))),\
+    cosigners = MultiSelectField(choices=zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all()))),\
                                 verbose_name=_('Copatrocinador/a'), 
-                                default='None'
+                                default='None',
+                                max_length=1000
                                 )
     date_posted = models.DateTimeField(default=timezone.now)
     posted_by = models.ForeignKey(User, 

@@ -19,7 +19,8 @@ import csv, io
 FIELDS = ['tema', 'patrocinador_sen', 'patrocinador_rep', 'descripción', 
          'fecha', 'caucus', 'legislatura', 'tema_específico',
          'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
-         'observaciones', 'acción', 'notice', 'cosigners']
+         'other_destinatario_comments', 'observaciones', 'acción', 
+         'notice', 'cosigners']
 
 
 def about(request):

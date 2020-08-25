@@ -85,7 +85,7 @@ def upload_legislator(pol_df):
             )
         legislator.save()
     print('{} Legislators added to database'.format(count))
-    
+
 
 def upload_letters(signers):
     '''
@@ -94,18 +94,21 @@ def upload_letters(signers):
     count = 0
     for _, info in signers:
         count += 1
-        ###fix cosigners later, caucus field is constant
         cosign = ', '.join(info['cosigners'])
+        try:
+            recip= Recipient.objects.filter(recipient_name=info['Recipient']).first().recipient_name
+        except:
+            recip = ''
+        
         letter = Letter(
         tema=Topic.objects.filter(topic_name=info['Topic']).first(), 
         patrocinador_sen=Legislator.objects.\
             filter(name=info['Legislator']).first(),
         patrocinador_rep = None,
-        caucus=Caucus.objects.filter(caucus_name='None Selected').first(),
+        caucus='',
         tema_específico=Specific_Topic.objects.\
             filter(specific_topic_name=info['Specific topic']).first(),
-        destinatario=Recipient.objects.\
-            filter(recipient_name=info['Recipient']).first(),
+        destinatario=recip,
         acción=Action.objects.filter(action_name=info['Action']).first(),
         legislatura = Legislature.objects.\
             filter(legislature_name=info['Legislature']).first(),

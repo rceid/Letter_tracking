@@ -17,17 +17,21 @@
                 </div>
                 <h2><a class="article-title">{{ letter.title }}</a></h2>
                 <p style="line-height:.4"> </p>
-                <p class="article-content" style="line-height:.4">Tema específico: {{ letter.tema_específico }}</p>
+                <p class="article-content" style="line-height:.4">Legislatura: {{ letter.legislatura }}</p>
                 {% if letter.mención_directa_a_MX == 1%}
                     <p class="article-content" style="line-height:.4">- Mención directa a MX</p>
                 {% endif %}
-                <p class="article-content" style="line-height:.4">Destinatario: {{ letter.destinatario }}</p>
+                {% if letter.other_destinatario_comments %}
+                    <p class="article-content" style="line-height:.4">Destinatario: {{ letter.destinatario }}- {{letter.other_destinatario_comments}}</p>
+                {% else %}
+                    <p class="article-content" style="line-height:.4">Destinatario: {{ letter.destinatario }}</p>
+                {% endif %}
                 <p class="article-content" style="line-height:.4">Caucus: {{ letter.caucus }}</p>
                 <p class="article-content" style="line-height:.4">Congresistas: {{ letter.num_reps }}</p>
                 <p class="article-content" style="line-height:.4">Senadores: {{ letter.num_sens }}</p>
                 <p class="article-content" style="line-height:.4">Notice: {{ letter.notice }}</p>
                 {% if letter.observaciones %}
-                <p class="article-content" style="line-height:1.3">Observaciones: {{ letter.observaciones }}</p>
+                    <p class="article-content" style="line-height:1.3">Observaciones: {{ letter.observaciones }}</p>
                 {% endif %}
                 <div> <small> <a  href="{% url 'letter-detail' letter.id%}">ver más</a></small></div>
             </div>
