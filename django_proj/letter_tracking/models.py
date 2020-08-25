@@ -186,11 +186,11 @@ class Letter(models.Model):
                                     )
     mención_directa_a_MX = models.CharField(max_length=3,
                                     choices=Dummy.choices,
-                                    verbose_name=_('Was Mexico directly mentioned?')
-                                    )
+                                    verbose_name=_('Was Mexico directly mentioned?'))
     destinatario = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda obj: obj.recipient_name, Recipient.objects.all())))),
                                 default='None',
-                                max_length=100
+                                max_length=100,
+                                help_text="<em>if 'Other', please specify in the text box below</em>"
                                 )
     other_destinatario_comments = models.TextField()
 
