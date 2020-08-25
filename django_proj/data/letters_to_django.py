@@ -36,7 +36,8 @@ def letter_sponsors():
             info[info['Counter'] == 1]['Legislator'].item() #author call
             
         except:
-            print('multiple letters on {}'.format(date), '\nDifferentiating by specific topic')
+            print('multiple letters on {}'.format(date),
+                  '\nDifferentiating by specific topic')
             subdivision = info.groupby('Specific topic').__iter__()
             for title_, info_ in subdivision:
                 letter_info(signers, info_)
@@ -97,15 +98,18 @@ def upload_letters(signers):
         cosign = ', '.join(info['cosigners'])
         letter = Letter(
         tema=Topic.objects.filter(topic_name=info['Topic']).first(), 
-        patrocinador_sen=Legislator.objects.filter(name=info['Legislator']).first(),
+        patrocinador_sen=Legislator.objects.\
+            filter(name=info['Legislator']).first(),
         patrocinador_rep = None,
         caucus=Caucus.objects.filter(caucus_name='None Selected').first(),
-        tema_específico=Specific_Topic.objects.filter(specific_topic_name=info['Specific topic']).first(),
-        destinatario=Recipient.objects.filter(recipient_name=info['Recipient']).first(),
+        tema_específico=Specific_Topic.objects.\
+            filter(specific_topic_name=info['Specific topic']).first(),
+        destinatario=Recipient.objects.\
+            filter(recipient_name=info['Recipient']).first(),
         acción=Action.objects.filter(action_name=info['Action']).first(),
-        legislatura = Legislature.objects.filter(legislature_name=info['Legislature']).first(),
+        legislatura = Legislature.objects.\
+            filter(legislature_name=info['Legislature']).first(),
         descripción=info['Short description'], fecha=info['Date'], 
-        link=info['Link'], 
         favorable_a_MX =info['Positive for MX'], 
         mención_directa_a_MX=info['MX was directly mentioned'],
         observaciones=info['Comments'], 

@@ -17,7 +17,7 @@ from .forms import LegSearchForm
 import csv, io
 
 FIELDS = ['tema', 'patrocinador_sen', 'patrocinador_rep', 'descripción', 
-         'fecha', 'caucus', 'legislatura', 'link', 'tema_específico',
+         'fecha', 'caucus', 'legislatura', 'tema_específico',
          'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
          'observaciones', 'acción', 'notice', 'cosigners']
 

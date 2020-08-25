@@ -72,7 +72,7 @@ def classify_letter(letter, attr, class_, options):
 def obj_list_to_attr(obj_list, attr):
     return list(map(lambda obj: obj.__dict__[attr], obj_list))
 
-STATES = zip_choices(list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"])
+STATES = sorted(zip_choices(list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"]))
 
 #Legislator and Letter Models 
 class Legislator(models.Model):
@@ -92,7 +92,7 @@ class Legislator(models.Model):
     state = models.CharField(max_length=30,
                             choices=STATES)
     district = models.CharField(max_length=10,\
-                                choices=[('N/a', '')] + list(zip_choices(['at large'] + list(map(lambda num: str(num), range(1,54))))),\
+                                choices=[('', 'N/a')] + list(zip_choices(['at large'] + list(map(lambda num: str(num), range(1,54))))),\
                                 help_text='If politician is a Sentor, please select N/a')
     rep_or_sen = models.CharField(max_length=4,
                                  choices=RepSen.choices,
@@ -216,11 +216,10 @@ class Letter(models.Model):
                                         null=True,
                                         blank=True
                                         )
-    cosigners = MultiSelectField(choices=zip_choices([''] + list(map(lambda leg: leg.name, Legislator.objects.all()))),\
+    cosigners = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all())))),\
                                 verbose_name=_('Copatrocinador/a'), 
                                 default='None'
                                 )
-    link = models.URLField("Letter URL")
     date_posted = models.DateTimeField(default=timezone.now)
     posted_by = models.ForeignKey(User, 
                                  on_delete=models.SET_NULL, 
