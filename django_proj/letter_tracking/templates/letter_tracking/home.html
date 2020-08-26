@@ -23,10 +23,16 @@
                 {% endif %}
                 {% if letter.other_destinatario_comments %}
                     <p class="article-content" style="line-height:.4">Destinatario: {{ letter.destinatario }}- {{letter.other_destinatario_comments}}</p>
-                {% else %}
+                {% elif object.destinatario %}
                     <p class="article-content" style="line-height:.4">Destinatario: {{ letter.destinatario }}</p>
+                {% else %}
+                    <p class="article-content" style="line-height:.4">Destinatario: N/a</p>
                 {% endif %}
-                <p class="article-content" style="line-height:.4">Caucus: {{ letter.caucus }}</p>
+                {% if object.caucus %}
+                    <p class="article-content" style="line-height:.4">Caucus: {{ letter.caucus }}</p>
+                {% else %}
+                    <p class="article-content" style="line-height:.4">Caucus: N/a</p>
+                {% endif %}
                 <p class="article-content" style="line-height:.4">Congresistas: {{ letter.num_reps }}</p>
                 <p class="article-content" style="line-height:.4">Senadores: {{ letter.num_sens }}</p>
                 <p class="article-content" style="line-height:.4">Notice: {{ letter.notice }}</p>

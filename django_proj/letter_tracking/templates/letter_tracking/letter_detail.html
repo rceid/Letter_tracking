@@ -12,97 +12,141 @@
                 {% if letter.rep_author %}
                     <a class="mr-2" href="{% url 'legislator-letters' letter.patrocinador_rep.name %}">{{letter.patrocinador_rep.full_title}}</a>
                 {% endif %}
-                    <small class="text-muted">{{ object.fecha | date:"F d, Y" }}</small>
+                    <medium class="text-muted">{{ object.fecha | date:"F d, Y" }}</medium>
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
             <div>
-                <small>
+                <medium>
                     <b>Tema:</b> {{object.tema}}
-                </small>
+                </medium>
             </div>
             <div>
-                <small>
+                <medium>
                     <b>Tema Específico:</b> {{object.tema_específico}}
-                </small>
+                </medium>
             </div>
             <div>
-                <small>
+                <medium>
                     <b>Fecha: </b>{{ object.fecha | date:"F d, Y"}}
-                </small>
+                </medium>
             </div>
             <div>
-                <small>
+                <medium>
                     <b>Descripción: </b>{{ object.descripción }}
-                </small>
+                </medium>
             </div>
             <div>
-                <small>
+                <medium>
                     <b>Favorable a México: </b>{{ object.favorable_a_MX }}
-                </small>
+                </medium>
             </div> 
             <div>
-                <small>
+                <medium>
                     <b>Mención directa a México: </b>{{ object.mencion_directa_a_MX }}
-                </small>
+                </medium>
             </div>  
+            {% if letter.other_destinatario_comments %}
+                <medium> Destinatario: {{ letter.destinatario }}- {{letter.other_destinatario_comments}}</medium>
+            {% elif object.destinatario %}
+                <div>
+                    <medium>
+                        <b>Destinatario: </b>{{ object.destinatario }}
+                    </medium>
+                </div>
+            {% else %}
             <div>
-                <small>
-                    <b>Destinatario: </b>{{ object.destinatario }}
-                </small>
+                <medium>
+                    <b>Destinatario: </b>N/a
+                </medium>
+            </div>
+            {% endif %}
+            <div>
+                <medium>
+                    <b>Partido: </b>{{ object.partido }}
+                </medium>
             </div>
             <div> 
-                <small>
-                    {% if object.posted_by == None %}
-                    <b>Uploaded by: letter_admin</b>
-                    {% else %}
-                    <b>Uploaded by:  {{user.posted_by}}</b>
-                    {% endif %}
-                </small>
-            </div>
-
-            <div> 
-                <small>
+                <medium>
                     <b>Cámara:</b> {{object.cámara}}
-                </small>
+                </medium>
+            </div>
+            {% if object.caucus %}
+                <div>
+                    <medium>
+                        <b>Caucus:</b> {{object.caucus}}
+                    </medium>
+                </div>
+            {% else %}
+                <div>
+                    <medium>
+                        <b>Caucus:</b> N/a
+                    </medium>
+                </div>
+            {% endif %}
+            <div>
+                <medium>
+                    <b>Legislatura:</b> {{object.legislatura}}
+                </medium>
             </div>
             <div>
-                <small>
-                    <b>Caucus:</b> {{object.caucus}}
-                </small>
+                <medium>
+                    <b>Congresistas:</b> {{object.num_reps}}
+                </medium>
             </div>
             <div>
-                <small>
+                <medium>
+                    <b>Senadores:</b> {{object.num_sens}}
+                </medium>
+            </div>
+            <div>
+                <medium>
+                    <b>Patrocinador/a/s:</b>
+            {% if letter.sen_author %}
+                {{letter.patrocinador_sen.full_title}}
+            {% endif %}
+            {% if letter.two_authors %}
+                &
+            {% endif %}
+            {% if letter.rep_author %}
+                {{letter.patrocinador_rep.full_title}}
+            {% endif %}
+                </medium>
+            </div>
+            <div>
+                <medium>
+                    <b>Copatrocinadores:</b> {{object.copatrocinador}}
+                </medium>
+            </div>
+            <div>
+                <medium> 
+                    <b>Link: </b>{{object.letter_path }}
+                </medium> 
+            </div>
+            <div>
+                <medium>
                     <b>Observaciones:</b> {{object.observaciones}}
-                </small>
+                </medium>
             </div>
             <div>
-                <small>
+                <medium>
                     <b>Acción:</b> {{object.acción}}
-                </small>
+                </medium>
             </div>
             <div>
-                <small>
+                <medium>
                     <b>Notice number:</b> {{object.notice}}
-                </small>
+                </medium>
             </div>
             <div>
                 __
             </div>
-            <div>
-                <small> 
-                    <a href="{{ object.link}}">Link to Letter</a> 
-                </small> 
-            </div>
-            <div>
-                <small> 
-                    <b>File path: </b>{{object.letter_path }}
-                </small> 
-            </div>
-            <div>
-                <small>
-                    <b>Copatrocinadores:</b> {{object.copatrocinador}}
-                </small>
-            </div>
+                <medium>
+                    {% if object.posted_by == None %}
+                    <b>Uploaded by: letter_admin</b>
+                    {% else %}
+                    <b>Uploaded by: {{user.posted_by}}</b>
+                    {% endif %}
+                </medium>
                 <div>
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'letter-update' object.id%}">Update</a>
                 <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'letter-delete' object.id%}">Delete</a>
