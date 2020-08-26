@@ -44,6 +44,9 @@ def clean_letters():
     letters['Counter'] = letters['Counter'].apply(dummy_col)
     letters['MX was directly mentioned'] = \
         letters['MX was directly mentioned'].apply(dummy_col)
+    letters['Positive for MX'] = letters['Positive for MX'].replace({1.0:'Positiva',
+                                                                     2.0:'Neutral',
+                                                                     3.0:'Negativa'})
     letters['Specific topic'] = letters['Specific topic'].fillna('Blank')
     
     return letters

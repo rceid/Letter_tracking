@@ -78,13 +78,13 @@ STATES = zip_choices(list(map(lambda state: state.abbr, us.states.STATES)) + ["D
 class Legislator(models.Model):
 
     class RepSen(models.TextChoices):
-        REP = 'Rep.', _('Representative')
-        SEN = 'Sen.', _('Senator')
+        REP = 'Rep.', _('Congresista')
+        SEN = 'Sen.', _('Senador')
 
     class PolParties(models.TextChoices):
-        D = 'D', _('Democrat')
-        R = 'R', _('Republican')
-        I = 'I', _('Independent')
+        D = 'D', _('Demócrata')
+        R = 'R', _('Republicano')
+        I = 'I', _('Independiente')
 
     # first_name = models.CharField(max_length=100, default='None')
     # last_name = models.CharField(max_length=100, default='None')
@@ -143,9 +143,9 @@ class Legislator(models.Model):
 class Letter(models.Model):
 
     class PolParties(models.TextChoices):
-        D = 'D', _('Democrat')
-        R = 'R', _('Republican')
-        I = 'I', _('Independent')
+        D = 'D', _('Demócrata')
+        R = 'R', _('Republicano')
+        I = 'I', _('Independiente')
     
     class RepSen(models.TextChoices):
         REP = 'Rep.', _('Representative')
@@ -157,17 +157,17 @@ class Letter(models.Model):
         C = 'C', _('Congreso')
     
     class Support(models.TextChoices):
-        rep = 'Republicano', _('Republican')
-        dem = 'Demócrata', _('Democrat')
-        bi= 'Bipartidista', _('Bipartisan')
+        rep = 'Republicano', _('Republicano')
+        dem = 'Demócrata', _('Demócrata')
+        bi= 'Bipartidista', _('Bipartidista')
     
     class Sentiment(models.TextChoices):
-        Pos = 1, _('Positive')
-        Neut = 2, _('Neutral')
-        Neg = 3, _('Negative')
+        Pos = 'Positiva', _('Positiva')
+        Neut = 'Neutral', _('Neutral')
+        Neg = 'Negativa', _('Negativa')
 
     class Dummy(models.TextChoices):
-        y = 1, _('Yes')
+        y = 1, _('Si')
         n = 0, _('No')
 
     tema = models.ForeignKey(Topic, 
@@ -187,7 +187,7 @@ class Letter(models.Model):
     mención_directa_a_MX = models.CharField(max_length=3,
                                     choices=Dummy.choices,
                                     verbose_name=_('Was Mexico directly mentioned?'))
-    destinatario = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda obj: obj.recipient_name, Recipient.objects.all())))),
+    destinatario = MultiSelectField(choices=[('N/a', 'N/a')] + list(zip_choices(list(map(lambda obj: obj.recipient_name, Recipient.objects.all())))),
                                 default='None',
                                 max_length=100,
                                 help_text="<em>if 'Other', please specify in the text box below</em>"

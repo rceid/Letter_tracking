@@ -15,7 +15,41 @@
                     <small class="text-muted">{{ object.fecha | date:"F d, Y" }}</small>
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
-            <p class="article-content">{{ object.descripción }}</p>
+            <div>
+                <small>
+                    <b>Tema:</b> {{object.tema}}
+                </small>
+            </div>
+            <div>
+                <small>
+                    <b>Tema Específico:</b> {{object.tema_específico}}
+                </small>
+            </div>
+            <div>
+                <small>
+                    <b>Fecha: </b>{{ object.fecha | date:"F d, Y"}}
+                </small>
+            </div>
+            <div>
+                <small>
+                    <b>Descripción: </b>{{ object.descripción }}
+                </small>
+            </div>
+            <div>
+                <small>
+                    <b>Favorable a México: </b>{{ object.favorable_a_MX }}
+                </small>
+            </div> 
+            <div>
+                <small>
+                    <b>Mención directa a México: </b>{{ object.mencion_directa_a_MX }}
+                </small>
+            </div>  
+            <div>
+                <small>
+                    <b>Destinatario: </b>{{ object.destinatario }}
+                </small>
+            </div>
             <div> 
                 <small>
                     {% if object.posted_by == None %}
@@ -29,16 +63,6 @@
             <div> 
                 <small>
                     <b>Cámara:</b> {{object.cámara}}
-                </small>
-            </div>
-            <div>
-                <small>
-                    <b>Tema:</b> {{object.tema}}
-                </small>
-            </div>
-            <div>
-                <small>
-                    <b>Tema Específico:</b> {{object.tema_específico}}
                 </small>
             </div>
             <div>
