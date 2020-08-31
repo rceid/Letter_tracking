@@ -82,9 +82,9 @@ class Legislator(models.Model):
         SEN = 'Sen.', _('Senador')
 
     class PolParties(models.TextChoices):
-        D = 'D', _('Demócrata')
-        R = 'R', _('Republicano')
-        I = 'I', _('Independiente')
+        D = 'D', _('Democrat')
+        R = 'R', _('Republican')
+        I = 'I', _('Independent')
 
     first_name = models.CharField(max_length=100, default='None')
     last_name = models.CharField(max_length=100, default='None')
@@ -143,9 +143,9 @@ class Legislator(models.Model):
 class Letter(models.Model):
 
     class PolParties(models.TextChoices):
-        D = 'D', _('Demócrata')
-        R = 'R', _('Republicano')
-        I = 'I', _('Independiente')
+        D = 'D', _('Democrat')
+        R = 'R', _('Republican')
+        I = 'I', _('Independent')
     
     class RepSen(models.TextChoices):
         REP = 'Rep.', _('Representative')
@@ -157,9 +157,9 @@ class Letter(models.Model):
         C = 'C', _('Congreso')
     
     class Support(models.TextChoices):
-        rep = 'Republicano', _('Republicano')
-        dem = 'Demócrata', _('Demócrata')
-        bi= 'Bipartidista', _('Bipartidista')
+        rep = 'Republican', _('Republican')
+        dem = 'Democrat', _('Democrat')
+        bi= 'Bipartisan', _('Bipartisan')
     
     class Sentiment(models.TextChoices):
         Pos = 'Positiva', _('Positiva')
