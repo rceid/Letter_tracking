@@ -77,6 +77,8 @@ def upload_legislator(pol_df):
         count += 1
         legislator = Legislator(
             name = pol['Legislator'],
+            last_name = pol['CONGRESSPERSON LAST NAME'],
+            first_name = pol['CONGRESSPERSON FIRST NAME'],
             state = pol['STATE'],
             district = pol['DISTRICT'],
             rep_or_sen = pol['SEN/REP'],

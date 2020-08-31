@@ -86,9 +86,9 @@ class Legislator(models.Model):
         R = 'R', _('Republicano')
         I = 'I', _('Independiente')
 
-    # first_name = models.CharField(max_length=100, default='None')
-    # last_name = models.CharField(max_length=100, default='None')
-    name = models.CharField(max_length=100, default='None')
+    first_name = models.CharField(max_length=100, default='None')
+    last_name = models.CharField(max_length=100, default='None')
+    name = models.CharField(max_length=100, default='None', verbose_name=_('Full Name'))
     state = models.CharField(max_length=30,
                             choices=STATES)
     district = models.CharField(max_length=10,\
@@ -237,6 +237,16 @@ class Letter(models.Model):
                               verbose_name=_('If a notice was sent, specify the number'),
                               default='N/a'
                               )
+
+    @property
+    def title(self):
+        if not self.authors:
+            name = 'NO LEGISLATOR SELECTED: UPDATE LETTER'
+        else:
+            name = '-'.join(obj_list_to_attr(self.authors, 'last_name'))
+        return str(self.fecha)[:10].replace('-', '.') + '.' + str(self.cámara)[0] +\
+                '.' + name + '.' + str(self.tema) + '.' + str(self.consecutive_number)
+
     @property
     def authors(self):
         auths = [leg for leg in [self.patrocinador_rep, self.patrocinador_sen] if leg]
@@ -270,15 +280,6 @@ class Letter(models.Model):
     def consecutive_number(self):
         daily_order = list(Letter.objects.filter(fecha=self.fecha).order_by('fecha'))
         return daily_order.index(self) + 1
-
-    @property
-    def title(self):
-        if not self.authors:
-            name = 'NO LEGISLATOR SELECTED: UPDATE LETTER'
-        else:
-            name = '-'.join(obj_list_to_attr(self.authors, 'name'))
-        return str(self.fecha)[:10].replace('-', '.') + '.' + str(self.cámara)[0] +\
-                '.' + name + '.' + str(self.tema) + '.' + str(self.consecutive_number)
 
     @property
     def chamber(self):
