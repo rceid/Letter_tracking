@@ -154,8 +154,8 @@ def export(self, name=None):
 def get_letter_values(letter):
     tema = lookup_attr(Topic, letter.tema_id, 'topic_name')
     tema_específico = lookup_attr(Specific_Topic, letter.tema_específico_id, 'specific_topic_name')
-    destinatario = lookup_attr(Recipient, letter.destinatario_id, 'recipient_name')
-    caucus = lookup_attr(Caucus, letter.caucus_id, 'caucus_name')
+    destinatario = ', '.join(letter.destinatario) #lookup_attr(Recipient, letter.destinatario_id, 'recipient_name')
+    caucus = ', '.join(letter.caucus)#lookup_attr(Caucus, letter.caucus_id, 'caucus_name')
     legislatura = lookup_attr(Legislature, letter.legislatura_id, 'legislature_name')
     senadores, congresistas = letter.num_reps_sens
     acción = lookup_attr(Action, letter.acción_id, 'action_name')
