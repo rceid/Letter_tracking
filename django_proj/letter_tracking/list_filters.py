@@ -1,9 +1,11 @@
 from django.contrib import admin
-from .models import Legislator, Letter
+from .models import Legislator, Letter, Topic
 import us
 
 def zip_options(options):
     return tuple(zip(options, options))
+
+
 
 class RepSenListFilter(admin.SimpleListFilter):
 

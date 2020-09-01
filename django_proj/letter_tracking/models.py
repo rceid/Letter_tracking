@@ -78,8 +78,8 @@ STATES = zip_choices(list(map(lambda state: state.abbr, us.states.STATES)) + ["D
 class Legislator(models.Model):
 
     class RepSen(models.TextChoices):
-        REP = 'Rep.', _('Congresista')
-        SEN = 'Sen.', _('Senador')
+        REP = 'Rep.', _('Representative')
+        SEN = 'Sen.', _('Senator')
 
     class PolParties(models.TextChoices):
         D = 'D', _('Democrat')
@@ -266,7 +266,7 @@ class Letter(models.Model):
 
     @property
     def partido(self):
-        return classify_letter(self, 'party', "D", ['Demócrata', 'Republicano', 'Bipartidista'])
+        return classify_letter(self, 'party', "D", ['Democrat', 'Republican', 'Bipartisan'])
 
     @property
     def cámara(self):
