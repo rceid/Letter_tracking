@@ -10,6 +10,13 @@ import us
 filterwarnings('ignore', message=r'.*received a naive datetime')
 
 #Meta topic models for dropdown menus and organization
+class State(models.Model):
+    name = models.CharField(max_length=30)
+    abbr = models.CharField(max_length=2)
+
+    def __str__(self):
+        return self.name
+
 class Topic(models.Model):
     topic_name = models.CharField(max_length=25)
 
@@ -67,8 +74,6 @@ def classify_letter(letter, attr, class_, options):
 def obj_list_to_attr(obj_list, attr):
     return list(map(lambda obj: obj.__dict__[attr], obj_list)) if attr != 'name' else list(map(lambda obj: obj.name, obj_list))
 
-STATES = zip_choices(list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"])
-
 #Legislator and Letter Models 
 class Legislator(models.Model):
 
@@ -83,8 +88,10 @@ class Legislator(models.Model):
 
     first_name = models.CharField(max_length=100, default='None')
     last_name = models.CharField(max_length=100, default='None')
-    state = models.CharField(max_length=30,
-                            choices=STATES)
+    state = models.ForeignKey(State, 
+                             on_delete=models.SET_NULL, 
+                             null=True
+                             )
     district = models.CharField(max_length=10,\
                                 choices=[('', 'N/a')] + list(zip_choices(['at large'] + list(map(lambda num: str(num), range(1,54))))),\
                                 help_text='If politician is a Sentor, please select N/a')

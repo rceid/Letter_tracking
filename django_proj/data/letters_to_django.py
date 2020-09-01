@@ -8,9 +8,11 @@ Created on Fri Jul 31 15:48:50 2020
 import sys
 sys.path.insert(0, './data')
 import letter_cleaning
+import us
 sys.path.insert(0, './../letter_tracking')
-from letter_tracking.models import (Letter, Legislator, Topic, Specific_Topic,
-                                    Recipient, Caucus, Legislature, Action)
+from letter_tracking.models import (Letter, Legislator, Topic, 
+                                    Specific_Topic, Recipient, Caucus, 
+                                    Legislature, Action, State)
             
 def go():
     print('Fetching letters...\n')
@@ -20,6 +22,7 @@ def go():
                                                   (signers[1]['Entry Order'])))
     print('\nLetters fetched, uploading metatopics...')
     upload_metatopics()
+    upload_states(politicians)
     print('Now uploading letters and legislators...')
     upload_legislator(politicians)
     upload_letters(signers)
@@ -76,10 +79,9 @@ def upload_legislator(pol_df):
     for _, pol in pol_df.iterrows():
         count += 1
         legislator = Legislator(
-            #name = pol['Legislator'],
             last_name = pol['CONGRESSPERSON LAST NAME'],
             first_name = pol['CONGRESSPERSON FIRST NAME'],
-            state = pol['STATE'],
+            state = State.objects.filter(abbr=pol['STATE']).first(),
             district = pol['DISTRICT'],
             rep_or_sen = pol['SEN/REP'],
             party = pol['PARTY'],
@@ -124,6 +126,7 @@ def upload_letters(signers):
     
 def upload_metatopics():
     meta_t = letter_cleaning.get_metatopics()
+
     for col in meta_t.columns:
         mask = meta_t[col].apply(lambda x: type(x) == str)
         iterrator = meta_t[col][mask]
@@ -150,5 +153,12 @@ def upload_metatopics():
     legislature = Legislature(legislature_name='116th')
     legislature.save()
     
-    
+def upload_states(politicians):
+    state_mapper = us.states.mapping('abbr','name')
+    states = set(politicians['STATE'])
+    for s in states:
+        state = State(
+            abbr=s,
+            name=state_mapper[s])
+        state.save()
     
