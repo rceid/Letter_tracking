@@ -165,7 +165,7 @@ class Letter(models.Model):
         Neg = 'Negativa', _('Negativa')
 
     class Dummy(models.TextChoices):
-        y = 1, _('Si')
+        y = 1, _('Yes')
         n = 0, _('No')
 
     tema = models.ForeignKey(Topic, 

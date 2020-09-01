@@ -13,7 +13,6 @@ from .models import (Letter,
                     Legislature,
                     Action)
 
-# admin.site.register(Letter)
 admin.site.register(Topic)
 admin.site.register(Specific_Topic)
 admin.site.register(Recipient)
@@ -28,7 +27,6 @@ class ExportCsvLetter:
         writer = csv.writer(response)
         writer.writerow(EXPORT_ATTRS)
         for obj in queryset:
-            #row = writer.writerow([getattr(obj, field) for field in field_names])
             authors = ['', '']
             if obj.sen_author:
                 authors[0] = obj.patrocinador_sen.name
@@ -56,7 +54,7 @@ class LetterAdmin(admin.ModelAdmin, ExportCsvLetter):
     actions = ["export_as_csv"]
 
 @admin.register(Legislator)
-class LegAdmin(admin.ModelAdmin, ExportCsvLetter):
+class LegAdmin(admin.ModelAdmin):
     list_display = ('name','state', 'district', 'party', 'rep_or_sen', 'num_all_letters', 'letters_authored' )
     list_filter = (ActiveListFilter, PartyListFilter, RepSenListFilter, StateListFilter, )
     actions = ["export_as_csv"]
