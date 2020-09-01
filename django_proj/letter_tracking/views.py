@@ -49,7 +49,6 @@ class LegLetterView(ListView):
     #paginate_by = 5
 
     def get_queryset(self):
-        print('OUTPUT:\n', self.kwargs.get('name'), '\n')
         [id_] = [leg.id for leg in Legislator.objects.all() if leg.name == self.kwargs.get('name')]
         return get_object_or_404(Legislator, pk=id_)
 

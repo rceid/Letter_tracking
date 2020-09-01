@@ -57,10 +57,10 @@ def zip_choices(choice_list):
     
 def classify_letter(letter, attr, class_, options):
     if not letter.cosigners:
-        if len(letter.authors) == 1:
-            return options[0] if letter.authors[0].__dict__[attr] == class_ else options[1]
+        if len(letter.authors) == 1: ###
+            return options[0] if getattr(letter.authors[0], attr) == class_ else options[1]
         elif len(letter.authors) == 2:
-            classified = list(map(lambda leg_obj: leg_obj.__dict__[attr] == class_, letter.authors))
+            classified = list(map(lambda leg_obj: getattr(leg_obj, attr) == class_, letter.authors))
     else:
         signers = letter.authors + [leg for leg in Legislator.objects.all() if leg.name in letter.cosigners]
         classified = list(map(lambda leg_obj: leg_obj.__dict__[attr] == class_, signers))
@@ -72,7 +72,7 @@ def classify_letter(letter, attr, class_, options):
         return options[2]
 
 def obj_list_to_attr(obj_list, attr):
-    return list(map(lambda obj: obj.__dict__[attr], obj_list)) if attr != 'name' else list(map(lambda obj: obj.name, obj_list))
+    return list(map(lambda obj: getattr(obj, attr), obj_list))
 
 #Legislator and Letter Models 
 class Legislator(models.Model):
@@ -108,8 +108,8 @@ class Legislator(models.Model):
 
     @property
     def title(self):
-        return self.name + ' (' + self.party + '-' + self.state + '-' +  self.district +')' if self.rep_or_sen == 'Rep.'\
-         else self.name + ' (' + self.party + '-' + self.state + ')'
+        return self.name + ' (' + self.party + '-' + self.state.abbr + '-' +  self.district +')' if self.rep_or_sen == 'Rep.'\
+         else self.name + ' (' + self.party + '-' + self.state.abbr + ')'
     
     @property
     def full_title(self):
@@ -319,7 +319,7 @@ class Letter(models.Model):
     def copatrocinador(self):
         if not self.cosigners:
             return 'Na'
-        leg_list = list(map(lambda name_: Legislator.objects.filter(name=name_).first(), self.cosigners))
+        leg_list = [cosigner for cosigner in Legislator.objects.all() if cosigner.name in self.cosigners]
         leg_list = list(map(lambda leg_obj: leg_obj.title, leg_list))
         return ', '.join(sorted(leg_list))
 
