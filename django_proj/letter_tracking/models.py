@@ -51,11 +51,6 @@ def zip_choices(choice_list):
 def classify_letter(letter, attr, class_, options):
     if not letter.cosigners:
         if len(letter.authors) == 1:
-            # letter.authors[0]
-            # if letter.sen_author:
-            #     leg = letter.patrocinador_sen
-            # else:
-            #     leg = letter.patrocinador_rep
             return options[0] if letter.authors[0].__dict__[attr] == class_ else options[1]
         elif len(letter.authors) == 2:
             classified = list(map(lambda leg_obj: leg_obj.__dict__[attr] == class_, letter.authors))
@@ -70,7 +65,7 @@ def classify_letter(letter, attr, class_, options):
         return options[2]
 
 def obj_list_to_attr(obj_list, attr):
-    return list(map(lambda obj: obj.__dict__[attr], obj_list))
+    return list(map(lambda obj: obj.__dict__[attr], obj_list)) if attr != 'name' else list(map(lambda obj: obj.name, obj_list))
 
 STATES = zip_choices(list(map(lambda state: state.abbr, us.states.STATES)) + ["DC"])
 
@@ -88,7 +83,6 @@ class Legislator(models.Model):
 
     first_name = models.CharField(max_length=100, default='None')
     last_name = models.CharField(max_length=100, default='None')
-    name = models.CharField(max_length=100, default='None', verbose_name=_('Full Name'))
     state = models.CharField(max_length=30,
                             choices=STATES)
     district = models.CharField(max_length=10,\
@@ -99,7 +93,11 @@ class Legislator(models.Model):
                                  verbose_name=_('Representative or Senator'))
     party = models.CharField(max_length=11, 
                             choices=PolParties.choices)
-    active = models.BooleanField() 
+    active = models.BooleanField()
+
+    @property
+    def name(self):
+        return self.last_name + ' ' + self.first_name
 
     @property
     def title(self):
@@ -295,10 +293,10 @@ class Letter(models.Model):
         if not self.cosigners:
             sen_rep = obj_list_to_attr(self.authors, 'rep_or_sen')
             if len(sen_rep) == 1:
-                return (1, 0) if [sen_rep] == 'Sen.' else (0, 1)
+                return (1, 0) if sen_rep == ['Sen.'] else (0, 1)
             elif len(sen_rep) == 2:
                 return sen_rep.count('Sen.'), sen_rep.count('Rep.')
-        sen_rep = list(map(lambda name_: Legislator.objects.filter(name=name_).first().rep_or_sen, signers))
+        sen_rep = [leg.rep_or_sen for leg in Legislator.objects.all() if leg.name in signers]
 
         return sen_rep.count('Sen.'), sen_rep.count('Rep.')
 

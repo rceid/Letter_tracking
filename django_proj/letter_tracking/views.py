@@ -21,6 +21,9 @@ FIELDS = ['tema', 'patrocinador_sen', 'patrocinador_rep', 'descripción',
          'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
          'other_destinatario_comments', 'observaciones', 'acción', 
          'notice', 'cosigners']
+EXPORT_ATTRS = ['Código', 'Tema', 'Tema específico', 'Fecha', 'Descripción', 'Favorable a MX', 'Mención directa a MX', 
+            'Destinatario',  'Cámara', 'Partido', 'Caucus', 'Legislatura', 'Congresistas', 'Senadores',
+            'Patrocinador/a (Sen.)', 'Patrocinador/a (Rep.)', 'Copatrocinador/a', 'Link', 'Observaciones', 'Acción', 'Notice']
 
 
 def about(request):
@@ -46,7 +49,9 @@ class LegLetterView(ListView):
     #paginate_by = 5
 
     def get_queryset(self):
-        return get_object_or_404(Legislator, name=self.kwargs.get('name'))
+        print('OUTPUT:\n', self.kwargs.get('name'), '\n')
+        [id_] = [leg.id for leg in Legislator.objects.all() if leg.name == self.kwargs.get('name')]
+        return get_object_or_404(Legislator, pk=id_)
 
 class UserLetterListView(ListView):
     model = Letter
@@ -118,21 +123,20 @@ class SearchResultsView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('leg')
-        return get_object_or_404(Legislator, name__icontains=query)
+        [id_] = [legislator.id for legislator in Legislator.objects.all() if legislator.name == query]
+
+        return get_object_or_404(Legislator, pk=id_)
 
 def export(self, name=None):
-    attrs = ['Código', 'Tema', 'Tema específico', 'Fecha', 'Descripción', 'Favorable a MX', 'Mención directa a MX', 
-            'Destinatario',  'Cámara', 'Partido', 'Caucus', 'Legislatura', 'Congresistas', 'Senadores',
-            'Patrocinador/a (Sen.)', 'Patrocinador/a (Rep.)', 'Copatrocinador/a', 'Link', 'Observaciones', 'Acción', 'Notice']
     #zip rows and the attrs into a dict in the loop
     response = HttpResponse(content_type='text/csv')
     response.write(u'\ufeff'.encode('utf8'))
     writer = csv.writer(response)
-    writer.writerow(attrs)
+    writer.writerow(EXPORT_ATTRS)
     if not name:
         letters = Letter.objects.all()
     else:
-        letters = Legislator.objects.filter(name=name).first().all_letters
+        [letters] = [leg.all_letters for leg in Legislator.objects.all() if leg.name == name]
     for letter in letters:
         authors = ['', '']
         if letter.sen_author:
@@ -154,8 +158,8 @@ def export(self, name=None):
 def get_letter_values(letter):
     tema = lookup_attr(Topic, letter.tema_id, 'topic_name')
     tema_específico = lookup_attr(Specific_Topic, letter.tema_específico_id, 'specific_topic_name')
-    destinatario = ', '.join(letter.destinatario) #lookup_attr(Recipient, letter.destinatario_id, 'recipient_name')
-    caucus = ', '.join(letter.caucus)#lookup_attr(Caucus, letter.caucus_id, 'caucus_name')
+    destinatario = ', '.join(letter.destinatario) 
+    caucus = ', '.join(letter.caucus)
     legislatura = lookup_attr(Legislature, letter.legislatura_id, 'legislature_name')
     senadores, congresistas = letter.num_reps_sens
     acción = lookup_attr(Action, letter.acción_id, 'action_name')

@@ -76,7 +76,7 @@ def upload_legislator(pol_df):
     for _, pol in pol_df.iterrows():
         count += 1
         legislator = Legislator(
-            name = pol['Legislator'],
+            #name = pol['Legislator'],
             last_name = pol['CONGRESSPERSON LAST NAME'],
             first_name = pol['CONGRESSPERSON FIRST NAME'],
             state = pol['STATE'],
@@ -101,16 +101,15 @@ def upload_letters(signers):
             recip= Recipient.objects.filter(recipient_name=info['Recipient']).first().recipient_name
         except:
             recip = ''
-        
+        [auth_id] = [leg.id for leg in Legislator.objects.all() if 
+                   leg.name == info['Legislator']]
         letter = Letter(
         tema=Topic.objects.filter(topic_name=info['Topic']).first(), 
-        patrocinador_sen=Legislator.objects.\
-            filter(name=info['Legislator']).first(),
-        patrocinador_rep = None,
-        caucus='',
+        patrocinador_sen=Legislator.objects.filter(id=auth_id).first(),
+        patrocinador_rep = None, caucus='',
         tema_específico=Specific_Topic.objects.\
             filter(specific_topic_name=info['Specific topic']).first(),
-        destinatario=recip,
+        destinatario=recip, cosigners=cosign,
         acción=Action.objects.filter(action_name=info['Action']).first(),
         legislatura = Legislature.objects.\
             filter(legislature_name=info['Legislature']).first(),
@@ -119,7 +118,6 @@ def upload_letters(signers):
         mención_directa_a_MX=info['MX was directly mentioned'],
         observaciones=info['Comments'], 
         notice = info['If a notice was sent, specify the number'], 
-        cosigners=cosign
         )
         letter.save()
     print('{} Letters uploaded'.format(count))
