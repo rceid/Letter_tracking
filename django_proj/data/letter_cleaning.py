@@ -9,12 +9,54 @@ Run this file from the django_proj directory
 
 import pandas as pd
 import us
+import jellyfish
 
 ## for spyder:
-# LETTER_DATA = './letters spreadsheet.xlsx'
+LETTER_DATA = './letters spreadsheet.xlsx'
 
-LETTER_DATA = './data/letters spreadsheet.xlsx'
+# LETTER_DATA = './data/letters spreadsheet.xlsx'
 POLITICIANS_OUT = './politicians.csv'
+TRANSLATION = {'Topic':
+               {'Armas':'Arms', 'Ambiente':'Environment',
+               'Medio ambiente':'Environment', 'Comercio':'Trade',
+               'Cooperación':'Cooperation', 'Drogas':'Drugs', 
+               'Economía':'Economy', 'Energía':'Energy', 'Frontera':'Border',
+               'Migración':'Migration', 'Política Exterior':'Foreign Policy',
+               'Política Interna':'Internal Policy', 'Presupuesto':'Budget',
+               'Seguridad':'Security'}, 
+               'Specific topic':
+                   {'Agricultura':'Agriculture', 
+               'Aranceles':'Tariffs', 'Cadenas de valor':'Supply chains',
+               'Centros de detención':'Immigration Detention Centers',
+               'Centros de Detención Migratoria': 'Immigration Detention Centers',
+               'Censo':'Census', 'Cortes migratorias':'Immigration Courts',
+               'Derechos Humanos':'Human Rights', 
+               'Asistencia / coooperación internacional':'International Cooperation or Assistance',
+               'Desigualdad racial':'Racial inequality', 
+               'Indocumentados':'Undocumented migrants', 
+               'Menores no acompañados':'Unaccompanied minors', 
+               'Muro fronterizo':'Border wall', 'Política comercial':'Trade policy',
+               'Política migratoria':'Immigration policy',
+               'Política multilateral':'Multilateral policy',
+               'Prisiones':'Prisons','Relación bilateral':'Bilteral relationship',
+               'TMEC Estacionalidad':'USMCA Seasonality', 'TMEC Laboral':'USMCA Labor',
+               'TMEC Ambiental':'USMCA Environment', 
+               'TMEC Trabajo Forzado':'USMCA Forced Labor', 
+               'Tráfico de personas':'Human trafficking', 
+               'Violencia doméstica':'Domestic violence'
+               'Interno EUA': 'US Domestic','Comunidad Hispana':'Hispanic Community'}, 
+                'Recipient':{ 
+               'Líder de la mayoría Cámara':'House Majority Leader',
+               'Líder de la minoría Cámara':'House Minority Leader',
+               'Líder de la mayoría Senado':'Senate Majority Leader',
+               'Líder de la minoría Senado':'Senate Minority Leader',
+               'Liderazgo Comité Apropiaciones Senado':
+                   'Senate Appropiations Committee Leadership'}, 
+               'Action':{
+               'Notice individual':'Individual notice', 'Notice colectivo':
+                   'Collective notice', 'Whatsapp a Titular':'Whatsapp message',
+                'No se reportó':'Not reported'}
+                }
     
 def prepare_data():
     '''
@@ -45,14 +87,16 @@ def clean_letters():
                                             replace({1.0:'Positive',
                                                      2.0:'Neutral',
                                                      3.0:'Negative'})
-    letters['Specific topic'] = letters['Specific topic'].fillna('Blank')
-    
+    letters['Specific topic'] = letters['Specific topic'].fillna('')
+    for col in TRANSLATION.keys():
+        letters[col].replace(TRANSLATION[col], inplace=True)
+        
     return letters
 
 def clean_politicians():
     cols = ['SEN/REP', 'CONGRESSPERSON FIRST NAME','CONGRESSPERSON LAST NAME',\
             'PARTY', 'STATE', 'DISTRICT']
-    pols = pd.read_excel(LETTER_DATA, sheet_name='Dropdowns', header=2, \
+    pols = pd.read_excel(LETTER_DATA, sheet_name='Dropdowns-eng', header=2, \
                              usecols=cols)
     pols['Legislator'] =  pols['CONGRESSPERSON LAST NAME'] + ' ' + \
                           pols['CONGRESSPERSON FIRST NAME']
@@ -60,12 +104,37 @@ def clean_politicians():
     pols['Legislature'] = '116th'
     pols['DISTRICT'] = pols['DISTRICT'].apply\
     (lambda dist: str(dist) if type(dist) == int or dist == 'at large' else '')
+
     
     return pols[['Legislator', 'Active', 'Legislature'] + cols]
 
+def link_topics(df):
+
+    for col in TRANSLATION.keys():
+        matches = {}
+        for entry in set(df[col]):
+            for link in TRANSLATION[col].keys():
+                match = string_sim(entry, link)
+                if match:
+                    print('MATCH##:\n', entry, '-with-', link)
+                    matches[entry] = link
+        df[col].replace(matches, inplace=True)
+        
+
+def string_sim(record, link):
+    thresh = 0.95
+    try:
+        similarity = jellyfish.jaro_winkler(record, link)
+    except:
+        print('heres the error', record, link)
+    else:
+        
+        return similarity if similarity > thresh else None
+    
+    
 
 def get_metatopics():
-    topics = pd.read_excel(LETTER_DATA, sheet_name='Dropdowns', header=2, \
+    topics = pd.read_excel(LETTER_DATA, sheet_name='Dropdowns-eng', header=2, \
                              usecols=['TOPIC','SPECIFIC TOPIC','RECIPIENT',\
                                       'CAUCUS','ACTION'])
 
