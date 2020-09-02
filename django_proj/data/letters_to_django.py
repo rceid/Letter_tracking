@@ -130,24 +130,30 @@ def upload_metatopics():
     for col in meta_t.columns:
         mask = meta_t[col].apply(lambda x: type(x) == str)
         iterrator = meta_t[col][mask]
+        print('#col:#\n', col)
         if col == 'TOPIC':
             for _, val in iterrator.iteritems():
+                print('val', val)
                 topic = Topic(topic_name=val)
                 topic.save()
         if col == 'SPECIFIC TOPIC':
             for _, val in iterrator.iteritems():
+                print('val', val)
                 s_topic = Specific_Topic(specific_topic_name=val)
                 s_topic.save()
         if col == 'RECIPIENT':
             for _, val in iterrator.iteritems():
+                print('val', val)
                 recip = Recipient(recipient_name=val)
                 recip.save()
         if col == 'CAUCUS':
             for _, val in iterrator.iteritems():
+                print('val', val)
                 caucus = Caucus(caucus_name=val)
                 caucus.save()
         if col == 'ACTION':
             for _, val in iterrator.iteritems():
+                print('val', val)
                 action = Action(action_name=val)
                 action.save()
     legislature = Legislature(legislature_name='116th')

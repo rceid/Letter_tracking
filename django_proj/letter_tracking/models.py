@@ -167,9 +167,9 @@ class Letter(models.Model):
         bi= 'Bipartisan', _('Bipartisan')
     
     class Sentiment(models.TextChoices):
-        Pos = 'Positiva', _('Positiva')
+        Pos = 'Positive', _('Positive')
         Neut = 'Neutral', _('Neutral')
-        Neg = 'Negativa', _('Negativa')
+        Neg = 'Negative', _('Negative')
 
     class Dummy(models.TextChoices):
         y = 1, _('Yes')
@@ -275,7 +275,7 @@ class Letter(models.Model):
 
     @property
     def cámara(self):
-        return classify_letter(self, 'rep_or_sen', "Sen.", ["Senado", "Cámara", "Bicameral"])
+        return classify_letter(self, 'rep_or_sen', "Sen.", ["Senate", "House", "Bicameral"])
 
     @property 
     def cosign_sorted(self):

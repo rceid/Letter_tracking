@@ -12,11 +12,8 @@ import us
 
 ## for spyder:
 # LETTER_DATA = './letters spreadsheet.xlsx'
-# REP_DATA = './factsheet_data.csv'
 
 LETTER_DATA = './data/letters spreadsheet.xlsx'
-REP_DATA = './data/factsheet_data.csv'
-
 POLITICIANS_OUT = './politicians.csv'
     
 def prepare_data():
@@ -44,13 +41,13 @@ def clean_letters():
     letters['Counter'] = letters['Counter'].apply(dummy_col)
     letters['MX was directly mentioned'] = \
         letters['MX was directly mentioned'].apply(dummy_col)
-    letters['Positive for MX'] = letters['Positive for MX'].replace({1.0:'Positiva',
-                                                                     2.0:'Neutral',
-                                                                     3.0:'Negativa'})
+    letters['Positive for MX'] = letters['Positive for MX'].\
+                                            replace({1.0:'Positive',
+                                                     2.0:'Neutral',
+                                                     3.0:'Negative'})
     letters['Specific topic'] = letters['Specific topic'].fillna('Blank')
     
     return letters
-
 
 def clean_politicians():
     cols = ['SEN/REP', 'CONGRESSPERSON FIRST NAME','CONGRESSPERSON LAST NAME',\
