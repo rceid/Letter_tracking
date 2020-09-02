@@ -12,10 +12,10 @@ import us
 import jellyfish
 
 ## for spyder:
-LETTER_DATA = './letters spreadsheet.xlsx'
-
-# LETTER_DATA = './data/letters spreadsheet.xlsx'
+# LETTER_DATA = './letters spreadsheet.xlsx'
+LETTER_DATA = './data/letters spreadsheet.xlsx'
 POLITICIANS_OUT = './politicians.csv'
+
 TRANSLATION = {'Topic':
                {'Armas':'Arms', 'Ambiente':'Environment',
                'Medio ambiente':'Environment', 'Comercio':'Trade',
@@ -23,7 +23,8 @@ TRANSLATION = {'Topic':
                'Economía':'Economy', 'Energía':'Energy', 'Frontera':'Border',
                'Migración':'Migration', 'Política Exterior':'Foreign Policy',
                'Política Interna':'Internal Policy', 'Presupuesto':'Budget',
-               'Seguridad':'Security'}, 
+               'Seguridad':'Security', 'Interno EUA': 'US Domestic',
+               'Comunidad Hispana':'Hispanic Community'}, 
                'Specific topic':
                    {'Agricultura':'Agriculture', 
                'Aranceles':'Tariffs', 'Cadenas de valor':'Supply chains',
@@ -43,8 +44,7 @@ TRANSLATION = {'Topic':
                'TMEC Ambiental':'USMCA Environment', 
                'TMEC Trabajo Forzado':'USMCA Forced Labor', 
                'Tráfico de personas':'Human trafficking', 
-               'Violencia doméstica':'Domestic violence'
-               'Interno EUA': 'US Domestic','Comunidad Hispana':'Hispanic Community'}, 
+               'Violencia doméstica':'Domestic violence'},
                 'Recipient':{ 
                'Líder de la mayoría Cámara':'House Majority Leader',
                'Líder de la minoría Cámara':'House Minority Leader',
@@ -90,6 +90,7 @@ def clean_letters():
     letters['Specific topic'] = letters['Specific topic'].fillna('')
     for col in TRANSLATION.keys():
         letters[col].replace(TRANSLATION[col], inplace=True)
+        letters[col] = letters[col].fillna('')
         
     return letters
 
