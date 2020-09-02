@@ -87,7 +87,7 @@ def clean_letters():
                                             replace({1.0:'Positive',
                                                      2.0:'Neutral',
                                                      3.0:'Negative'})
-    letters['Specific topic'] = letters['Specific topic'].fillna('')
+    letters['Comments'] = letters['Comments'].fillna('')
     for col in TRANSLATION.keys():
         letters[col].replace(TRANSLATION[col], inplace=True)
         letters[col] = letters[col].fillna('')

@@ -197,7 +197,7 @@ class Letter(models.Model):
                                 max_length=100,
                                 help_text="<em>If 'Other', please specify in the text box below</em>"
                                 )
-    other_destinatario_comments = models.TextField(default='N/a')
+    other_destinatario_comments = models.TextField(blank=True)
 
     caucus = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda obj: obj.caucus_name, Caucus.objects.all())))),
                                 default='None',

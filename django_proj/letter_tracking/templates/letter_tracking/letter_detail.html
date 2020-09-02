@@ -17,57 +17,59 @@
             <h2 class="article-title">{{ object.title }}</h2>
             <div>
                 <medium>
-                    <b>Tema:</b> {{object.tema}}
+                    <b>Topic:</b> {{object.tema}}
                 </medium>
             </div>
             <div>
                 <medium>
-                    <b>Tema Específico:</b> {{object.tema_específico}}
+                    <b>Specific Topic:</b> {{object.tema_específico}}
                 </medium>
             </div>
             <div>
                 <medium>
-                    <b>Fecha: </b>{{ object.fecha | date:"F d, Y"}}
+                    <b>Date: </b>{{ object.fecha | date:"F d, Y"}}
                 </medium>
             </div>
             <div>
                 <medium>
-                    <b>Descripción: </b>{{ object.descripción }}
+                    <b>Description: </b>{{ object.descripción }}
                 </medium>
             </div>
             <div>
                 <medium>
-                    <b>Favorable a México: </b>{{ object.favorable_a_MX }}
+                    <b>Positive for Mexico: </b>{{ object.favorable_a_MX }}
                 </medium>
-            </div> 
+            </div>
             <div>
                 <medium>
-                    <b>Mención directa a México: </b>{{ object.mencion_directa_a_MX }}
+                    <b>Mexico is directly mentioned: </b>{{ object.mencion_directa_a_MX }}
                 </medium>
             </div>  
             {% if letter.other_destinatario_comments %}
-                <medium> Destinatario: {{ letter.destinatario }}- {{letter.other_destinatario_comments}}</medium>
+                <div>
+                    <medium><b>Recipient:</b> {{ letter.destinatario }}- {{letter.other_destinatario_comments}}</medium>
+                </div>
             {% elif object.destinatario %}
                 <div>
                     <medium>
-                        <b>Destinatario: </b>{{ object.destinatario }}
+                        <b>Recipient: </b>{{ object.destinatario }}
                     </medium>
                 </div>
             {% else %}
             <div>
                 <medium>
-                    <b>Destinatario: </b>N/a
+                    <b>Recipient: </b>N/a
                 </medium>
             </div>
             {% endif %}
-            <div>
-                <medium>
-                    <b>Partido: </b>{{ object.partido }}
-                </medium>
-            </div>
             <div> 
                 <medium>
-                    <b>Cámara:</b> {{object.cámara}}
+                    <b>Chamber:</b> {{object.cámara}}
+                </medium>
+            </div>
+            <div>
+                <medium>
+                    <b>Party: </b>{{ object.partido }}
                 </medium>
             </div>
             {% if object.caucus %}
@@ -85,22 +87,22 @@
             {% endif %}
             <div>
                 <medium>
-                    <b>Legislatura:</b> {{object.legislatura}}
+                    <b>Legislature:</b> {{object.legislatura}}
                 </medium>
             </div>
             <div>
                 <medium>
-                    <b>Congresistas:</b> {{object.num_reps}}
+                    <b>Representatives:</b> {{object.num_reps}}
                 </medium>
             </div>
             <div>
                 <medium>
-                    <b>Senadores:</b> {{object.num_sens}}
+                    <b>Senators:</b> {{object.num_sens}}
                 </medium>
             </div>
             <div>
                 <medium>
-                    <b>Patrocinador/a/s:</b>
+                    <b>Sponsor(s):</b>
             {% if letter.sen_author %}
                 {{letter.patrocinador_sen.full_title}}
             {% endif %}
@@ -114,7 +116,7 @@
             </div>
             <div>
                 <medium>
-                    <b>Copatrocinadores:</b> {{object.copatrocinador}}
+                    <b>Cosponsor(s):</b> {{object.copatrocinador}}
                 </medium>
             </div>
             <div>
@@ -124,29 +126,22 @@
             </div>
             <div>
                 <medium>
-                    <b>Observaciones:</b> {{object.observaciones}}
+                    <b>Comments:</b> {{object.observaciones}}
                 </medium>
             </div>
             <div>
                 <medium>
-                    <b>Acción:</b> {{object.acción}}
+                    <b>Action:</b> {{object.acción}}
                 </medium>
             </div>
             <div>
                 <medium>
-                    <b>Notice number:</b> {{object.notice}}
+                    <b>Notice:</b> {{object.notice}}
                 </medium>
             </div>
             <div>
                 __
             </div>
-                <medium>
-                    {% if object.posted_by == None %}
-                    <b>Uploaded by: letter_admin</b>
-                    {% else %}
-                    <b>Uploaded by: {{user.posted_by}}</b>
-                    {% endif %}
-                </medium>
                 <div>
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'letter-update' object.id%}">Update</a>
                 <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'letter-delete' object.id%}">Delete</a>
