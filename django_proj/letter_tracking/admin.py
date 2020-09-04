@@ -3,9 +3,9 @@ from django.contrib.admin import SimpleListFilter, ModelAdmin
 from django.http import HttpResponse
 from .views import get_letter_values, EXPORT_ATTRS, LEG_ATTRS
 import csv
-from .list_filters import (StateListFilter, ActiveListFilter, 
-                           PartyListFilter, RepSenListFilter,
-                           TopicListFilter)
+from .list_filters import (ActiveListFilter, 
+                           PartyListFilter, 
+                           RepSenListFilter)
 from .models import (Letter,
                     Legislator,
                     Topic,

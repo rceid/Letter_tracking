@@ -84,10 +84,7 @@ class LetterUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         return True
-        # letter = self.get_object()
-        # if self.request.user == letter.posted_by:
-        #     return True
-        # return False
+
 
 class LetterDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Letter
