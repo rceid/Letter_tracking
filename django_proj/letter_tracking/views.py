@@ -24,6 +24,7 @@ FIELDS = ['tema', 'patrocinador_sen', 'patrocinador_rep', 'descripción',
 EXPORT_ATTRS = ['Código', 'Tema', 'Tema específico', 'Fecha', 'Descripción', 'Favorable a MX', 'Mención directa a MX', 
             'Destinatario',  'Cámara', 'Partido', 'Caucus', 'Legislatura', 'Congresistas', 'Senadores',
             'Patrocinador/a (Sen.)', 'Patrocinador/a (Rep.)', 'Copatrocinador/a', 'Link', 'Observaciones', 'Acción', 'Notice']
+LEG_ATTRS = ['name','state', 'district', 'party', 'rep_or_sen', 'num_all_letters', 'letters_authored']
 
 
 def about(request):
@@ -127,16 +128,16 @@ class SearchResultsView(ListView):
         return get_object_or_404(Legislator, pk=id_)
 
 def export(self, name=None):
-    print('self:\n', self)
     #zip rows and the attrs into a dict in the loop
     response = HttpResponse(content_type='text/csv')
     response.write(u'\ufeff'.encode('utf8'))
     writer = csv.writer(response)
-    writer.writerow(EXPORT_ATTRS)
+    writer.writerow(EXPORT_ATTRS) 
     if not name:
         letters = Letter.objects.all()
+        auth = 'all'
     else:
-        [letters] = [leg.all_letters for leg in Legislator.objects.all() if leg.name == name]
+        [(letters, auth)] = [(leg.all_letters, leg.last_name) for leg in Legislator.objects.all() if leg.name == name]
     for letter in letters:
         authors = ['', '']
         if letter.sen_author:
@@ -150,9 +151,8 @@ def export(self, name=None):
         vals.insert(14, authors[0])
         vals.insert(15, authors[1])
         writer.writerow(vals)
-    #auths = ', '.join(authors)
     
-    response['Content-Disposition'] = 'attachment; filename="{} letters.csv"'.format(name)
+    response['Content-Disposition'] = 'attachment; filename="{}_letters.csv"'.format(auth)
 
     return response
     

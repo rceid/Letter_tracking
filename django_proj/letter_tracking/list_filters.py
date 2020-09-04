@@ -6,40 +6,28 @@ def zip_options(options):
     return tuple(zip(options, options))
 
 
+class TopicListFilter(admin.SimpleListFilter):
+    title = 'Topic'
+    parameter_name = 'topic'
+    default_value = None
 
+    def lookups(self, request, model_admin):
+        return None
+    def queryset(self, request, queryset):
+        return None
 class RepSenListFilter(admin.SimpleListFilter):
 
-    """
-    This filter will always return a subset of the instances in a Model, either filtering by the
-    user choice or by a default value.
-    """
-    # Human-readable title which will be displayed in the
-    # right admin sidebar just above the filter options.
     title = 'Rep or Sen'
-
-    # Parameter for the filter that will be used in the URL query.
     parameter_name = 'reporsen'
 
     default_value = None
 
     def lookups(self, request, model_admin):
-        """
-        Returns a list of tuples. The first element in each
-        tuple is the coded value for the option that will
-        appear in the URL query. The second element is the
-        human-readable name for the option that will appear
-        in the right sidebar.
-        """
-        
+
         return (("Sen.", "Senator"), ("Rep.", "Representative"))
 
     def queryset(self, request, queryset):
-        """
-        Returns the filtered queryset based on the value
-        provided in the query string and retrievable via
-        `self.value()`.
-        """
-        # Compare the requested value to decide how to filter the queryset.
+
         if self.value():
             return queryset.filter(rep_or_sen=self.value())
         return queryset

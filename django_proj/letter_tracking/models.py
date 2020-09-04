@@ -14,6 +14,9 @@ class State(models.Model):
     name = models.CharField(max_length=30)
     abbr = models.CharField(max_length=2)
 
+    class Meta:
+        ordering = ('name',)
+    
     def __str__(self):
         return self.name
 
@@ -85,6 +88,9 @@ class Legislator(models.Model):
         D = 'D', _('Democrat')
         R = 'R', _('Republican')
         I = 'I', _('Independent')
+
+    class Meta:
+        ordering = ('last_name', 'first_name')
 
     first_name = models.CharField(max_length=100, default='None')
     last_name = models.CharField(max_length=100, default='None')
@@ -280,7 +286,9 @@ class Letter(models.Model):
     @property 
     def cosign_sorted(self):
         return ', '.join(sorted(self.cosigners)) if self.cosigners else 'N/a'
-
+    @property
+    def date(self):
+        return self.fecha.date()
     @property
     def consecutive_number(self):
         daily_order = list(Letter.objects.filter(fecha=self.fecha).order_by('fecha'))
@@ -320,7 +328,8 @@ class Letter(models.Model):
         if not self.cosigners:
             return 'Na'
         leg_list = [cosigner for cosigner in Legislator.objects.all() if cosigner.name in self.cosigners]
-        leg_list = list(map(lambda leg_obj: leg_obj.title, leg_list))
+        leg_list = sorted(leg_list, key=lambda leg: (leg.rep_or_sen, leg.name))
+        leg_list = list(map(lambda leg_obj: leg_obj.full_title, leg_list))
         return ', '.join(sorted(leg_list))
 
     @property
