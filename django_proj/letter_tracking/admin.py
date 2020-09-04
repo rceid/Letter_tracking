@@ -33,7 +33,7 @@ class ExportCsvLetter:
             if obj.rep_author:
                 authors[1] = obj.patrocinador_rep.name
             tema, tema_específico, destinatario, caucus, legislatura, senadores, congresistas, acción = get_letter_values(obj)
-            vals = [obj.title, tema, tema_específico, obj.fecha, obj.descripción, obj.favorable_a_MX, obj.mención_directa_a_MX,
+            vals = [obj.title, tema, tema_específico, obj.fecha.date(), obj.descripción, obj.favorable_a_MX, obj.mención_directa_a_MX,
                     obj.destinatario, obj.cámara, obj.partido, caucus, legislatura, congresistas, senadores, obj.cosign_sorted, 
                     obj.letter_path, obj.observaciones, acción, obj.notice]
             vals.insert(14, authors[0])

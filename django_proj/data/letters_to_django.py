@@ -140,7 +140,6 @@ def upload_metatopics():
                 s_topic.save()
         if col == 'RECIPIENT':
             for _, val in iterrator.iteritems():
-                print('val', val)
                 recip = Recipient(recipient_name=val)
                 recip.save()
         if col == 'CAUCUS':

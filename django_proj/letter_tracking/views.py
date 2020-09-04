@@ -127,6 +127,7 @@ class SearchResultsView(ListView):
         return get_object_or_404(Legislator, pk=id_)
 
 def export(self, name=None):
+    print('self:\n', self)
     #zip rows and the attrs into a dict in the loop
     response = HttpResponse(content_type='text/csv')
     response.write(u'\ufeff'.encode('utf8'))
@@ -143,14 +144,15 @@ def export(self, name=None):
         if letter.rep_author:
             authors[1] = letter.patrocinador_rep.name
         tema, tema_específico, destinatario, caucus, legislatura, senadores, congresistas, acción = get_letter_values(letter)
-        vals = [letter.title, tema, tema_específico, letter.fecha, letter.descripción, letter.favorable_a_MX, letter.mención_directa_a_MX,
+        vals = [letter.title, tema, tema_específico, letter.fecha.date(), letter.descripción, letter.favorable_a_MX, letter.mención_directa_a_MX,
                 letter.destinatario, letter.cámara, letter.partido, caucus, legislatura, congresistas, senadores, letter.cosign_sorted, 
                 letter.letter_path, letter.observaciones, acción, letter.notice]
         vals.insert(14, authors[0])
         vals.insert(15, authors[1])
         writer.writerow(vals)
+    #auths = ', '.join(authors)
     
-    response['Content-Disposition'] = 'attachment; filename="letters.csv"'
+    response['Content-Disposition'] = 'attachment; filename="{} letters.csv"'.format(name)
 
     return response
     
