@@ -191,8 +191,8 @@ class Letter(models.Model):
                                         null=True,
                                         verbose_name=_('Specific Topic')
                                         )
-    fecha = models.DateTimeField(help_text="Enter dates in <em>MM/DD/YYYY</em> format")
-    descripción = models.TextField()
+    fecha = models.DateTimeField(help_text="Enter dates in <em>MM/DD/YYYY</em> format", verbose_name=_('Date'))
+    descripción = models.TextField(verbose_name=_('Description'))
     favorable_a_MX = models.CharField(max_length=8,
                                     choices=Sentiment.choices,
                                     verbose_name=_('Positive for Mexico?')
@@ -203,17 +203,19 @@ class Letter(models.Model):
     destinatario = MultiSelectField(choices=[('N/a', 'N/a')] + list(zip_choices(list(map(lambda obj: obj.recipient_name, Recipient.objects.all())))),
                                 default='None',
                                 max_length=100,
-                                help_text="<em>If 'Other', please specify in the text box below</em>"
+                                help_text="<em>If 'Other', please specify in the text box below</em>",
+                                verbose_name=_('Recipient(s)')
                                 )
-    other_destinatario_comments = models.TextField(blank=True)
-
+    other_destinatario_comments = models.TextField(blank=True,
+                                                   verbose_name=_('Other recipient comments'))
     caucus = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda obj: obj.caucus_name, Caucus.objects.all())))),
-                                default='None',
+                                default='N/a',
                                 max_length=100
                                 )
     legislatura = models.ForeignKey(Legislature, 
                                     on_delete=models.SET_NULL, 
-                                    null=True
+                                    null=True,
+                                    verbose_name=_('Legislature')
                                     )
     patrocinador_sen = models.ForeignKey(Legislator, 
                                         limit_choices_to={'rep_or_sen': 'Sen.'}, 
@@ -231,8 +233,8 @@ class Letter(models.Model):
                                         null=True,
                                         blank=True
                                         )
-    cosigners = MultiSelectField(choices=zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all()))),\
-                                verbose_name=_('Copatrocinador/a'), 
+    cosigners = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all())))),\
+                                verbose_name=_('Cosigner(s)'), 
                                 default='None',
                                 max_length=1000
                                 )
@@ -241,10 +243,13 @@ class Letter(models.Model):
                                  on_delete=models.SET_NULL, 
                                  null=True
                                  )
-    observaciones =  models.TextField(default='N/a')
+    observaciones =  models.TextField(default='N/a',
+                                      verbose_name=_('Comments')
+                                      )
     acción = models.ForeignKey(Action,
                                on_delete=models.SET_NULL, 
-                               null=True
+                               null=True,
+                               verbose_name=_('Action')
                                )
     notice = models.CharField(max_length=9,
                               verbose_name=_('If a notice was sent, specify the number'),
@@ -328,7 +333,7 @@ class Letter(models.Model):
     @property
     def copatrocinador(self):
         if not self.cosigners:
-            return 'Na'
+            return 'N/a'
         leg_list = [cosigner for cosigner in Legislator.objects.all() if cosigner.name in self.cosigners]
         leg_list = sorted(leg_list, key=lambda leg: (leg.rep_or_sen, leg.name))
         leg_list = list(map(lambda leg_obj: leg_obj.full_title, leg_list))
