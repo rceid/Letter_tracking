@@ -183,11 +183,13 @@ class Letter(models.Model):
 
     tema = models.ForeignKey(Topic, 
                             on_delete=models.SET_NULL, 
-                            null=True
+                            null=True,
+                            verbose_name=_('Topic')
                             )
     tema_específico = models.ForeignKey(Specific_Topic, 
                                         on_delete=models.SET_NULL, 
-                                        null=True
+                                        null=True,
+                                        verbose_name=_('Specific Topic')
                                         )
     fecha = models.DateTimeField(help_text="Enter dates in <em>MM/DD/YYYY</em> format")
     descripción = models.TextField()

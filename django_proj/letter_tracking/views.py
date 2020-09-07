@@ -16,8 +16,8 @@ from django.db.models import Q
 from .forms import LegSearchForm
 import csv, io
 
-FIELDS = ['tema', 'patrocinador_sen', 'patrocinador_rep', 'descripción', 
-         'fecha', 'caucus', 'legislatura', 'tema_específico',
+FIELDS = ['tema',  'tema_específico', 'patrocinador_sen', 'patrocinador_rep', 
+          'descripción', 'fecha', 'caucus', 'legislatura',
          'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
          'other_destinatario_comments', 'observaciones', 'acción', 
          'notice', 'cosigners']
