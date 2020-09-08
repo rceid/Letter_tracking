@@ -276,6 +276,7 @@ class Letter(models.Model):
                               )
     letter_path = models.CharField(max_length=200,
                                    verbose_name=_('File Path'),
+                                   help_text="For example, 'G:\\Cartas Legisladores\\116th\\2019.01.23.S.Casey.Migration.1'",
                                    blank=True)
 
     @property
@@ -324,10 +325,6 @@ class Letter(models.Model):
         return daily_order.index(self) + 1
 
     @property
-    def chamber(self):
-        return None
-
-    @property
     def num_reps_sens(self):
         if not self.authors:
             return 0, 0
@@ -360,10 +357,6 @@ class Letter(models.Model):
         leg_list = sorted(leg_list, key=lambda leg: (leg.rep_or_sen, leg.name))
         leg_list = list(map(lambda leg_obj: leg_obj.full_title, leg_list))
         return ', '.join(sorted(leg_list))
-
-    @property
-    def letter_path(self):
-         return "G:\\Cartas Legisladores\\" + str(self.legislatura) + '\\' + self.title
 
     def __str__(self):
         return self.title
