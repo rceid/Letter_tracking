@@ -20,7 +20,7 @@ FIELDS = ['tema',  'tema_específico', 'patrocinador_sen', 'patrocinador_rep',
           'descripción', 'fecha', 'caucus', 'legislatura',
          'favorable_a_MX', 'mención_directa_a_MX', 'destinatario', 
          'other_destinatario_comments', 'observaciones', 'acción', 
-         'notice', 'cosigners']
+         'notice', 'letter_path','cosigners']
 EXPORT_ATTRS = ['Código', 'Tema', 'Tema específico', 'Fecha', 'Descripción', 'Favorable a MX', 'Mención directa a MX', 
             'Destinatario',  'Cámara', 'Partido', 'Caucus', 'Legislatura', 'Congresistas', 'Senadores',
             'Patrocinador/a (Sen.)', 'Patrocinador/a (Rep.)', 'Copatrocinador/a', 'Link', 'Observaciones', 'Acción', 'Notice']

@@ -274,6 +274,9 @@ class Letter(models.Model):
                               verbose_name=_('If a notice was sent, specify the number'),
                               default='N/a'
                               )
+    letter_path = models.CharField(max_length=200,
+                                   verbose_name=_('File Path'),
+                                   blank=True)
 
     @property
     def title(self):
@@ -281,8 +284,8 @@ class Letter(models.Model):
             name = 'NO LEGISLATOR SELECTED: UPDATE LETTER'
         else:
             name = '-'.join(obj_list_to_attr(self.authors, 'last_name'))
-        return str(self.fecha)[:10].replace('-', '.') + '.' + str(self.cámara)[0] +\
-                '.' + name + '.' + str(self.tema) + '.' + str(self.consecutive_number)
+        return '.'.join([str(self.fecha)[:10].replace('-', '.'), self.cámara[0],\
+               self.partido[0], name, str(self.tema), str(self.consecutive_number)])
 
     @property
     def authors(self):

@@ -9,10 +9,9 @@ Run this file from the django_proj directory
 
 import pandas as pd
 import us
-import jellyfish
 
-## for spyder:
-#LETTER_DATA = './letters spreadsheet.xlsx'
+# for spyder:
+# LETTER_DATA = './letters spreadsheet.xlsx'
 
 LETTER_DATA = './data/letters spreadsheet.xlsx'
 POLITICIANS_OUT = './politicians.csv'
@@ -117,10 +116,9 @@ def get_metatopics():
                              usecols=['TOPIC','SPECIFIC TOPIC','RECIPIENT',\
                                       'CAUCUS','ACTION'])
 
-    return topics.iloc[:34]
+    return topics.iloc[:35]
         
         
 if __name__ == '__main__':
     letters, pols = prepare_data()
-
     
