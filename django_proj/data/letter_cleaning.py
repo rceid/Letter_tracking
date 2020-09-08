@@ -12,7 +12,8 @@ import us
 import jellyfish
 
 ## for spyder:
-# LETTER_DATA = './letters spreadsheet.xlsx'
+#LETTER_DATA = './letters spreadsheet.xlsx'
+
 LETTER_DATA = './data/letters spreadsheet.xlsx'
 POLITICIANS_OUT = './politicians.csv'
 
@@ -108,29 +109,6 @@ def clean_politicians():
 
     
     return pols[['Legislator', 'Active', 'Legislature'] + cols]
-
-def link_topics(df):
-
-    for col in TRANSLATION.keys():
-        matches = {}
-        for entry in set(df[col]):
-            for link in TRANSLATION[col].keys():
-                match = string_sim(entry, link)
-                if match:
-                    print('MATCH##:\n', entry, '-with-', link)
-                    matches[entry] = link
-        df[col].replace(matches, inplace=True)
-        
-
-def string_sim(record, link):
-    thresh = 0.95
-    try:
-        similarity = jellyfish.jaro_winkler(record, link)
-    except:
-        print('heres the error', record, link)
-    else:
-        
-        return similarity if similarity > thresh else None
     
     
 

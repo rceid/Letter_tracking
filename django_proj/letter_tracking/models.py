@@ -23,35 +23,51 @@ class State(models.Model):
 class Topic(models.Model):
     topic_name = models.CharField(max_length=25)
 
+    class Meta:
+        ordering = ('topic_name',)
     def __str__(self):
         return self.topic_name
 
 class Specific_Topic(models.Model):
     specific_topic_name =  models.CharField(max_length=25)
-    
+        
+    class Meta:
+        ordering = ('specific_topic_name',)
+
     def __str__(self):
         return self.specific_topic_name
 
 class Recipient(models.Model):
     recipient_name =  models.CharField(max_length=50)
-    
+    class Meta:
+        ordering = ('recipient_name',)
     def __str__(self):
         return self.recipient_name
 
 class Caucus(models.Model):
     caucus_name = models.CharField(max_length=25, blank=True, null=True, default='Na')
+
     class Meta:
         verbose_name_plural = "Caucuses"
+        ordering = ('caucus_name',)
+
     def __str__(self):
         return self.caucus_name
 
 class Legislature(models.Model):
     legislature_name =  models.CharField(max_length=6)
+
+    class Meta:
+        ordering = ('legislature_name',)
+        
     def __str__(self):
         return self.legislature_name
 
 class Action(models.Model):
     action_name =  models.CharField(max_length=40)
+    class Meta:
+        ordering = ('action_name',)
+
     def __str__(self):
         return self.action_name
 
