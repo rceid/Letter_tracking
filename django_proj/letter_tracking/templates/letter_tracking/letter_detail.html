@@ -41,9 +41,15 @@
                 </medium>
             </div>
             <div>
+                {% if object.mención_directa_a_MX == '1' %}
                 <medium>
-                    <b>Mexico is directly mentioned: </b>{{ object.mencion_directa_a_MX }}
+                    <b>Mexico is directly mentioned: </b>Yes
                 </medium>
+                {% else %}
+                    <medium>
+                        <b>Mexico is directly mentioned: </b>No
+                    </medium>
+                {% endif%}
             </div>  
             {% if letter.other_destinatario_comments %}
                 <div>

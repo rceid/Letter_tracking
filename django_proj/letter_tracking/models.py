@@ -181,10 +181,13 @@ class Letter(models.Model):
         y = 1, _('Yes')
         n = 0, _('No')
 
+    class Meta:
+        ordering = ('fecha', )
+
     tema = models.ForeignKey(Topic, 
                             on_delete=models.SET_NULL, 
                             null=True,
-                            verbose_name=_('Topic')
+                            verbose_name=_('-Topic')
                             )
     tema_específico = models.ForeignKey(Specific_Topic, 
                                         on_delete=models.SET_NULL, 
