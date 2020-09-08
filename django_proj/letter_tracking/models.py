@@ -115,8 +115,9 @@ class Legislator(models.Model):
                              null=True
                              )
     district = models.CharField(max_length=10,\
-                                choices=[('', 'N/a')] + list(zip_choices(['at large'] + list(map(lambda num: str(num), range(1,54))))),\
-                                help_text='If politician is a Sentor, please select N/a')
+                                choices=[('', '-')] + list(zip_choices(['at large'] + list(map(lambda num: str(num), range(1,54))))),\
+                                help_text='If politician is a Sentor, please select N/a',
+                                blank=True)
     rep_or_sen = models.CharField(max_length=4,
                                  choices=RepSen.choices,
                                  verbose_name=_('Representative or Senator'))
@@ -203,7 +204,7 @@ class Letter(models.Model):
     tema = models.ForeignKey(Topic, 
                             on_delete=models.SET_NULL, 
                             null=True,
-                            verbose_name=_('-Topic')
+                            verbose_name=_('Topic')
                             )
     tema_específico = models.ForeignKey(Specific_Topic, 
                                         on_delete=models.SET_NULL, 
@@ -237,7 +238,7 @@ class Letter(models.Model):
                                     verbose_name=_('Legislature')
                                     )
     patrocinador_sen = models.ForeignKey(Legislator, 
-                                        limit_choices_to={'rep_or_sen': 'Sen.'}, 
+                                        limit_choices_to={'rep_or_sen': 'Sen.', 'active': True}, 
                                         related_name='Senators',
                                         verbose_name=_('Senate Author'), 
                                         on_delete=models.SET_NULL, 
@@ -245,14 +246,14 @@ class Letter(models.Model):
                                         blank=True
                                         )
     patrocinador_rep = models.ForeignKey(Legislator, 
-                                        limit_choices_to={'rep_or_sen': 'Rep.'}, 
+                                        limit_choices_to={'rep_or_sen': 'Rep.', 'active': True}, 
                                         related_name='Representatives',
                                         verbose_name=_('House Author'), 
                                         on_delete=models.SET_NULL, 
                                         null=True,
                                         blank=True
                                         )
-    cosigners = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda leg: leg.name, Legislator.objects.all())))),\
+    cosigners = MultiSelectField(choices=[('', 'N/a')] + list(zip_choices(list(map(lambda leg: leg.name, Legislator.objects.filter(active=True))))),\
                                 verbose_name=_('Cosigner(s)'), 
                                 default='None',
                                 max_length=1000
@@ -304,6 +305,11 @@ class Letter(models.Model):
     @property
     def rep_author(self):
         return True if self.patrocinador_rep else False
+    
+    @property
+    def state(self):
+        return [auth.state for auth in self.authors]
+
 
     @property
     def partido(self):

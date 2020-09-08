@@ -22,5 +22,6 @@ urlpatterns = [
     path('search/', views.get_name, name='search_form'),
     path('about/', views.about, name='letter_tracking-about'),
     path('export/', views.export, name='export-data'),
+    path('export_guide/', views.export_guide, name='export-guide'),
     path('export/<str:name>/', views.export, name='export-data-leg')
 ]

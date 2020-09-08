@@ -15,6 +15,7 @@ from .models import (Letter, Legislator,
 from django.db.models import Q
 from .forms import LegSearchForm
 import csv, io
+import urllib.request
 
 FIELDS = ['tema',  'tema_específico', 'patrocinador_sen', 'patrocinador_rep', 
           'descripción', 'fecha', 'caucus', 'legislatura',
@@ -171,3 +172,9 @@ def lookup_attr(obj, id_, attr):
         rv = None
     return rv
 
+def export_guide(self):
+    file_path = './Users guide for website.pdf'
+    with open(file_path, 'rb') as guide:
+        response = HttpResponse(guide.read())
+        response['Content-Disposition'] = 'attachment; filename="User Guide.pdf"'
+    return response
