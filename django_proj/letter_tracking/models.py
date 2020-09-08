@@ -305,11 +305,6 @@ class Letter(models.Model):
     @property
     def rep_author(self):
         return True if self.patrocinador_rep else False
-    
-    @property
-    def state(self):
-        return [auth.state for auth in self.authors]
-
 
     @property
     def partido(self):
