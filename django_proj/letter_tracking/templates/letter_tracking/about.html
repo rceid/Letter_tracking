@@ -1,5 +1,105 @@
 
 {%extends "letter_tracking/base.html" %}
 {% block content %}
-    <h1>Letter tracking about page</h1>
+    <style>
+        body {
+        padding-bottom: 100px;
+        }
+    </style>
+    <h1 style="text-align:center">Criterios para el registro de cartas del Congreso</h1><br>
+    <div>
+        <h3 style="text-decoration:underline;">Registro de cartas nuevas</h3>
+    <font size="+2"><i>Topic y Specific Topic:</i></font> <br>
+    <p><font size="+1">&emsp;●	Se elige uno para cada categoría.<br>
+    &emsp;●	De considerarse necesario agregar un elemento adicional a la(s) lista(s) desplegable(s),  &emsp;&emsp;se puede hacer en la cuenta de Administrador. </font></p>
+    </div>
+    <div>
+        <font size="+2"><i>Senate Author y House Author: </i></font> <br>
+            <p><font size="+1">&emsp;● Únicamente aparecen como opciones los legisladores que estén catalogados como <br>&emsp;&emsp;“Activos” en la cuenta de Administrador.<br>
+            &emsp;●	Se refiere al promotor/a de la carta. La mayor parte de las veces corresponde a la <br>&emsp;&emsp;primera firmaque aparece. <br>
+            &emsp;●	En el caso de que sea una carta bicameral, suele haber un/a promotor/a por cada <br>&emsp;&emsp;Cámara, por lo que existe la opción de que se elija un autor principal<br>&emsp;&emsp;para la Cámara de Representantes y otro para el Senado.<br>
+            &emsp;●	<b>NO</b> es posible que ambos campos estén vacíos. Por lo menos uno debe adquirir un <br>&emsp;&emsp;valor.</font></p>
+    </div>
+    <div>
+        <font size="+2"><i>Description:</i></font> <br>
+        <p><font size="+1">&emsp;●	Breve descripción del contenido de la carta. <br>
+            &emsp;●	Se recomienda sea de un sólo párrafo de 2-3 líneas (aproximadamente 140-160 <br>&emsp;&emsp;caracteres, como máximo).</font></p>
+    </div>
+    <div>
+        <font size="+2"><i>Date:</i></font> <br>
+        <p><font size="+1">&emsp;●	Se refiere a la fecha en la que se firmó la carta, <b>NO</b> en la que se registró la misma.</font></p>
+    </div>
+    <div>
+        <font size="+2"><i>Caucus:</i></font> <br>
+        <p><font size="+1">&emsp;●	Se marca únicamente cuando la carta hace referencia explícita que se envía en nombre &emsp;&emsp;del caucus seleccionado (o viene membretada).</font></p>
+    </div>
+    <div>
+    <font size="+2"><i>Legislature:</i></font> <br>
+    <p><font size="+1">&emsp;●	Se refiere al número de legislatura durante la cual la carta fue enviada.</font>
+    </div>
+    <div>
+    <font size="+2"><i>Positive for Mexico:</i></font> <br>
+    <p><font size="+1">&emsp;●	Se elige entre:<br>
+        &emsp;&emsp;○	Positive, si el contenido de la carta favorece a México.<br>
+        &emsp;&emsp;○	Negative, si el contenido de la carta desfavorece a México.<br>
+        &emsp;&emsp;○	Neutral si no favorece ni desfavorece a México.<br></font></p>
+    </div>
+    <div>
+    <font size="+2"><i>Was Mexico directly mentioned?:</i></font> <br>
+    <p><font size="+1">&emsp;●	Indicar si México o los mexicanos fueron mencionados de manera explícita en la carta.</font></p>
+    </div>
+    <div>
+        <font size="+2"><i>Recipient(s):</i></font> <br>
+        <p><font size="+1">&emsp;&emsp;●	Se seleccionan todas las entidades a las que se dirige la carta.<br>
+        &emsp;&emsp;●	Es importante notar que se incluyen las entidades y <b>NO</b> los nombres de quienes &emsp;&emsp;&emsp;ocupan el cargo, ni su puesto en específico. La excepción son los cargos de una &emsp;&emsp;&emsp;relevancia o recurrencia particular en la Cámara de Representantes y el Senado, para &emsp;&emsp;&emsp;quienes se incluyen como opciones, por ejemplo, los líderes de la mayoría y minoría &emsp;&emsp;&emsp;de ambas Cámaras, pero nunca los nombres..<br>
+        &emsp;&emsp;●	En caso de que haya alguna otra entidad no incluida en la lista cuya importancia o &emsp;&emsp;&emsp;frecuencia amerite agregarla entre las casillas, se puede hacer desde la cuenta de &emsp;&emsp;&emsp;Administrador..<br>
+        &emsp;&emsp;●	Si la entidad destinataria es de carácter muy específico, local o no recurrente, se &emsp;&emsp;&emsp;puede escribir en “Other recipient comments” el nombre organismo al que se dirige &emsp;&emsp;&emsp;la carta..<br>
+        &emsp;&emsp;●	Si la carta va dirigida a alguna autoridad mexicana, las opciones que se tienen son: &emsp;&emsp;&emsp;PEUM,Canciller, EMBAMEX o GOBMX. En caso de que GOBMX se seleccione, en el <br>&emsp;&emsp;&emsp;apartado de “Other recipient comments” se debe insertar el nombre de la entidad en &emsp;&emsp;&emsp;particular dentro del Gobierno de México a la cual se envió la misiva.<br>
+    </font></p>
+    </div>
+    <div>
+        <font size="+2"><i>Link:</i></font> <br>
+        <p><font size="+1">&emsp;&emsp;●	Se refiere a la ubicación final de la carpeta en la que se encontrará el archivo en PDF &emsp;&emsp;&emsp;de la carta, <b>NO </b> alude a la liga de internet en la que se encuentra el documento.<br>
+        &emsp;&emsp;●	Esta ubicación se obtiene accediendo a la carpeta en el Explorador de Archivos de &emsp;&emsp;&emsp;Windows y haciendo copy-paste del texto que contiene la Barra de Direcciones, la &emsp;&emsp;&emsp;cual se encuentra en la parte superior del explorador.<br>
+        &emsp;&emsp;●	Un ejemplo de ubicación sería: <br>&emsp;&emsp;&emsp;G:\6. Congreso 117 (2021-2022)\9. CORRESPONDENCIA CAPITOLIO\1. RECIBIDA<br></font></p>
+    </div>
+    <div>
+    <font size="+2"><i>Comments:</i></font> <br>
+    <p><font size="+1">&emsp;&emsp;●	En este apartado se pueden insertar comentarios cortos adicionales sobre la carta, &emsp;&emsp;&emsp;como lo son algunas observaciones que aportan al análisis de la misma.<br>
+    &emsp;&emsp;●	Por ejemplo: “Firmada por todos los miembros de la bancada demócrata en el <br>&emsp;&emsp;&emsp;Senado, menos ______” o “Firmada por toda la delegación legislativa de Florida”.</font></p>
+    </div>
+    <div>
+        <font size="+2"><i>Action:</i></font> <br>
+        <p><font size="+1">&emsp;&emsp;●	Se refiere a si la carta fue reportada y el medio mediante el cual se informó.</font></p>
+</div>
+<div>
+    <font size="+2"><i>Notice:</i></font> <br>
+    <p><font size="+1">&emsp;&emsp;●	Si en el apartado de Action se seleccionó “Individual notice” o “Collective notice”, se &emsp;&emsp;&emsp;debe incluir el número de notice con el que se reportó la carta y la fecha en la que &emsp;&emsp;&emsp;salió el correo. El formato es: EUAXXXXX (dd.mm.aa)</font></p>
+</div>
+<div>
+    <font size="+2"><i>Cosigner(s):</i></font> <br>
+    <p><font size="+1">&emsp;&emsp;●	Únicamente aparecen los legisladores que estén catalogados como “Activos” en la &emsp;&emsp;&emsp;cuenta de Administrador.<br>
+    &emsp;&emsp;●	Se palomean todos los legisladores que firmaron la carta.<br>
+    &emsp;&emsp;●	<b>NO</b> deben seleccionarse quién/es patrocinó/aron la carta (cuyos nombres ya se &emsp;&emsp;&emsp;incluyeron en Senate Author y/o House Author).<br></font></p>
+</div>
+<div>
+    <font size="+2"><i>Code:</i></font> <br>
+    <p><font size="+1">&emsp;&emsp;●	Una vez registrada la nueva carta, el sistema genera de manera automática un código &emsp;&emsp;&emsp;único para la misma. Éste debe ser el nombre bajo el cual se guarde la carta en la &emsp;&emsp;&emsp;carpeta asignada (cuya ubicación se señaló en el cuadro de texto de Link)<br>
+    &emsp;&emsp;●	El código da información básica de la carta. Se compone de la siguiente forma:<br>
+    &emsp;&emsp;&emsp;○	Fecha (formato: aaaa.mm.dd).<br>
+    &emsp;&emsp;&emsp;○	Cámara (C si los firmantes son de Cámara de Representantes, S si son del Senado, &emsp;&emsp;&emsp;&emsp;B si es bicameral).<br>
+    &emsp;&emsp;&emsp;○	Partido (R si los firmantes son republicanos, D si son demócratas, B si es <br>&emsp;&emsp;&emsp;&emsp;bipartidista).<br>
+    &emsp;&emsp;&emsp;○	Apellido del promotor/a de la carta.<br>
+    &emsp;&emsp;&emsp;○	Tema (Topic) de la carta.<br>
+    &emsp;&emsp;&emsp;○	Un número consecutivo de las cartas registradas con esa fecha. (Por ejemplo, si el  &emsp;&emsp;&emsp;&emsp;código de una carta termina en 2, significa que es la segunda carta registrada con &emsp;&emsp;&emsp;&emsp;esa fecha).<br></font></p>
+</div><br>
+
+<h3 style="text-decoration:underline;">Actualización de legisladores</h3>
+    <p><font size="+1">&emsp;&emsp;●	Cada que cambie uno o varios miembros de la Cámara de Representantes o del <br>&emsp;&emsp;Senado (ya sea por retiro, defunción, renuncia o cambio de legislatura), es necesario &emsp;&emsp;actualizar desde la cuenta del Administrador los nombres de los congresistas y/o <br>&emsp;&emsp;senadores actualmente activos.<br>
+    &emsp;&emsp;●	Para ello, es necesario:<br>
+    &emsp;&emsp;&emsp;○	Registrar los nombres de quienes se integran como congresista(s) y/o senador(es), <br>&emsp;&emsp;&emsp;&emsp;asegurándose que estén seleccionados como activos.<br>
+    &emsp;&emsp;&emsp;○	Ingresar en el nombre de la persona que deja el escaño y marcarlo como <br>&emsp;&emsp;&emsp;&emsp;inactivo/a (quitando la marca de la casilla de “Active”). Es muy importante <b>NO</b> &emsp;&emsp;&emsp;&emsp;eliminar al legislador(a), sólo quitarle el atributo de activo.</font></p>
+
+
+
 {% endblock content %}
