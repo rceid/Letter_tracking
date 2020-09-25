@@ -21,7 +21,7 @@ class State(models.Model):
         return self.name
 
 class Topic(models.Model):
-    topic_name = models.CharField(max_length=25)
+    topic_name = models.CharField(max_length=100)
 
     class Meta:
         ordering = ('topic_name',)
@@ -29,7 +29,7 @@ class Topic(models.Model):
         return self.topic_name
 
 class Specific_Topic(models.Model):
-    specific_topic_name =  models.CharField(max_length=25)
+    specific_topic_name =  models.CharField(max_length=100)
         
     class Meta:
         ordering = ('specific_topic_name',)
@@ -38,14 +38,14 @@ class Specific_Topic(models.Model):
         return self.specific_topic_name
 
 class Recipient(models.Model):
-    recipient_name =  models.CharField(max_length=50)
+    recipient_name =  models.CharField(max_length=100)
     class Meta:
         ordering = ('recipient_name',)
     def __str__(self):
         return self.recipient_name
 
 class Caucus(models.Model):
-    caucus_name = models.CharField(max_length=25, blank=True, null=True, default='Na')
+    caucus_name = models.CharField(max_length=100, blank=True, null=True, default='Na')
 
     class Meta:
         verbose_name_plural = "Caucuses"
@@ -55,7 +55,7 @@ class Caucus(models.Model):
         return self.caucus_name
 
 class Legislature(models.Model):
-    legislature_name =  models.CharField(max_length=6)
+    legislature_name =  models.CharField(max_length=10)
 
     class Meta:
         ordering = ('legislature_name',)
@@ -64,7 +64,7 @@ class Legislature(models.Model):
         return self.legislature_name
 
 class Action(models.Model):
-    action_name =  models.CharField(max_length=40)
+    action_name =  models.CharField(max_length=100)
     class Meta:
         ordering = ('action_name',)
 
@@ -224,7 +224,7 @@ class Letter(models.Model):
                                 default='None',
                                 max_length=100,
                                 help_text="<em>If 'Other', please specify in the text box below</em>",
-                                verbose_name=_('Recipient(s)')
+                                verbose_name=_('Recipients')
                                 )
     other_destinatario_comments = models.TextField(blank=True,
                                                    verbose_name=_('Other recipient comments'))

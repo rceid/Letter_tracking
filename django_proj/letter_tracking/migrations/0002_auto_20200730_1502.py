@@ -42,13 +42,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='letter',
             name='party',
-            field=models.CharField(choices=[('D', 'Democrat'), ('R', 'Republican'), ('I', 'Independent')], default='default party', max_length=11),
+            field=models.CharField(choices=[('D', 'Democrat'), ('R', 'Republican'), ('I', 'Independent')], max_length=11),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='letter',
             name='rep_or_sen',
-            field=models.CharField(choices=[('Rep.', 'Representative'), ('Sen.', 'Senator')], default='defauly rep sen', max_length=4),
+            field=models.CharField(choices=[('Rep.', 'Representative'), ('Sen.', 'Senator')], max_length=15),
             preserve_default=False,
         ),
         migrations.AddField(

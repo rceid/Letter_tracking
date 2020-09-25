@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='letter',
             name='MX_mentioned',
-            field=models.CharField(choices=[('1', 'Yes'), ('0', 'No')], default='null', max_length=3),
+            field=models.CharField(choices=[('1', 'Yes'), ('0', 'No')], default='null', max_length=30),
             preserve_default=False,
         ),
         migrations.AddField(

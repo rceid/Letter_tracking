@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='letter',
             name='MX_mentioned',
-            field=models.CharField(choices=[('1', 'Yes'), ('0', 'No')], max_length=3, verbose_name='Was Mexico directly mentioned?'),
+            field=models.CharField(choices=[('1', 'Yes'), ('0', 'No')], max_length=30, verbose_name='Was Mexico directly mentioned?'),
         ),
         migrations.AlterField(
             model_name='letter',
@@ -64,7 +64,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='letter',
             name='positive_MX',
-            field=models.CharField(choices=[('1', 'Positive'), ('2', 'Neutral'), ('3', 'Negative')], max_length=8, verbose_name='Positive for Mexico?'),
+            field=models.CharField(choices=[('1', 'Positive'), ('2', 'Neutral'), ('3', 'Negative')], max_length=10, verbose_name='Positive for Mexico?'),
         ),
         migrations.AlterField(
             model_name='letter',

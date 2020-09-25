@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='letter',
             name='code',
-            field=models.CharField(default='Date.Chamber.Party.Topic', max_length=15),
+            field=models.CharField(default='', max_length=15),
         ),
     ]
