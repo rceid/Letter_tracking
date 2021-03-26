@@ -53,7 +53,7 @@ pyserial==3.4
 python-dateutil==1.5
 python-debian==0.1.32
 pytz==2020.1
-PyYAML==5.3.1
+PyYAML==5.4
 requests==2.24.0
 requests-unixsocket==0.1.5
 scour==0.36
