@@ -44,7 +44,7 @@ oauthlib==2.0.6
 odfpy==1.4.1
 openpyxl==3.0.4
 optional-django==0.1.0
-Pillow==7.2.0
+Pillow==9.0.1
 pipdeptree==1.0.0
 pipreqs==0.4.10
 psycopg2-binary==2.8.6
