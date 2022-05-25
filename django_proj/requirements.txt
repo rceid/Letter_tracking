@@ -50,7 +50,7 @@ pipreqs==0.4.10
 psycopg2-binary==2.8.6
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
-PyJWT==1.5.3
+PyJWT==2.4.0
 pyOpenSSL==17.5.0
 pyserial==3.4
 python-dateutil==1.5
