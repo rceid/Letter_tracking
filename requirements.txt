@@ -36,7 +36,7 @@ MarkupPy==1.14
 MarkupSafe==1.1.1
 netifaces==0.10.4
 npm==0.1.1
-numpy==1.19.1
+numpy==1.22.0
 oauthlib==2.0.6
 odfpy==1.4.1
 openpyxl==3.0.4
